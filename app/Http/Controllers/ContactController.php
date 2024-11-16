@@ -13,24 +13,26 @@ class ContactController extends Controller
 {
     // Validate the request
     $request->validate([
-        'name' => 'required|string|max:255',
+        'full_name' => 'required|string|max:255',
         'email' => 'required|email|max:255',
-        'subject' => 'nullable|string|max:255',
-        'message' => 'nullable|string',
+        'phone_number' => 'required|string|max:255',
+        'lead_business_name' => 'nullable|string|max:255',
+        'msg' => 'nullable|string',
     ]);
 
     // Prepare the data for the email
     $contactData = [
-        'name' => $request->input('name'),
+        'full_name' => $request->input('full_name'),
         'email' => $request->input('email'),
-        'subject' => $request->input('subject'),
-        'message' => $request->input('message'),
+        'phone_number' => $request->input('phone_number'),
+        'lead_business_name' => $request->input('lead_business_name'),
+        'msg' => $request->input('msg'),
     ];
 
     // Send the email
     Mail::to("mrashid2000@gmail.com")->send(new ContactMail($contactData));
 
-    return redirect()->route('contact', ['#sentmessage'])->with('info', 'Your message has been sent successfully!');
+    return redirect()->route('aboutus', ['#sentmessage'])->with('info', 'Your message has been sent successfully!');
 }
 
 }

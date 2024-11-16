@@ -226,7 +226,7 @@
 <li class="csquared-sublink"><a class="menu_link" href="{{ url('contactus') }}"> Contact us </a></li>
 <li class="csquared-sublink"><a class="menu_link" href="{{ url('aboutus') }}"> About us </a></li>
 
-                
+
             </ul>
         </div>
     </nav>
@@ -279,8 +279,7 @@
             menuList.style.display = "none";
 
 
-            <
-            !--TODO: test start here-- >
+            // <!--TODO: test start here-- >
                 $(`#formPopupModal-${sessionStorage['selectedForm']}`).modal('toggle');
             // location.href="#main-form";
 
@@ -288,8 +287,8 @@
             mobileQuery.addListener(function () {
                 $(`#formPopupModal-${sessionStorage['selectedForm']}`).modal('toggle');
                 // location.href="#mobile-form";
-            }); <
-            !--TODO: test end here-- >
+            });
+            // <!--TODO: test end here-- >
         });
     </script>
 

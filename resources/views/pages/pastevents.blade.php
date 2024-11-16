@@ -286,8 +286,7 @@
         menuList.style.display = "none";
 
 
-        <
-        !--TODO: test start here-- >
+        // <!--TODO: test start here-- >
             $(`#formPopupModal-${sessionStorage['selectedForm']}`).modal('toggle');
         // location.href="#main-form";
 
@@ -295,8 +294,8 @@
         mobileQuery.addListener(function() {
             $(`#formPopupModal-${sessionStorage['selectedForm']}`).modal('toggle');
             // location.href="#mobile-form";
-        }); <
-        !--TODO: test end here-- >
+        });
+        // <!--TODO: test end here-- >
     });
     </script>
 
@@ -905,7 +904,7 @@
                 <div class="hp-grid-box-container">
                     <div id="archive-box" class="hp-grid-box-content-container grid-container">
                         <h2 class="body-headings-two heading-white">Poster Archive</h2>
-                        
+
                                 <a class="outlined-white-button mt-5" href="{{ url('posterarchive') }}" role="button">learn more</a>
                     </div>
                 </div>

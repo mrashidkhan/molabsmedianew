@@ -286,8 +286,7 @@
         menuList.style.display = "none";
 
 
-        <
-        !--TODO: test start here-- >
+        // <!--TODO: test start here-- >
             $(`#formPopupModal-${sessionStorage['selectedForm']}`).modal('toggle');
         // location.href="#main-form";
 
@@ -295,8 +294,8 @@
         mobileQuery.addListener(function() {
             $(`#formPopupModal-${sessionStorage['selectedForm']}`).modal('toggle');
             // location.href="#mobile-form";
-        }); <
-        !--TODO: test end here-- >
+        });
+        // <!--TODO: test end here-- >
     });
     </script>
 

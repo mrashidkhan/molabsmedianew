@@ -274,8 +274,7 @@
         menuList.style.display = "none";
 
 
-        <
-        !--TODO: test start here-- >
+        // <!--TODO: test start here-- >
             $(`#formPopupModal-${sessionStorage['selectedForm']}`).modal('toggle');
         // location.href="#main-form";
 
@@ -283,8 +282,8 @@
         mobileQuery.addListener(function() {
             $(`#formPopupModal-${sessionStorage['selectedForm']}`).modal('toggle');
             // location.href="#mobile-form";
-        }); <
-        !--TODO: test end here-- >
+        });
+        // <!--TODO: test end here-- >
     });
     </script>
 
@@ -1015,7 +1014,7 @@
         integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g=="
         crossorigin="anonymous"></script>
 
-    <form id="main-form" action="mail.php" method="post" autocomplete="off">
+    {{-- <form id="main-form" action="mail.php" method="post" autocomplete="off">
         <div class="form-container container lets-talk-form">
             <h1 id="homepage-form-heading">let's talk</h1>
             <hr
@@ -1047,7 +1046,7 @@
             <button onclick="getButtonId(this)" name="Footer Form" id="form-button" type="submit">submit</button>
             <div id="form-disclaimer">* By clicking submit, you agree to our terms of service.</div>
         </div>
-    </form>
+    </form> --}}
 
     <style>
     /** stop ios rounded corners */
@@ -1173,7 +1172,9 @@
         integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g=="
         crossorigin="anonymous"></script>
 
-    <form id="mobile-form" action="mail.php" method="post" autocomplete="off" style="width: 100%;">
+    @include('partials.contactsection')
+
+    {{-- <form id="mobile-form" action="mail.php" method="post" autocomplete="off" style="width: 100%;">
         <div class="mobile-form-container">
             <h1 id="homepage-form-heading-mobile">let's talk</h1>
             <hr style="opacity: 1; color: black; width: 15px; height: 4pt; margin-left: -11px; margin-bottom: 2rem;">
@@ -1208,7 +1209,7 @@
             <button onclick="getButtonId(this)" name="Footer Form" id="form-button-mobile">submit</button>
             <div id="form-disclaimer-mobile">* By clicking submit, you agree to our terms of service.</div>
         </div>
-    </form>
+    </form> --}}
 
     <style>
     input {
@@ -3772,3 +3773,13 @@ input[type="text"] {
     }
 }
 </style>
+
+
+<script>
+    window.addEventListener('load', function() {
+        var element = document.getElementById('contactmessage');
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+</script>

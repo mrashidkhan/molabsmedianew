@@ -41,4 +41,4 @@ Route::get('/videos', [PageController::class, 'videos'])->name('videos');
 Route::get('/videoarchive', [PageController::class, 'videoarchive'])->name('videoarchive');
 Route::get('/webdesign', [PageController::class, 'webdesign'])->name('webdesign');
 
-
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
