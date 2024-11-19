@@ -172,7 +172,7 @@
                 <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
                     <li><a class="dropdown-item" href="{{ url('events') }}">Events &raquo; </a>
                         <ul class="submenu dropdown-menu dropdown-menu-dark">
-                        <li><a class="dropdown-item" href="{{ url('upcomingevents') }}">Upcoming Events</a></li>
+                            <li><a class="dropdown-item" href="{{ url('upcomingevents') }}">Upcoming Events</a></li>
                             <li><a class="dropdown-item" href="{{ url('pastevents') }}">Past Events &raquo; </a>
                                 <ul class="submenu dropdown-menu dropdown-menu-dark">
                                     <li><a class="dropdown-item" href="{{ url('videos') }}">Video Archive</a></li>
@@ -204,7 +204,8 @@
                 </div>
             </div>
             <ul class="mobile-dropdown-list">
-                <li><a class="menu_link" href='index'>home</a></li>
+                <li><a class="menu_link" href="{{ url('index') }}">home</a></li>
+
                 <li class="csquared-sublink"><a class="menu_link" href="{{ url('events') }}"> Events
                     </a>
                 </li>
@@ -324,16 +325,6 @@
 
 
     <style>
-    .row {
-        display: flex;
-    }
-
-    /* Create three equal columns that sits next to each other */
-    .column {
-        flex: 18%;
-        padding: 5px;
-    }
-
     #phone-desk-container {
         display: none;
     }
@@ -840,52 +831,27 @@
     }
     </style>
 
-    <div id="contactus-hero" class="jumbotron hero-height">
-        <div id="content-container" class="container hero-container">
-            <div id="content-hero-container" class="hp-hero-content-container hp-hero-content-container-alt">
-                <img class="hp-hero-logo" src="molabsmedia/molabs_logo.png">
-                <h1 class="hp-hero-heading">Events</h1>
 
+
+    <section id="creative-writing">
+        <div id="like-drives-row" class="row center-aligned-container">
+            <div class="col-md">
+                <img id="content-like-drive-hidden" src="homepage/images/newdesktop/home_creative_writing.jpg"
+                    width="100%">
             </div>
-        </div>
 
-    </div>
+            <div id="likeDrivesCol" class="col-md">
+                <div class="inside-container-content-container-right">
+                    <div id="content-three-content">
+                        <!-- <img id="thumbs-up" src="content/images/thumb_and_numbers.png"> -->
+                        <h1 class="body-headings">Creative Writing</h1>
+                        <p class="copy-one">We provide creative writing services. We provide personalized and audience
+                            engaging content which is unique to your businesses and brands. </p>
+                        
 
-    <section id="section-two">
-        <div class="teal-splash-container">
-            <img id="teal-splash" src="homepage/images/desktop/teal_splash.png">
-        </div>
-        <div class="what-we-do-container container">
-            <h1 id="whatWeDo" class="body-headings heading-black">Our Events</h1>
-            <hr id="whatWeDoHr" class="body-hr">
-        </div>
-
-
-
-        <div class="row mb-1-custom">
-            <div class="col-md grid-padding-right">
-                <div class="hp-grid-box-container">
-                    <div id="upcoming-box" class="hp-grid-box-content-container grid-container">
-                        <h2 class="body-headings-two heading-white">Upcoming Events</h2>
-                        <!-- <p id="ad-grid-copy" class="copy-two">All-in-one marketing solution <br class="desktop-break">
-                            for <br class="mobile-break"> digital advertising.</p> -->
-                        <button class="outlined-white-button mt-5" type="button"
-                            onclick="window.location.href='upcomingevents'">learn more</button>
                     </div>
                 </div>
             </div>
-            <div class="col-md grid-padding-left">
-                <div class="hp-grid-box-container">
-                    <div id="archive-box" class="hp-grid-box-content-container grid-container">
-                        <h2 class="body-headings-two heading-white">Past Events</h2>
-                        <!-- <p id="web-grid-copy" class="copy-two">Custom websites to enhance <br class="desktop-break"> <br
-                                class="mobile-break"> your company's image.</p> -->
-                        <button class="outlined-white-button mt-5" type="button"
-                            onclick="window.location.href='{{ url('pastevents') }}'">learn more</button>
-                    </div>
-                </div>
-            </div>
-        </div>
         </div>
     </section>
 
@@ -1090,34 +1056,6 @@
     </form>
 
     <style>
-    #event1-left-box {
-        background-image: url('images/event1.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: bottom;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding-bottom: 25px;
-        min-height: 1050px;
-        margin-top: 25px;
-        margin-bottom: 25px;
-    }
-
-    #event2-right-box {
-        background-image: url('images/event2.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: bottom;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding-bottom: 25px;
-        min-height: 1050px;
-        margin-top: 25px;
-        margin-bottom: 25px;
-    }
-
     input {
         -webkit-border-radius: 0;
         border-radius: 0;
@@ -1330,21 +1268,18 @@
                     <h2 class="desktopFooterHeader">Your Business <br> is unique for us!</h2>
                     <p class="desktopRightsReserved desktopFooterMainCopy"> &#169; 2022 Molabs Media All Rights
                         Reserved.</p>
-                    <!-- <a class="desktopPrivacyAndTerms" href="#disclaimerModal" data-toggle="modal"
-                        data-target="#disclaimerModal">
-                        <p class="desktopFooterMainCopy"><span style="font-weight: bold;">Privacy & Terms</span></p>
-                    </a> -->
+
                 </div>
 
                 <div class="col-2 columnBorderTop">
                     <h3 class="desktopFooterSubheading">contact</h3>
-                    <a class="desktopFooterPhone footerLinks">
+                    <a class="desktopFooterPhone footerLinks" href="tel:0012146796818">
                         <p class="desktopFooterMainCopy"><span style="font-weight: bold;">+1 214-679-6818</span></p>
                     </a>
-                    <a class="footerLinks" href="{{ url('/') }}">
-    <p class="desktopFooterMainCopy">molabsmedia.com</p>
-</a>
-                    <!-- <a class="footerLinks" href="/cdn-cgi/l/email-protection#98f1f6fef7d8fbebe9edf9eafdfcebf7fbf1f9f4b6fbf7f5"><p class="desktopFooterMainCopy"><span class="__cf_email__" data-cfemail="127b7c747d527161636773607776617d717b737e3c717d7f">[email&#160;protected]</span></p></a> -->
+                    <a class="footerLinks" href="{{ url('index') }}">
+                        <p class="desktopFooterMainCopy">molabsmedia.com</p>
+                    </a>
+
 
                     <a class="footerLinks">
 

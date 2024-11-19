@@ -43,3 +43,124 @@
         </div>
     @endif
 </div>
+
+<style>
+    /** stop ios rounded corners */
+    input {
+        -webkit-border-radius: 0;
+        border-radius: 0;
+    }
+
+    textarea {
+        -webkit-border-radius: 0;
+        border-radius: 0;
+    }
+
+    #form-fullname {
+        font-size: 20px;
+    }
+
+    #main-form-confirmation {
+        display: none;
+        border: solid 2px;
+        font-size: 25px;
+        font-family: 'Source Code Pro', sans-serif;
+        padding-top: 20px;
+        padding-bottom: 80px;
+        padding-left: 15px;
+    }
+
+    #main-form {
+        outline: none;
+        height: 100%;
+        padding-top: 80px;
+        padding-bottom: 80px;
+        /* height: 700px; */
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    #homepage-form-heading {
+        margin-left: -11px;
+        /* font-weight: 700; */
+        /* font-size: 70px; */
+    }
+
+    .form-container {
+        /* padding-bottom: 80px;
+    padding-top: 80px; */
+    }
+
+    .lets-talk-form {
+        display: block !important;
+    }
+
+    .field-in-row {
+        width: 33.3%;
+        border-left: none;
+        height: 70px;
+        font-family: 'Source Code Pro', monospace;
+        font-size: 20px;
+        outline: none;
+        background-color: transparent;
+    }
+
+    #form-phone-number {
+        border-right: none;
+        font-size: 20px;
+        outline: none;
+        background-color: transparent;
+    }
+
+    #form-business-name {
+        font-size: 20px;
+        border: none;
+        height: 70px;
+        font-family: 'Source Code Pro', monospace;
+        outline: none;
+        background-color: transparent;
+    }
+
+    #form-message {
+        font-size: 20px;
+        font-family: 'Source Code Pro', monospace;
+        border-left: none;
+        border-right: none;
+        resize: none;
+        outline: none;
+        background-color: transparent;
+        padding-top: 25px;
+    }
+
+    .my-top-border {
+        border-top: 5px solid black;
+    }
+
+    #form-button {
+        width: 250px;
+        height: 64px;
+        border: solid;
+        background: transparent;
+        margin-left: -12px;
+        font-size: 18px;
+        font-weight: bold;
+        box-shadow: inset 0 0 0 0 black;
+        transition: ease-out 0.3s;
+        outline: none;
+    }
+
+    #form-button:hover {
+        box-shadow: inset 250px 0 0 0 black;
+        border-color: black;
+        color: white;
+    }
+
+    #form-disclaimer {
+        font-weight: bold;
+        display: inline-block;
+        padding-left: 20px;
+        font-size: 12px;
+        position: absolute;
+        margin-top: 20px;
+    }
+</style>

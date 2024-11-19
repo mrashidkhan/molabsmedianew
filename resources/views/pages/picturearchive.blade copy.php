@@ -170,19 +170,20 @@
                     Services
                 </a>
                 <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                    <li><a class="dropdown-item" href="{{ url('events') }}">Events &raquo; </a>
-                        <ul class="submenu dropdown-menu dropdown-menu-dark">
-                        <li><a class="dropdown-item" href="{{ url('upcomingevents') }}">Upcoming Events</a></li>
-                            <li><a class="dropdown-item" href="{{ url('pastevents') }}">Past Events &raquo; </a>
-                                <ul class="submenu dropdown-menu dropdown-menu-dark">
-                                    <li><a class="dropdown-item" href="{{ url('videos') }}">Video Archive</a></li>
-                                    <li><a class="dropdown-item" href="{{ url('picturearchive') }}">Picture Archive</a></li>
-                                    <li><a class="dropdown-item" href="{{ url('postersarchive') }}">Poster Archive</a></li>
-                                </ul>
-                            </li>
-
-                        </ul>
-                    </li>
+                    <li>
+    <a class="dropdown-item" href="{{ url('events') }}">Events &raquo; </a>
+    <ul class="submenu dropdown-menu dropdown-menu-dark">
+        <li><a class="dropdown-item" href="{{ url('upcomingevents') }}">Upcoming Events</a></li>
+        <li>
+            <a class="dropdown-item" href="{{ url('pastevents') }}">Past Events &raquo; </a>
+            <ul class="submenu dropdown-menu dropdown-menu-dark">
+                <li><a class="dropdown-item" href="{{ url('videos') }}">Video Archive</a></li>
+                <li><a class="dropdown-item" href="{{ url('picturearchive') }}">Picture Archive</a></li>
+                <li><a class="dropdown-item" href="{{ url('posterarchive') }}">Poster Archive</a></li>
+            </ul>
+        </li>
+    </ul>
+</li>
                     <li><a class="dropdown-item" href="{{ url('videoproduction') }}">Video production</a></li>
 <li><a class="dropdown-item" href="{{ url('creativewriting') }}">Creative writing</a></li>
 <li><a class="dropdown-item" href="{{ url('contentwriters') }}">Content writers</a></li>
@@ -204,7 +205,7 @@
                 </div>
             </div>
             <ul class="mobile-dropdown-list">
-                <li><a class="menu_link" href='index'>home</a></li>
+                <li><a class="menu_link" href="{{ url('index') }}">home</a></li>
                 <li class="csquared-sublink"><a class="menu_link" href="{{ url('events') }}"> Events
                     </a>
                 </li>
@@ -220,7 +221,7 @@
                     </a>
                 </li>
 
-                <li class="csquared-sublink"><a class="menu_link" href="{{ url('postersarchive') }}"> Poster Archive
+                <li class="csquared-sublink"><a class="menu_link" href="{{ url('posterarchive') }}"> Poster Archive
                     </a>
                 </li>
                 <li class="csquared-sublink"><a class="menu_link" href="{{ url('videoproduction') }}"> Video Production </a></li>
@@ -843,53 +844,243 @@
     <div id="contactus-hero" class="jumbotron hero-height">
         <div id="content-container" class="container hero-container">
             <div id="content-hero-container" class="hp-hero-content-container hp-hero-content-container-alt">
-                <img class="hp-hero-logo" src="molabsmedia/molabs_logo.png">
-                <h1 class="hp-hero-heading">Events</h1>
+                <img class="hp-hero-logo img-fluid" src="molabsmedia/molabs_logo.png" alt="Molabs Logo">
+                <h1 class="hp-hero-heading">Picture Archive</h1>
 
             </div>
         </div>
 
     </div>
 
-    <section id="section-two">
-        <div class="teal-splash-container">
-            <img id="teal-splash" src="homepage/images/desktop/teal_splash.png">
+
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+            <img src="{{ asset('images/pics/pic1.jpg') }}" alt="Snow" class="img-fluid">
         </div>
-        <div class="what-we-do-container container">
-            <h1 id="whatWeDo" class="body-headings heading-black">Our Events</h1>
-            <hr id="whatWeDoHr" class="body-hr">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+            <img src="{{ asset('images/pics/pic2.jpg') }}" alt="Forest" class="img-fluid">
         </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+            <img src="{{ asset('images/pics/pic3.jpg') }}" alt="Mountains" class="img-fluid">
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+            <img src="{{ asset('images/pics/pic4.jpg') }}" alt="Mountains" class="img-fluid">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+            <img src="{{ asset('images/pics/pic5.jpg') }}" alt="Snow" class="img-fluid">
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+            <img src="{{ asset('images/pics/pic6.jpg') }}" alt="Forest" class="img-fluid">
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+            <img src="{{ asset('images/pics/pic7.jpg') }}" alt="Mountains" class="img-fluid">
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+            <img src="{{ asset('images/pics/pic8.jpg') }}" alt="Mountains" class="img-fluid">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+            <img src="{{ asset('images/pics/pic9.jpg') }}" alt="Snow" class="img-fluid">
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+            <img src="{{ asset('images/pics/pic10.jpg') }}" alt="Forest" class="img-fluid">
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+            <img src="{{ asset('images/pics/pic11.jpg') }}" alt="Mountains" class="img-fluid">
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+            <img src="{{ asset('images/pics/pic12.jpg') }}" alt="Mountains" class="img-fluid">
+        </div>
+    </div>
 
 
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+            <img src="{{ asset('images/pics/pic13.jpg') }}" alt="Snow" class="img-fluid">
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+            <img src="{{ asset('images/pics/pic14.jpg') }}" alt="Forest" class="img-fluid">
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+            <img src="{{ asset('images/pics/pic15.jpg') }}" alt="Mountains" class="img-fluid">
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+            <img src="{{ asset('images/pics/pic16.jpg') }}" alt="Mountains" class="img-fluid">
+        </div>
+    </div>
 
-        <div class="row mb-1-custom">
-            <div class="col-md grid-padding-right">
-                <div class="hp-grid-box-container">
-                    <div id="upcoming-box" class="hp-grid-box-content-container grid-container">
-                        <h2 class="body-headings-two heading-white">Upcoming Events</h2>
-                        <!-- <p id="ad-grid-copy" class="copy-two">All-in-one marketing solution <br class="desktop-break">
-                            for <br class="mobile-break"> digital advertising.</p> -->
-                        <button class="outlined-white-button mt-5" type="button"
-                            onclick="window.location.href='upcomingevents'">learn more</button>
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+            <img src="{{ asset('images/pics/pic17.jpg') }}" alt="Snow" class="img-fluid">
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+            <img src="{{ asset('images/pics/pic18.jpg') }}" alt="Forest" class="img-fluid">
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+            <img src="{{ asset('images/pics/pic19.jpg') }}" alt="Mountains" class="img-fluid">
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+            <img src="{{ asset('images/pics/pic20.jpg') }}" alt="Mountains" class="img-fluid">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+            <img src="{{ asset('images/pics/pic21.jpg') }}" alt="Snow" class="img-fluid">
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+            <img src="{{ asset('images/pics/pic22.jpg') }}" alt="Forest" class="img-fluid">
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+            <img src="{{ asset('images/pics/pic23.jpg') }}" alt="Mountains" class="img-fluid">
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+            <img src="{{ asset('images/pics/pic24.jpg') }}" alt="Mountains" class="img-fluid">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+            <img src="{{ asset('images/pics/pic25.jpg') }}" alt="Snow" class="img-fluid">
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+            <img src="{{ asset('images/pics/pic26.jpg') }}" alt="Forest" class="img-fluid">
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+            <img src="{{ asset('images/pics/pic27.jpg') }}" alt="Mountains" class="img-fluid">
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+            <img src="{{ asset('images/pics/pic28.jpg') }}" alt="Mountains" class="img-fluid">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+            <img src="{{ asset('images/pics/pic29.jpg') }}" alt="Snow" class="img-fluid">
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+            <img src="{{ asset('images/pics/pic30.jpg') }}" alt="Forest" class="img-fluid">
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+            <img src="{{ asset('images/pics/pic31.jpg') }}" alt="Mountains" class="img-fluid">
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+            <img src="{{ asset('images/pics/pic32.jpg') }}" alt="Mountains" class="img-fluid">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+            <img src="{{ asset('images/pics/pic33.jpg') }}" alt="Snow" class="img-fluid">
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+            <img src="{{ asset('images/pics/pic34.jpg') }}" alt="Forest" class="img-fluid">
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+            <img src="{{ asset('images/pics/pic35.jpg') }}" alt="Mountains" class="img-fluid">
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+            <img src="{{ asset('images/pics/pic36.jpg') }}" alt="Mountains" class="img-fluid">
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+            <img src="{{ asset('images/pics/pic37.jpg') }}" alt="Snow" class="img-fluid">
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+            <img src="{{ asset('images/pics/pic38.jpg') }}" alt="Forest" class="img-fluid">
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+            <img src="{{ asset('images/pics/pic39.jpg') }}" alt="Mountains" class="img-fluid">
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+            <img src="{{ asset('images/pics/pic40.jpg') }}" alt="Mountains" class="img-fluid">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+            <img src="{{ asset('images/pics/pic41.jpg') }}" alt="Snow" class="img-fluid">
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+            <img src="{{ asset('images/pics/pic42.jpg') }}" alt="Forest" class="img-fluid">
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+            <img src="{{ asset('images/pics/pic43.jpg') }}" alt="Mountains" class="img-fluid">
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+            <img src="{{ asset('images/pics/pic44.jpg') }}" alt="Mountains" class="img-fluid">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+            <img src="{{ asset('images/pics/pic45.jpg') }}" alt="Snow" class="img-fluid">
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+            <img src="{{ asset('images/pics/pic46.jpg') }}" alt="Forest" class="img-fluid">
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+            <img src="{{ asset('images/pics/pic47.jpg') }}" alt="Mountains" class="img-fluid">
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+            <img src="{{ asset('images/pics/pic48.jpg') }}" alt="Mountains" class="img-fluid">
+        </div>
+    </div>
+
+    <!-- <section id="content-two">
+        <div class="container">
+            <div id="email-sms-row" class="row center-aligned-container">
+                <div class="col-md">
+                    <div class="inside-container-content-container-right">
+                        <img id="text-bubble" src="content/images/desktop/email_SMS gif.gif">
+                        <h1 class="body-headings">email/SMS</h1>
+                        <p class="copy-one">Capitalize on your lead generation efforts with email and SMS marketing that
+                            captures your message and drives more purchases.</p>
+                        <button onclick="getButtonId(this)" name="Content email/SMS Button" id="content-two-button"
+                            class="outlined-black-button" type="button" data-toggle="modal"
+                            data-target="#buttonModal">book demo</button>
+                    </div>
+                </div>
+                <div id="content-phone-bg-col" class="col-md"></div>
+            </div>
+        </div>
+    </section> -->
+    <!-- <section id="contentwriter-three">
+        <div id="like-drives-row" class="row center-aligned-container">
+            <div class="col-md">
+                <img id="content-like-drive-hidden" src="{{ asset('content/images/mobile/content_likedrives_mobile.jpg') }}" width="100%" height="auto">
+            </div>
+
+            <div id="likeDrivesCol" class="col-md">
+                <div class="inside-container-content-container-right">
+                    <div id="content-three-content">
+                        <img id="thumbs-up" src="content/images/thumb_and_numbers.png">
+                        <h1 class="body-headings">Content writers</h1>
+                        <p class="copy-one">Our team of professional writers have expertise in different genres of writing. We work on building content that is effective and persuasive. </p>
+                        <p>
+                        <button class="outlined-black-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                            Read More
+                        </button>
+                    </p>
+                    <div class="collapse" id="collapseExample">
+                        <div class="card card-body copy-one" style="background-color: #EFB000;"  >
+                        Our team of writers are capable of writing on range of different disciplines like showbiz, fashion, lifestyle, automobile, gadgets, education, technology, hospitality, eCommerce and what not. Our pertinent and appropriate content makes instant connection with the audience and make them fall for your businesses and brands.
+                        </div>
+                    </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md grid-padding-left">
-                <div class="hp-grid-box-container">
-                    <div id="archive-box" class="hp-grid-box-content-container grid-container">
-                        <h2 class="body-headings-two heading-white">Past Events</h2>
-                        <!-- <p id="web-grid-copy" class="copy-two">Custom websites to enhance <br class="desktop-break"> <br
-                                class="mobile-break"> your company's image.</p> -->
-                        <button class="outlined-white-button mt-5" type="button"
-                            onclick="window.location.href='{{ url('pastevents') }}'">learn more</button>
-                    </div>
-                </div>
-            </div>
         </div>
-        </div>
-    </section>
-
-
+    </section> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"
         integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g=="
         crossorigin="anonymous"></script>
@@ -1400,7 +1591,7 @@
                     <h3 class="desktopFooterSubheading">follow</h3>
                     <div class="desktopFooterSocialContainer">
                         <a href="https://www.facebook.com/Molabsmedia" target="_blank"><img width="100%" height="auto"
-                                id="desktopFooterFB" src="essentials/footer/images/Facebook_white.svg" /></a>
+                                id="desktopFooterFB" src="{{ asset('essentials/footer/images/Facebook_white.svg') }}" /></a>
                         <a class="footerLinks linkCenter" href="https://www.facebook.com/Molabsmedia" target="_blank">
                             <p class="desktopFooterMainCopy noBottomMargin">Facebook</p>
                         </a>
@@ -1442,29 +1633,7 @@
         </div>
     </footer>
 
-    <!-- <div class="modal" tabindex="-1" role="dialog" aria-labelledby="disclaimerModal" aria-hidden="true"
-        id="disclaimerModal" data-backdrop="false">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content" style="width: 100%;">
-                <div class="modal-header" style="background-color: white;">
-                    <h5 class="modal-title">Privacy & Terms</h5>
-                    <button id="close-disclaimer" type="button" class="close" data-dismiss="modal" aria-label="Close"
-                        style="border-radius: 25px; border-color: black; border: solid; background-color: white;">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body" style="overflow-y: scroll; height: 450px; background-color: white;"> -->
-    <!-- Termly Tracking Code -->
-    <!-- goes here -->
-    <!--  <embed src="https://app.termly.io/document/privacy-policy/90512b59-d462-4367-b546-069571520429"
-                        style="width: 100%;height: 450px;">
 
-                </div>
-            </div>
-        </div>
-    </div> -->
-
-    <!-- <script language='JavaScript1.1' async src='//pixel.mathtag.com/event/js?mt_id=1541489&mt_adid=245306&mt_exem=&mt_excl=&v1=&v2=&v3=&s1=&s2=&s3='></script> -->
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script type="text/javascript">
     _linkedin_partner_id = "1293980";
@@ -2246,10 +2415,7 @@
                     height: 40px;
                     border: solid 1px black;
                     border-radius: 0.25rem;
-                    /* background-image: url('essentials/forms/images/popup_person_button.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center; */
+
                     color: white;
                     font-family: 'Pro Source Code', monospace;
                     font-weight: 800;

@@ -5,13 +5,17 @@
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
-    <!-- Font Awesome -->
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Fonts-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
@@ -25,126 +29,186 @@
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" />
 
+    <!-- <link rel="shortcut icon" type="image/jpg" href="essentials/images/favicon/favicon.ico" /> -->
+    <link rel="icon" type="image/png" href="essentials/images/favicon/favicon.ico">
     <!--Calendly required import-->
-    <link href="/assets/calendly.css" rel="stylesheet">
+    <link href="assets/calendly.css" rel="stylesheet">
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
     <!-- -->
-    <script src="/assets/analytics.js" type="text/javascript" async></script>
+    <script src="assets/analytics.js" type="text/javascript" async></script>
+    <link rel="stylesheet" href="style/style.css">
+    <!-- stockticker stylesheet -->
+    <!-- <link rel="stylesheet" href="/homepage/stockticker/stylesheet.css" /> -->
+    <title>Molabs Media</title>
+    <meta name="description" content="A full-service digital marketing agency serving businesses of all sizes.">
 
-    <link rel="shortcut icon" type="image/jpg" href="{{ asset('essentials/images/favicon/favicon.ico') }}" />
-<link rel="stylesheet" href="{{ asset('style/style.css') }}">
+    <!-- Social Media Meta Tags (Replace content with your actual information) -->
+    <meta name="keywords"
+              content="Photo,Video,Photography,Videography,Wedding,Engagement,Birthday,Event,Texas,Dallas,Texas Dallas,Studios3Sixty,Molabs Media, 3Sixty, Studio" />
+        <meta property="og:title" content="Molabs Media" />
+        <meta property="og:type" content="website" />
+        <meta property="og:description"
+              content="A full-service digital marketing agency serving businesses of all sizes." />
 
-    <title>Molabs Media – Content Services</title>
-    <meta name="description" content="Impress your prospects with stunning and unified content across all channels.">
+        <meta property="og:image"
+              content="https://molabsmedia.com/molabsog.png" />
+
+
+        <meta property="og:url" content="https://molabsmedia.com/" />
+        <!-- Twitter Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Molabs Media">
+        <meta name="twitter:description"
+              content="A full-service digital marketing agency serving businesses of all sizes.">
+        <!-- <meta name="twitter:image"
+              content="essentials/images/favicon/molabsog.png"> -->
+              <meta name="twitter:image"
+              content="https://molabsmedia.com/molabsog.png">
 
     <style type="text/css">
-    /* ============ desktop view ============ */
-    @media all and (min-width: 992px) {
-
-        .dropdown-menu li {
-            position: relative;
-        }
-
-        .dropdown-menu .submenu {
-            display: none;
-            position: absolute;
-            left: 100%;
-            top: -7px;
-        }
-
-        .dropdown-menu .submenu-left {
-            right: 100%;
-            left: auto;
-        }
-
-        /* .dropdown-menu > li:hover{ background-color: #f1f1f1 } */
-        .dropdown-menu>li:hover>.submenu {
-            display: block;
-        }
-    }
-
-    /* ============ desktop view .end// ============ */
-
-    /* ============ small devices ============ */
-    @media (max-width: 991px) {
-
-        .dropdown-menu .dropdown-menu {
-            margin-left: 0.7rem;
-            margin-right: 0.7rem;
-            margin-bottom: .5rem;
-        }
-
-    }
-
-    /* ============ small devices .end// ============ */
-    </style>
-
-
-    <script type="text/javascript">
-    //	window.addEventListener("resize", function() {
-    //		"use strict"; window.location.reload();
-    //	});
-
-
-    document.addEventListener("DOMContentLoaded", function() {
-
-
-        /////// Prevent closing from click inside dropdown
-        document.querySelectorAll('.dropdown-menu').forEach(function(element) {
-            element.addEventListener('click', function(e) {
-                e.stopPropagation();
-            });
-        })
 
 
 
-        // make it as accordion for smaller screens
-        if (window.innerWidth < 992) {
+/* ============ desktop view ============ */
+@media all and (min-width: 992px) {
 
-            // close all inner dropdowns when parent is closed
-            document.querySelectorAll('.navbar .dropdown').forEach(function(everydropdown) {
-                everydropdown.addEventListener('hidden.bs.dropdown', function() {
-                    // after dropdown is hidden, then find all submenus
-                    this.querySelectorAll('.submenu').forEach(function(everysubmenu) {
-                        // hide every submenu as well
-                        everysubmenu.style.display = 'none';
-                    });
-                })
-            });
+	.dropdown-menu li{
+		position: relative;
+	}
+	.dropdown-menu .submenu{
+		display: none;
+		position: absolute;
+		left:100%; top:-7px;
+	}
+	.dropdown-menu .submenu-left{
+		right:100%; left:auto;
+	}
 
-            document.querySelectorAll('.dropdown-menu a').forEach(function(element) {
-                element.addEventListener('click', function(e) {
+	/* .dropdown-menu > li:hover{ background-color: #f1f1f1 } */
+	.dropdown-menu > li:hover > .submenu{
+		display: block;
+	}
+}
+/* ============ desktop view .end// ============ */
 
-                    let nextEl = this.nextElementSibling;
-                    if (nextEl && nextEl.classList.contains('submenu')) {
-                        // prevent opening link if link needs to open dropdown
-                        e.preventDefault();
-                        console.log(nextEl);
-                        if (nextEl.style.display == 'block') {
-                            nextEl.style.display = 'none';
-                        } else {
-                            nextEl.style.display = 'block';
-                        }
+/* ============ small devices ============ */
+@media (max-width: 991px) {
 
-                    }
-                });
-            })
-        }
-        // end if innerWidth
+.dropdown-menu .dropdown-menu{
+		margin-left:0.7rem; margin-right:0.7rem; margin-bottom: .5rem;
+}
 
-    });
-    // DOMContentLoaded  end
-    </script>
+}
+/* ============ small devices .end// ============ */
+
+</style>
+
+
+<script type="text/javascript">
+//	window.addEventListener("resize", function() {
+//		"use strict"; window.location.reload();
+//	});
+
+
+	document.addEventListener("DOMContentLoaded", function(){
+
+
+    	/////// Prevent closing from click inside dropdown
+		document.querySelectorAll('.dropdown-menu').forEach(function(element){
+			element.addEventListener('click', function (e) {
+			  e.stopPropagation();
+			});
+		})
+
+
+
+		// make it as accordion for smaller screens
+		if (window.innerWidth < 992) {
+
+			// close all inner dropdowns when parent is closed
+			document.querySelectorAll('.navbar .dropdown').forEach(function(everydropdown){
+				everydropdown.addEventListener('hidden.bs.dropdown', function () {
+					// after dropdown is hidden, then find all submenus
+					  this.querySelectorAll('.submenu').forEach(function(everysubmenu){
+					  	// hide every submenu as well
+					  	everysubmenu.style.display = 'none';
+					  });
+				})
+			});
+
+			document.querySelectorAll('.dropdown-menu a').forEach(function(element){
+				element.addEventListener('click', function (e) {
+
+				  	let nextEl = this.nextElementSibling;
+				  	if(nextEl && nextEl.classList.contains('submenu')) {
+				  		// prevent opening link if link needs to open dropdown
+				  		e.preventDefault();
+				  		console.log(nextEl);
+				  		if(nextEl.style.display == 'block'){
+				  			nextEl.style.display = 'none';
+				  		} else {
+				  			nextEl.style.display = 'block';
+				  		}
+
+				  	}
+				});
+			})
+		}
+		// end if innerWidth
+
+	});
+	// DOMContentLoaded  end
+</script>
+
 </head>
 
 <body>
-    <!-- audience files and page -->
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PNLS3RC" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- homepage -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"
         integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g=="
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous">
+    </script>
 
 
+    <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-51668283-1');
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-448785418"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'AW-448785418');
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GX0S22QZ2D"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-GX0S22QZ2D');
+    </script>
 
     <nav class="navbar" id="desktop-navbar">
         <div id="desktop-navbar-container">
@@ -153,7 +217,7 @@
                     <img id="footer_outlined_phone" src="{{ asset('essentials/images/Phone_white.png') }}">
                 </button>
                 <img id="phone-dropdown-img" src="{{ asset('essentials/images/phone(dropdown)-01.png') }}">
-                <a href="tel:0012146796818" id="mobile-phone" class="nav-link">
+                <a href="tel:8583867400" id="mobile-phone" class="nav-link">
                     <img id="footer_outlined_phone_mobile" src="{{ asset('essentials/images/Phone_white.png') }}">
                 </a>
                 <a href="{{ url('index') }}" id="mobile-logo" class="nav-link flexauto">
@@ -164,25 +228,32 @@
     <img id="desktop-logo" src="{{ asset('molabsmedia/molabs_logo.png') }}" alt="Molabs Media Logo">
 </a>
 
+
+
+
+
+
             <li class="nav-item dropdown">
-                <a id="services" class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
-                    data-bs-toggle="dropdown" aria-expanded="false">
+
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
                     Services
                 </a>
                 <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                    <li><a class="dropdown-item" href="{{ url('events') }}">Events &raquo; </a>
+                    <li><a class="dropdown-item" href="#">Events &raquo; </a>
                         <ul class="submenu dropdown-menu dropdown-menu-dark">
-                        <li><a class="dropdown-item" href="{{ url('upcomingevents') }}">Upcoming Events</a></li>
-                            <li><a class="dropdown-item" href="{{ url('pastevents') }}">Past Events &raquo; </a>
-                                <ul class="submenu dropdown-menu dropdown-menu-dark">
-                                    <li><a class="dropdown-item" href="{{ url('videos') }}">Video Archive</a></li>
-                                    <li><a class="dropdown-item" href="{{ url('picturearchive') }}">Picture Archive</a></li>
-                                    <li><a class="dropdown-item" href="{{ url('postersarchive') }}">Poster Archive</a></li>
-                                </ul>
-                            </li>
-
-                        </ul>
+    <li><a class="dropdown-item" href="{{ url('upcomingevents') }}">Upcoming Events</a></li>
+    <li>
+        <a class="dropdown-item" href="{{ url('pastevents') }}">Past Events &raquo;</a>
+        <ul class="submenu dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" href="{{ url('videos') }}">Video Archive</a></li>
+            <li><a class="dropdown-item" href="{{ url('events') }}">Picture Archive</a></li>
+            <li><a class="dropdown-item" href="{{ url('posterarchive') }}">Poster Archive</a></li>
+        </ul>
+    </li>
+</ul>
                     </li>
+
                     <li><a class="dropdown-item" href="{{ url('videoproduction') }}">Video production</a></li>
 <li><a class="dropdown-item" href="{{ url('creativewriting') }}">Creative writing</a></li>
 <li><a class="dropdown-item" href="{{ url('contentwriters') }}">Content writers</a></li>
@@ -194,7 +265,7 @@
             </li>
 
 
-            <a href="{{ url('ourteam') }}" id="ourteam" class="nav-link flexauto">Our Team</a>
+<a href="{{ url('molabsteam') }}" id="molabsteam" class="nav-link flexauto">Our Team</a>
 <a href="{{ url('aboutus') }}" id="aboutus" class="nav-link flexauto">About us</a>
 <a href="{{ url('contactus') }}" id="contactus" class="nav-link flexauto">Contact Us</a>
 
@@ -204,11 +275,9 @@
                 </div>
             </div>
             <ul class="mobile-dropdown-list">
-                <li><a class="menu_link" href='index'>home</a></li>
+                <li><a class="menu_link" href="{{ url('index') }}">home</a></li>
+
                 <li class="csquared-sublink"><a class="menu_link" href="{{ url('events') }}"> Events
-                    </a>
-                </li>
-                <li class="csquared-sublink"><a class="menu_link" href="{{ url('upcomingevents') }}"> Upcoming Events
                     </a>
                 </li>
 
@@ -216,26 +285,29 @@
                     </a>
                 </li>
 
-                <li class="csquared-sublink"><a class="menu_link" href="{{ url('picturearchive') }}"> Picture Archive
+                <li class="csquared-sublink"><a class="menu_link" href="{{ url('posterarchive') }}"> Poster Archive
                     </a>
                 </li>
 
-                <li class="csquared-sublink"><a class="menu_link" href="{{ url('postersarchive') }}"> Poster Archive
+                <li class="csquared-sublink"><a class="menu_link" href="{{ url('upcomingevents') }}"> Video Production
                     </a>
                 </li>
-                <li class="csquared-sublink"><a class="menu_link" href="{{ url('videoproduction') }}"> Video Production </a></li>
-<li class="csquared-sublink"><a class="menu_link" href="{{ url('creativewriting') }}"> Creative Writing </a></li>
-<li class="csquared-sublink"><a class="menu_link" href="{{ url('contentwriters') }}"> Content Writing </a></li>
-<li class="csquared-sublink"><a class="menu_link" href="{{ url('webdesign') }}"> Web Design </a></li>
-<li class="csquared-sublink"><a class="menu_link" href="{{ url('graphicsdesign') }}"> Graphics Design </a></li>
-<li class="csquared-sublink"><a class="menu_link" href="{{ url('itandtelecom') }}"> IT and Telecom Staffing </a></li>
-<li class="csquared-sublink"><a class="menu_link" href="{{ url('contactus') }}"> Contact us </a></li>
-<li class="csquared-sublink"><a class="menu_link" href="{{ url('aboutus') }}"> About us </a></li>
-
+                <li class="csquared-sublink"><a class="menu_link" href="{{ url('creativewriting') }}"> Creative Writing
+                    </a></li>
+                <li class="csquared-sublink"><a class="menu_link" href="{{ url('contentwriters') }}"> Content Writing
+                    </a></li>
+                <li class="csquared-sublink"><a class="menu_link" href="{{ url('webdesign') }}"> Web Design </a></li>
+                <li class="csquared-sublink"><a class="menu_link" href="{{ url('graphicsdesign') }}"> Graphics design
+                    </a></li>
+                <li class="csquared-sublink"><a class="menu_link" href="{{ url('itandtelecom') }}"> IT and Telecom
+                        Staffing </a></li>
+                <li class="csquared-sublink"><a class="menu_link" href="{{ url('contactus') }}"> Contact us </a></li>
+                <li class="csquared-sublink"><a class="menu_link" href="{{ url('aboutus') }}"> About us </a></li>
 
             </ul>
         </div>
     </nav>
+
 
 
 
@@ -324,16 +396,6 @@
 
 
     <style>
-    .row {
-        display: flex;
-    }
-
-    /* Create three equal columns that sits next to each other */
-    .column {
-        flex: 18%;
-        padding: 5px;
-    }
-
     #phone-desk-container {
         display: none;
     }
@@ -372,9 +434,6 @@
         display: -ms-flexbox;
         display: -webkit-flex;
         display: flex;
-        /* padding-left: 25%;
-    padding-right: 25%; */
-        /* display: inline-block; */
         justify-content: center;
         align-items: stretch;
         align-content: stretch;
@@ -397,7 +456,8 @@
         padding-left: 5vw;
     }
 
-    #ourteam {
+
+    #molabsteam {
         padding-right: 3vw;
         padding-left: 3vw;
     }
@@ -413,10 +473,6 @@
     }
 
     #content {
-        /* padding-right: 16%;
-    padding-left: 6%; */
-        /* padding-right: 215px;
-    padding-left: 60px; */
         padding-right: 10vw;
         padding-left: 3vw;
     }
@@ -429,18 +485,14 @@
     #desktop-logo {
         width: 70px;
         height: auto;
-        /* margin-left: 50px; */
+
     }
 
     .menu_icon {
         position: absolute;
-        /* top: 10px;
-    left: 20px; */
         left: 15px;
         bottom: 76px;
         transform: translate(-50%, -50%);
-        /* width: 80px;
-    height: 80px; */
         cursor: pointer;
         margin-left: -13px;
     }
@@ -501,9 +553,6 @@
     #phone {
         border: none;
         background: transparent;
-        /* margin-left: 150px; */
-        /* padding-right: 8.5%;
-    padding-left: 8.5% */
     }
 
     #dropdown-button {
@@ -582,7 +631,7 @@
         display: none;
         background-color: black;
         width: 100%;
-        height: 75px;
+        height: 65px;
         position: fixed;
         padding: 0;
     }
@@ -674,12 +723,6 @@
         flex: auto;
     }
 
-    /*
-.csquared-sublink{
-    font-size: 35px;
-    margin-left: 15px;
-} */
-
     .menu_link {
         font-size: 35px;
     }
@@ -689,23 +732,6 @@
         font-weight: 100;
     }
 
-
-    /* #desktop-navbar{
-    display: none;
-}
-
-#mobile-navbar{
-    display: inline-block;
-} */
-
-
-    /** Navbar Responsiveness */
-
-    /* @media screen and (min-width: 2560px){
-    .mobile-dropdown-list{
-        padding-left: 4%;
-    }
-} */
 
     @media screen and (max-width: 1920px) {
         .mobile-dropdown-list {
@@ -750,14 +776,6 @@
         }
 
         #mobile-navbar {
-            /* display: inline-block; */
-            /* text-align: center;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-content: center;
-        justify-content: center;
-        justify-content: space-evenly;
-        align-items: center; */
             display: inline-flex;
             flex-direction: row;
             flex-wrap: nowrap;
@@ -807,7 +825,7 @@
         .navbar {
             background-color: #000000;
             width: 100%;
-            height: 75px;
+            height: 65px;
             position: fixed;
         }
 
@@ -839,49 +857,191 @@
         }
     }
     </style>
+    <div id="homepage-header" class="jumbotron hero-height">
+        <div class="container hero-container">
+            <div class="hp-hero-content-container">
+                <div id="hpHeroContainer" class="hp-hero-subcontainer">
 
-    <div id="contactus-hero" class="jumbotron hero-height">
-        <div id="content-container" class="container hero-container">
-            <div id="content-hero-container" class="hp-hero-content-container hp-hero-content-container-alt">
-                <img class="hp-hero-logo" src="molabsmedia/molabs_logo.png">
-                <h1 class="hp-hero-heading">Events</h1>
+                    <h1 class="hp-hero-heading">Molabs Media</h1>
+                    <h1 id="theFutureOf" class="hp-hero-subheading">Your Business</h1>
+                    <h1 class="hp-hero-heading">is unique for us!</h1>
 
+                    <div id="hero-signature-container">
+                        <img id="signature" src="homepage/images/signature.png">
+                    </div>
+                    <button onclick="getButtonId(this)" name="Home Hero Button homepageHeroButton"
+                        id="hero-button-desktop" type="button" class="outlined-white-button">let's talk!</button>
+                </div>
             </div>
         </div>
-
     </div>
+    <img id="hero-bg-logos" src="homepage/images/mobile/Home_mobile_logos.png">
+
+    <script>
+    $('.homepageHeroButton').click(function(e) {
+        e.stopPropagation();
+        e.preventDefault();
+    });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"
+        integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g=="
+        crossorigin="anonymous"></script>
+    <script src="https://player.vimeo.com/api/player.js"></script>
+
+
+    <div class="stockTickerContainer">
+        <div class="stockTickerSubcontainer-Left">
+            <div class="stockTickerLogoContainer">
+                <img class="stockTickerLogo" id="CallawayLogo" src="homepage/stockticker/assets/molabsmedia/allvoi.png">
+            </div>
+            <div class="stockTickerLogoContainer">
+                <img class="stockTickerLogo" src="homepage/stockticker/assets/molabsmedia/avonz.jpeg">
+            </div>
+            <div class="stockTickerLogoContainer">
+                <img class="stockTickerLogo" id="GroupMTYGroup"
+                    src="homepage/stockticker/assets/molabsmedia/balaji.jpeg">
+            </div>
+            <div class="stockTickerLogoContainer">
+                <img class="stockTickerLogo" id="F45Logo" src="homepage/stockticker/assets/molabsmedia/dfwics.jpg">
+            </div>
+            <div class="stockTickerLogoContainer">
+                <img class="stockTickerLogo" src="homepage/stockticker/assets/molabsmedia/dishnetwork.png">
+            </div>
+
+        </div>
+    </div>
+
+    <div class="stockTickerContainer">
+        <div class="stockTickerSubcontainer-Right">
+            <div class="stockTickerLogoContainer">
+                <img class="stockTickerLogo" src="homepage/stockticker/assets/molabsmedia/mehtaproduction.jpeg">
+            </div>
+            <div class="stockTickerLogoContainer">
+                <img class="stockTickerLogo" src="homepage/stockticker/assets/molabsmedia/ndtvimagine.png">
+            </div>
+            <div class="stockTickerLogoContainer">
+                <img class="stockTickerLogo" src="homepage/stockticker/assets/molabsmedia/royal.jpg">
+            </div>
+            <div class="stockTickerLogoContainer">
+                <img class="stockTickerLogo" src="homepage/stockticker/assets/molabsmedia/wdt.png">
+            </div>
+            <div class="stockTickerLogoContainer">
+                <img class="stockTickerLogo" src="homepage/stockticker/assets/molabsmedia/indiaassociation.jpeg">
+            </div>
+
+        </div>
+    </div>
+    <section id="section-one">
+        <div id="section-one-row" class="row center-aligned-container">
+            <div class="col-md-6">
+                <div style="padding:57% 0 0 0;position:relative;">
+
+                    <iframe src="homepage/videos/Typo-Reel.mp4" allow="autoplay; fullscreen; picture-in-picture"
+                        allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"
+                        title="Typo-Reel.mp4"></iframe>
+                </div>
+                <script src="https://player.vimeo.com/api/player.js"></script>
+
+               
+            </div>
+            <div class="col-md-6" style="z-index: 20;">
+                <div id="blue-splash-container">
+                    <img id="blue-splash" src="homepage/images/desktop/rotated_blue_splash.png">
+                </div>
+                <div id="whoWeAreContentContainer" class="content-container">
+                    <h2 class="body-headings">who we are</h2>
+                    <hr class="body-hr">
+                    <p class="copy-one">We care for every client and propose them the best suitable model to fulfill
+                        their needs within the given budget and timelines. Our models are flexible and solely customer
+                        oriented because we know a happy customer is worth more than a million dollars. </p>
+
+                    <p>
+                        <button class="outlined-black-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                            Read More
+                        </button>
+                    </p>
+                    <div class="collapse" id="collapseExample">
+                        <div class="card card-body copy-one">
+                            We’ve been building and operating for more than 15 years, and will continue that
+                            commitment for many years to come. As demand for connectivity grows, we are building the
+                            solutions that deliver long-term value for our customers, communities, and investors.
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <section id="section-two">
         <div class="teal-splash-container">
             <img id="teal-splash" src="homepage/images/desktop/teal_splash.png">
         </div>
         <div class="what-we-do-container container">
-            <h1 id="whatWeDo" class="body-headings heading-black">Our Events</h1>
+            <h1 id="whatWeDo" class="body-headings heading-black">what we do</h1>
             <hr id="whatWeDoHr" class="body-hr">
         </div>
-
-
 
         <div class="row mb-1-custom">
             <div class="col-md grid-padding-right">
                 <div class="hp-grid-box-container">
-                    <div id="upcoming-box" class="hp-grid-box-content-container grid-container">
-                        <h2 class="body-headings-two heading-white">Upcoming Events</h2>
-                        <!-- <p id="ad-grid-copy" class="copy-two">All-in-one marketing solution <br class="desktop-break">
-                            for <br class="mobile-break"> digital advertising.</p> -->
-                        <button class="outlined-white-button mt-5" type="button"
-                            onclick="window.location.href='upcomingevents'">learn more</button>
+                    <div id="video-box" class="hp-grid-box-content-container grid-container">
+                        <h2 class="body-headings-two heading-white">Video production</h2>
+
+                        <a class="outlined-white-button mt-5" href="{{ url('videoproduction') }}" role="button">learn more</a>
                     </div>
                 </div>
             </div>
             <div class="col-md grid-padding-left">
                 <div class="hp-grid-box-container">
-                    <div id="archive-box" class="hp-grid-box-content-container grid-container">
-                        <h2 class="body-headings-two heading-white">Past Events</h2>
-                        <!-- <p id="web-grid-copy" class="copy-two">Custom websites to enhance <br class="desktop-break"> <br
-                                class="mobile-break"> your company's image.</p> -->
-                        <button class="outlined-white-button mt-5" type="button"
-                            onclick="window.location.href='{{ url('pastevents') }}'">learn more</button>
+                    <div id="creative-writing-box" class="hp-grid-box-content-container grid-container">
+                        <h2 class="body-headings-two heading-white">Creative writing</h2>
+
+                        <a class="outlined-white-button mt-5" href="{{ url('creativewriting') }}" role="button">learn more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-1-custom">
+            <div class="col-md grid-padding-right">
+                <div class="hp-grid-box-container">
+                    <div id="content2-box" class="hp-grid-box-content-container grid-container">
+                        <h2 class="body-headings-two heading-white">Content writers</h2>
+
+                        <a class="outlined-white-button mt-5" href="{{ url('creativewriting') }}" role="button">learn more</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md grid-padding-left">
+                <div class="hp-grid-box-container">
+                    <div id="design-box" class="hp-grid-box-content-container grid-container">
+                        <h2 class="body-headings-two heading-white">Web design</h2>
+
+                        <a class="outlined-white-button mt-5" href="{{ url('webdesign') }}" role="button">learn more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-1-custom">
+            <div class="col-md grid-padding-right">
+                <div class="hp-grid-box-container">
+                    <div id="graphics-box" class="hp-grid-box-content-container grid-container">
+                        <h2 class="body-headings-two heading-white">Graphic design</h2>
+
+                        <a class="outlined-white-button mt-5" href="{{ url('graphicsdesign') }}" role="button">learn more</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md grid-padding-left">
+                <div class="hp-grid-box-container">
+                    <div id="it-telecom-box" class="hp-grid-box-content-container grid-container">
+                        <h2 class="body-headings-two heading-white">IT and Telecom Staffing</h2>
+
+                        <a class="outlined-white-button mt-5" href="{{ url('itandtelecom') }}" role="button">learn more</a>
                     </div>
                 </div>
             </div>
@@ -890,6 +1050,27 @@
     </section>
 
 
+    <section id="section-three">
+        <div class="image-over-copy-container">
+            <img id="staticReelMobile" class="staticReel" src="homepage/images/newdesktop/mission_statement.jpg">
+            <img id="staticReelDesktop" class="staticReel" src="homepage/images/newdesktop/mission_statement.jpg">
+
+            <div class="centered-image-overlay">
+                <div class="centered-image-content">
+                    <p class="blurry-text">the product is</p>
+                    <h2 class="blurry-heading">cool.</h2>
+                    <p class="blurry-text">the process is</p>
+                    <h2 class="blurry-heading">simple.</h2>
+                    <p class="blurry-text">the result is</p>
+                    <h2 class="blurry-heading">epic.</h2>
+                    <p class="blurry-text">the customer is</p>
+                    <h2 class="blurry-heading">everything.</h2>
+                    <button class="outlined-white-button" onclick="getButtonId(this)" name="Home Texture Button"
+                        id="hp-section-three-button" type="button">get pricing</button>
+                </div>
+            </div>
+        </div>
+    </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"
         integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g=="
         crossorigin="anonymous"></script>
@@ -1090,34 +1271,6 @@
     </form>
 
     <style>
-    #event1-left-box {
-        background-image: url('images/event1.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: bottom;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding-bottom: 25px;
-        min-height: 1050px;
-        margin-top: 25px;
-        margin-bottom: 25px;
-    }
-
-    #event2-right-box {
-        background-image: url('images/event2.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: bottom;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding-bottom: 25px;
-        min-height: 1050px;
-        margin-top: 25px;
-        margin-bottom: 25px;
-    }
-
     input {
         -webkit-border-radius: 0;
         border-radius: 0;
@@ -1231,22 +1384,19 @@
     </style>
     <footer id="showOnMobile" class="mobileFooter">
         <div class="container">
-            <img id="mobileFooterLogo" src='molabsmedia/molabs_logo.png' />
+
+            <a href="{{ url('index') }}" id="mobile-logo" class="nav-link flexauto">
+                <img id="mobile-logo-img" src="{{ asset('molabsmedia/molabs_logo.png') }}">
+            </a>
             <h2 class="desktopFooterHeader">Your Business <br> is unique for us!</h2>
             <hr class="footerHR">
             <h3 class="desktopFooterSubheading">contact</h3>
             <a class="desktopFooterPhone footerLinks">
-                <p class="desktopFooterMainCopy"><span style="font-weight: bold;">tel: +1 214-679-6818</span></p>
+                <p class="desktopFooterMainCopy"><span style="font-weight: bold;">+1 214-679-6818</span></p>
             </a>
             <a class="footerLinks" href="{{ url('index') }}">
     <p class="desktopFooterMainCopy">molabsmedia.com</p>
 </a>
-            <!-- <a class="footerLinks" href="/cdn-cgi/l/email-protection#b5dcdbd3daf5d6c6c4c0d4c7d0d1c6dad6dcd4d99bd6dad8">
-                <p class="desktopFooterMainCopy"><span class="__cf_email__"
-                        data-cfemail="1e777078715e7d6d6f6b7f6c7b7a6d717d777f72307d7173">[email&#160;protected]</span>
-                </p>
-            </a> -->
-
             <a class="footerLinks">
 
                 <span class="e-mail desktopFooterMainCopy" data-user="tcatnoc" data-website="moc.aidemsbalom">
@@ -1257,20 +1407,21 @@
             <div id="CAContainer" class="locationsContainer">
                 <img class="stateIcon" src="{{ asset('essentials/footer/images/texas.png') }}" />
                 <div>
-                    <p class="desktopFooterMainCopy stateInformation"><span style="font-weight: bold;">Carlsbad,
-                            CA</span></p>
+                    <p class="desktopFooterMainCopy stateInformation"><span style="font-weight: bold;">Dallas, TX</span>
+                    </p>
                     <p class="desktopFooterMainCopy stateInformation dontWrapText">2727 LBJ Freeway, Suite 200</p>
                     <p class="desktopFooterMainCopy stateInformation">Dallas, TX, 75234</p>
                 </div>
             </div>
-            <!-- <div class="locationsContainer">
-        <img class="stateIcon" src="essentials/footer/images/ID.svg" />
-            <div>
-                <p class="desktopFooterMainCopy stateInformation"><span style="font-weight: bold;">Boise, ID</span></p>
-                <p class="desktopFooterMainCopy stateInformation dontWrapText">1861 S Wells Ave #300</p>
-                <p class="desktopFooterMainCopy stateInformation">Meridian, ID 83642</p>
-            </div>
-        </div> -->
+            <!--  <div class="locationsContainer">
+                <img class="stateIcon" src="essentials/footer/images/ID.svg" />
+                <div>
+                    <p class="desktopFooterMainCopy stateInformation"><span style="font-weight: bold;">Boise, ID</span>
+                    </p>
+                    <p class="desktopFooterMainCopy stateInformation dontWrapText">2727 LBJ Freeway, Suite 200</p>
+                    <p class="desktopFooterMainCopy stateInformation">Dallas, TX, 75234</p>
+                </div>
+            </div> -->
             <hr class="footerHR">
             <h3 class="desktopFooterSubheading">follow</h3>
             <div class="desktopFooterSocialContainer">
@@ -1314,7 +1465,8 @@
                 </a>
             </div>
             <hr class="footerHR">
-            <p class="desktopRightsReserved desktopFooterMainCopy"> &#169; 2022 Molabs Media All Rights Reserved.</p>
+            <p class="desktopRightsReserved desktopFooterMainCopy"> &#169; 2022 Molabs Media All Rights Reserved.
+            </p>
             <!-- <a class="desktopPrivacyAndTerms" href="#disclaimerModal" data-toggle="modal"
                 data-target="#disclaimerModal">
                 <p class="desktopFooterMainCopy"><span style="font-weight: bold;">Privacy & Terms</span></p>
@@ -1344,7 +1496,6 @@
                     <a class="footerLinks" href="{{ url('/') }}">
     <p class="desktopFooterMainCopy">molabsmedia.com</p>
 </a>
-                    <!-- <a class="footerLinks" href="/cdn-cgi/l/email-protection#98f1f6fef7d8fbebe9edf9eafdfcebf7fbf1f9f4b6fbf7f5"><p class="desktopFooterMainCopy"><span class="__cf_email__" data-cfemail="127b7c747d527161636773607776617d717b737e3c717d7f">[email&#160;protected]</span></p></a> -->
 
                     <a class="footerLinks">
 
@@ -1352,6 +1503,8 @@
                         </span>
 
                     </a>
+                    <!-- <a class="e-mail" data-user="nohj" data-website="moc.liamg"></a> -->
+
 
                     <div id="CAContainer" class="locationsContainer">
                         <img class="stateIcon" src="{{ asset('essentials/footer/images/texas.png') }}" />
@@ -1363,14 +1516,7 @@
                             <p class="desktopFooterMainCopy stateInformation">Dallas, TX, 75234</p>
                         </div>
                     </div>
-                    <!-- <div class="locationsContainer">
-                <img class="stateIcon" src="essentials/footer/images/ID.svg" />
-                    <div>
-                        <p class="desktopFooterMainCopy stateInformation"><span style="font-weight: bold;">Boise, ID</span></p>
-                        <p class="desktopFooterMainCopy stateInformation dontWrapText">1861 S Wells Ave #300</p>
-                        <p class="desktopFooterMainCopy stateInformation">Meridian, ID 83642</p>
-                    </div>
-                </div> -->
+
                 </div>
                 <div class="col-2 columnBorderTop">
                     <h3 class="desktopFooterSubheading">information</h3>
@@ -1442,30 +1588,10 @@
         </div>
     </footer>
 
-    <!-- <div class="modal" tabindex="-1" role="dialog" aria-labelledby="disclaimerModal" aria-hidden="true"
-        id="disclaimerModal" data-backdrop="false">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content" style="width: 100%;">
-                <div class="modal-header" style="background-color: white;">
-                    <h5 class="modal-title">Privacy & Terms</h5>
-                    <button id="close-disclaimer" type="button" class="close" data-dismiss="modal" aria-label="Close"
-                        style="border-radius: 25px; border-color: black; border: solid; background-color: white;">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body" style="overflow-y: scroll; height: 450px; background-color: white;"> -->
-    <!-- Termly Tracking Code -->
-    <!-- goes here -->
-    <!--  <embed src="https://app.termly.io/document/privacy-policy/90512b59-d462-4367-b546-069571520429"
-                        style="width: 100%;height: 450px;">
 
-                </div>
-            </div>
-        </div>
-    </div> -->
 
     <!-- <script language='JavaScript1.1' async src='//pixel.mathtag.com/event/js?mt_id=1541489&mt_adid=245306&mt_exem=&mt_excl=&v1=&v2=&v3=&s1=&s2=&s3='></script> -->
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script type="text/javascript">
     _linkedin_partner_id = "1293980";
     window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
@@ -1900,6 +2026,12 @@
             height: auto;
             margin-right: 15px;
         }
+
+        .e-mail:before {
+            content: attr(data-website) "\0040"attr(data-user);
+            unicode-bidi: bidi-override;
+            direction: rtl;
+        }
     }
 
     @media screen and (min-width: 1440px) {
@@ -1963,6 +2095,12 @@
             max-width: 31px;
             height: auto;
             margin-right: 15px;
+        }
+
+        .e-mail:before {
+            content: attr(data-website) "\0040"attr(data-user);
+            unicode-bidi: bidi-override;
+            direction: rtl;
         }
     }
     </style>
@@ -2031,7 +2169,7 @@
                     <div class="get-onboard-container">
                         <div class="popupDesktopParentContainer">
                             <div class="popupDesktopContainer">
-                                <h4 class="popupDesktopCopy">partner up with <br>
+                                <h4 class="popupDesktopCopy">Partner up with <br>
                                     the specialists at <br>
                                     <span style="font-weight: bold;">Molabs Media.</span> <br>
                                     we have!
@@ -2056,14 +2194,12 @@
                                 </div>
                                 <div class="popupDesktopParentContainer">
                                     <div class="popupDesktopContainer mobilePopupContainer">
-                                        <h4 class="popupDesktopCopy">partner up with <br>
+                                        <h4 class="popupDesktopCopy">Partner up with <br>
                                             the specialists at <br>
-                                            <span style="font-weight: bold;">c squared social.</span> <br>
-                                            i have!
+                                            <span style="font-weight: bold;">Molabs Media.</span> <br>
+                                            we have!
                                         </h4>
-                                        <div class="formSignatureContainer">
-                                            <img id="formSignature" src="/homepage/images/signature_White.png">
-                                        </div>
+
                                     </div>
                                 </div>
 
@@ -2246,10 +2382,7 @@
                     height: 40px;
                     border: solid 1px black;
                     border-radius: 0.25rem;
-                    /* background-image: url('essentials/forms/images/popup_person_button.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center; */
+
                     color: white;
                     font-family: 'Pro Source Code', monospace;
                     font-weight: 800;
@@ -2414,12 +2547,11 @@
                     <div class="get-onboard-container">
                         <div class="popupDesktopParentContainer">
                             <div class="popupDesktopContainer">
-                                <h4 class="popupDesktopCopy">partner up with <br>
+                                <h4 class="popupDesktopCopy">Partner up with <br>
                                     the specialists at <br>
                                     <span style="font-weight: bold;">Molabs Media.</span><br>
                                     we have!
                                 </h4>
-
                             </div>
                         </div>
                     </div>
@@ -2438,14 +2570,12 @@
                                 </div>
                                 <div class="popupDesktopParentContainer">
                                     <div class="popupDesktopContainer mobilePopupContainer">
-                                        <h4 class="popupDesktopCopy">partner up with <br>
+                                        <h4 class="popupDesktopCopy">Partner up with <br>
                                             the specialists at <br>
-                                            <span style="font-weight: bold;">c squared social.</span> <br>
-                                            i have!
+                                            <span style="font-weight: bold;">Molabs Media.</span> <br>
+                                            we have!
                                         </h4>
-                                        <div class="formSignatureContainer">
-                                            <img id="formSignature" src="/homepage/images/signature_White.png">
-                                        </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -2838,7 +2968,7 @@
                     <div class="get-onboard-container">
                         <div class="popupDesktopParentContainer">
                             <div class="popupDesktopContainer">
-                                <h4 class="popupDesktopCopy">partner up with <br>
+                                <h4 class="popupDesktopCopy">Partner up with <br>
                                     the specialists at <br>
                                     <span style="font-weight: bold;">Molabs Media.</span> <br>
                                     we have!
@@ -2863,14 +2993,14 @@
                                 </div>
                                 <div class="popupDesktopParentContainer">
                                     <div class="popupDesktopContainer mobilePopupContainer">
-                                        <h4 class="popupDesktopCopy">partner up with <br>
+                                        <h4 class="popupDesktopCopy">Partner up with <br>
                                             the specialists at <br>
-                                            <span style="font-weight: bold;">c squared social.</span><br>
-                                            i have!
+                                            <span style="font-weight: bold;">Molabs Media.</span><br>
+                                            we have!
                                         </h4>
-                                        <div class="formSignatureContainer">
-                                            <img id="formSignature" src="/homepage/images/signature_White.png">
-                                        </div>
+                                        <!-- <div class="formSignatureContainer">
+                                            <img id="formSignature" src="homepage/images/signature_White.png">
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -2991,10 +3121,7 @@
                     height: 40px;
                     border: solid 1px black;
                     border-radius: 0.25rem;
-                    /* background-image: url('essentials/forms/images/popup_person_button.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center; */
+
                     color: white;
                     font-family: 'Pro Source Code', monospace;
                     font-weight: 800;
@@ -3220,9 +3347,9 @@
                     <div class="get-onboard-container">
                         <div class="popupDesktopParentContainer">
                             <div class="popupDesktopContainer">
-                                <h4 class="popupDesktopCopy">partner up with <br>
+                                <h4 class="popupDesktopCopy">Partner up with <br>
                                     the specialists at <br>
-                                    <span style="font-weight: bold;">Molabs Media</span> <br>
+                                    <span style="font-weight: bold;">Molabs Media.</span> <br>
                                     we have!
                                 </h4>
 
@@ -3246,14 +3373,12 @@
                                 </div>
                                 <div class="popupDesktopParentContainer">
                                     <div class="popupDesktopContainer mobilePopupContainer">
-                                        <h4 class="popupDesktopCopy">partner up with <br>
+                                        <h4 class="popupDesktopCopy">Partner up with <br>
                                             the specialists at <br>
-                                            <span style="font-weight: bold;">c squared social.</span> <br>
-                                            i have!
+                                            <span style="font-weight: bold;">Molabs Media.</span> <br>
+                                            we have!
                                         </h4>
-                                        <div class="formSignatureContainer">
-                                            <img id="formSignature" src="/homepage/images/signature_White.png">
-                                        </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -3357,10 +3482,6 @@
                     height: 40px;
                     border: solid 1px black;
                     border-radius: 0.25rem;
-                    /* background-image: url('essentials/forms/images/popup_person_button.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center; */
                     color: white;
                     font-family: 'Pro Source Code', monospace;
                     font-weight: 800;
@@ -3523,217 +3644,250 @@
         </div>
     </div>
 
-</body>
+    <!-- popup video from thumbnail -->
+    <div id="videoModal" class="modal fade show" role="dialog" displayed="false">
+        <div class="modal-dialog">
+            <div id="index-popup-video" class="modal-content">
+                <video id="section-one-video" loop autoplay muted>
+                    <!-- <source src="homepage/images/Sizzle_2.mp4"> -->
+                </video>
+            </div>
+        </div>
+    </div>
+    <img style="display:none;" src="https://tags.w55c.net/rs?id=59367b5677b54448873f70108845e11b&t=homepage" />
 
-</html>
-
-
-<script>
-$(document).ready(function() {
-
-    // conditionally setting the sessions seconds
-    var secondsToDisplayModal = sessionStorage['displayModal'] != undefined ? parseInt(sessionStorage[
-        'displayModal']) : 0;
-
-    //displaying modal after 30 seconds
-    const formModalTimer = setInterval(() => {
-        const iteratedSeconds = secondsToDisplayModal++;
-        iteratedSeconds.toString();
-        sessionStorage['displayModal'] = iteratedSeconds;
-        if ((sessionStorage['displayModal'] == '15') && (sessionStorage['timer'] == 'running')) {
-
-            $(`#formPopupModal-${sessionStorage['selectedForm']}`).modal('toggle');
-
-            //creating a variable so we can pass as utm_data
-            var popupModal = `Content Popup Modal ${sessionStorage['selectedForm']}`;
-            var utmData =
-                'google | cpc | Social_Media_Agency | g | Social_Media_Agency | ad agency company' +
-                ' | ' + popupModal;
-
-            //assigning string data to our form fields
-            const elements = [
-
-                'utmDataField',
-                'utmDataFieldTwo',
-                'utmDataFieldThree',
-                'utmDataFieldFour',
-                'utmDataFieldFive',
-                'utmDataFieldSix',
-
-                'utmButtonDesktopOne',
-                'utmButtonMobileOne',
-
-                'utmButtonMobileTwo',
-                'utmButtonDesktopTwo',
-
-                'utmButtonDesktopThree',
-                'utmButtonMobileThree',
-
-                'utmButtonMobileFour',
-                'utmButtonDesktopFour',
-            ];
-
-            elements.map((element) => {
-                if (document.getElementById(element) !== null) {
-                    const x = document.getElementById(element);
-                    x.value = utmData;
-                }
-            });
+    <script>
+    $(document).ready(function() {
+        sessionStorage['timer'] = 'running';
+        const ABformPicker = () => {
+            randomNum = Math.floor((Math.random() * 100) + 1);
+            if (randomNum % 2 == 0) {
+                sessionStorage['selectedForm'] = 'form-a'; //get pricing
+            } else {
+                sessionStorage['selectedForm'] = 'form-b';
+            }
         }
 
-        if (sessionStorage['displayModal'] == '16') {
-            clearInterval(formModalTimer)
-        }
-    }, 1000);
+        ABformPicker();
 
-});
 
-//stops page from bouncing after modal is closed
-$('#buttonModal').on('hidden.bs.modal', function(event) {
-    event.preventDefault();
-    event.stopPropagation();
-    event.stopImmediatePropagation();
-    return false;
-});
+        // conditionally setting the sessions seconds
+        var secondsToDisplayModal = sessionStorage['displayModal'] != undefined ? parseInt(sessionStorage[
+            'displayModal']) : 0;
 
-//stops page from bouncing after modal is closed
-$('#disclaimerModal').on('hidden.bs.modal', function(event) {
-    event.preventDefault();
-    event.stopPropagation();
-    event.stopImmediatePropagation();
-    return false;
-});
-</script>
+        //displaying modal after 30 seconds
+        const formModalTimer = setInterval(() => {
 
-<script>
-//stops timer for popup modal checks to toggle modal, sets utmData
-function getButtonId(buttonClicked) {
-    sessionStorage['timer'] = 'stop';
-    var buttonClicked = buttonClicked.name;
+            const iteratedSeconds = secondsToDisplayModal++;
+            iteratedSeconds.toString();
+            sessionStorage['displayModal'] = iteratedSeconds;
+            if ((sessionStorage['displayModal'] == '15') && (sessionStorage['timer'] ==
+                    'running')) {
 
-    if (buttonClicked.toLowerCase() != "footer form") {
-        $(`#buttonModal-${sessionStorage['selectedForm']}`).modal('toggle');
-    }
+                $(`#formPopupModal-${sessionStorage['selectedForm']}`).modal('toggle');
+                //creating a variable so we can pass as utm_data
+                var popupModal = `Homepage Popup Modal ${sessionStorage['selectedForm']}`;
 
-    if (buttonClicked != null) {
-        var utmData = 'google | cpc | Social_Media_Agency | g | Social_Media_Agency | ad agency company |' +
-            `${buttonClicked} ${sessionStorage['selectedForm']}`;
-    } else {
-        var utmData = 'google | cpc | Social_Media_Agency | g | Social_Media_Agency | ad agency company';
-    }
+                var utmData =
+                    'google | cpc | Social_Media_Agency | g | Social_Media_Agency | ad agency company' +
+                    ' | ' + popupModal;
 
-    const buttonElements = [
+                //assigning string data to our form fields
+                const elements = [
+                    'utmDataField',
+                    'utmDataFieldTwo',
+                    'utmDataFieldThree',
+                    'utmDataFieldFour',
+                    'utmDataFieldFive',
+                    'utmDataFieldSix',
 
-        'utmDataField',
-        'utmDataFieldTwo',
-        'utmDataFieldThree',
-        'utmDataFieldFour',
-        'utmDataFieldFive',
-        'utmDataFieldSix',
+                    'utmButtonDesktopOne',
+                    'utmButtonMobileOne',
 
-        'utmButtonDesktopOne',
-        'utmButtonMobileOne',
+                    'utmButtonMobileTwo',
+                    'utmButtonDesktopTwo',
 
-        'utmButtonMobileTwo',
-        'utmButtonDesktopTwo',
+                    'utmButtonDesktopThree',
+                    'utmButtonMobileThree',
 
-        'utmButtonDesktopThree',
-        'utmButtonMobileThree',
+                    'utmButtonMobileFour',
+                    'utmButtonDesktopFour',
+                ];
 
-        'utmButtonMobileFour',
-        'utmButtonDesktopFour',
+                elements.map((element) => {
+                    if (document.getElementById(element) !== null) {
+                        const x = document.getElementById(element);
+                        x.value = utmData;
+                    }
+                });
+            }
 
-    ];
-
-    buttonElements.map((element) => {
-        if (document.getElementById(element) !== null) {
-            const x = document.getElementById(element);
-            x.value = utmData;
-        }
+            if (sessionStorage['displayModal'] == '16') {
+                clearInterval(formModalTimer)
+            }
+        }, 1000);
     });
-}
-</script>
 
-<style>
-/* body {
-    font-family: 'Inter', sans-serif;
-  } */
+    //stops page from bouncing after modal is closed
+    $('#buttonModal').on('hidden.bs.modal', function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        event.stopImmediatePropagation();
+        return false;
+    });
 
-html,
-body {
-    margin: 0;
-    overflow-x: hidden;
-    overflow-y: overlay;
-}
+    //stops page from bouncing after modal is closed
+    $('#disclaimerModal').on('hidden.bs.modal', function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        event.stopImmediatePropagation();
+        return false;
+    });
+    </script>
 
-input[type="text"] {
-    font-size: 16px;
-}
+    <script>
+    //stops timer for popup modal checks to toggle modal, sets utmData
+    function getButtonId(id) {
+        sessionStorage['timer'] = 'stop';
 
-.modal-content {
-    border: none;
-}
+        if (id.name.toLowerCase() != "footer form") {
+            $(`#buttonModal-${sessionStorage['selectedForm']}`).modal('toggle');
+        }
 
-.index-popup-content {
-    width: 65%;
-    height: 100%;
-    border: none;
-    align-items: center;
-}
+        if (id !== null) {
+            var utmData = `google | cpc | Social_Media_Agency | g | Social_Media_Agency | ad agency company` +
+                ` | ` +
+                `${id.name} ${sessionStorage['selectedForm']}`;
+        } else {
+            var utmData = 'google | cpc | Social_Media_Agency | g | Social_Media_Agency | ad agency company';
+        }
 
-.modal-dialog {
-    display: flex;
-    width: 100%;
-    margin: 0;
-    max-width: 100%;
-    align-items: center;
-    justify-content: center;
-}
+        const buttonElements = [
+            'utmDataField',
+            'utmDataFieldTwo',
+            'utmDataFieldThree',
+            'utmDataFieldFour',
+            'utmDataFieldFive',
+            'utmDataFieldSix',
 
-.modal-container {
-    display: flex;
-    width: 100%;
-    height: 37rem;
-}
+            'utmButtonDesktopOne',
+            'utmButtonMobileOne',
 
-.modal-button-container {
-    width: 100%;
-}
+            'utmButtonMobileTwo',
+            'utmButtonDesktopTwo',
 
-@media screen and (min-width: 1013px) {
-    .form-popup-modal {
-        display: none;
-        justify-content: center;
-        align-items: center;
-        margin-top: 75px;
-        height: 38rem;
+            'utmButtonDesktopThree',
+            'utmButtonMobileThree',
+
+            'utmButtonMobileFour',
+            'utmButtonDesktopFour',
+        ];
+
+        buttonElements.map((element) => {
+            if (document.getElementById(element) !== null) {
+                const x = document.getElementById(element);
+                x.value = utmData;
+            }
+        });
+    }
+    </script>
+
+    <style>
+    body {
+        /* font-family: 'Inter', sans-serif; */
     }
 
-    .form-button-popup-modal {
-        margin-top: 75px;
-        height: 38rem;
+    html,
+    body {
+        margin: 0;
+        overflow-x: hidden;
+        overflow-y: overlay !important;
+        /* font-family: 'Inter', sans-serif; */
     }
-}
 
-@media screen and (max-width: 1012px) {
-    .index-popup-content {
+    input[type="text"] {
+        font-size: 16px;
+    }
+
+    #index-popup-video {
         width: 100%;
     }
 
-    .mobile-form-popup-modal {
-        display: none;
-        justify-content: center;
-        align-items: flex-start;
-        margin-top: 65px;
-        height: 32rem;
+    #videoModal {
+        margin-top: 50px;
     }
 
-    .mobile-button-form-popup-modal {
-        display: none;
-        justify-content: center;
-        align-items: flex-start;
-        margin-top: 55px;
-        height: 35rem;
+    .modal-content {
+        border: none;
     }
-}
-</style>
+
+    .index-popup-content {
+        width: 65%;
+        height: 100%;
+        border: none;
+        align-items: center;
+    }
+
+    .modal-open {
+        overflow: hidden;
+    }
+
+    .modal-dialog {
+        display: flex;
+        width: 100%;
+        margin: 0;
+        max-width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .modal-container {
+        display: flex;
+        width: 100%;
+    }
+
+    .modal-button-container {
+        width: 100%;
+    }
+
+    /* larger than mobile styles */
+    @media screen and (min-width: 1013px) {
+        .form-popup-modal {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            margin-top: 75px;
+            height: 38rem;
+        }
+
+        .form-button-popup-modal {
+            margin-top: 75px;
+            height: 38rem;
+        }
+    }
+
+    @media screen and (max-width: 1012px) {
+        .index-popup-content {
+            width: 100%;
+        }
+
+        .mobile-form-popup-modal {
+            display: none;
+            justify-content: center;
+            align-items: flex-start;
+            margin-top: 65px;
+            height: 32rem;
+        }
+
+        .mobile-button-form-popup-modal {
+            display: none;
+            justify-content: center;
+            align-items: flex-start;
+            margin-top: 55px;
+            height: 35rem;
+        }
+    }
+    </style>
+</body>
+
+</html>

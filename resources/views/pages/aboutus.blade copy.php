@@ -170,19 +170,20 @@
                     Services
                 </a>
                 <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                    <li><a class="dropdown-item" href="{{ url('events') }}">Events &raquo; </a>
-                        <ul class="submenu dropdown-menu dropdown-menu-dark">
-                        <li><a class="dropdown-item" href="{{ url('upcomingevents') }}">Upcoming Events</a></li>
-                            <li><a class="dropdown-item" href="{{ url('pastevents') }}">Past Events &raquo; </a>
-                                <ul class="submenu dropdown-menu dropdown-menu-dark">
-                                    <li><a class="dropdown-item" href="{{ url('videos') }}">Video Archive</a></li>
-                                    <li><a class="dropdown-item" href="{{ url('picturearchive') }}">Picture Archive</a></li>
-                                    <li><a class="dropdown-item" href="{{ url('postersarchive') }}">Poster Archive</a></li>
-                                </ul>
-                            </li>
-
-                        </ul>
-                    </li>
+                    <li>
+    <a class="dropdown-item" href="{{ url('events') }}">Events &raquo; </a>
+    <ul class="submenu dropdown-menu dropdown-menu-dark">
+        <li><a class="dropdown-item" href="{{ url('upcomingevents') }}">Upcoming Events</a></li>
+        <li>
+            <a class="dropdown-item" href="{{ url('pastevents') }}">Past Events &raquo; </a>
+            <ul class="submenu dropdown-menu dropdown-menu-dark">
+                <li><a class="dropdown-item" href="{{ url('videos') }}">Video Archive</a></li>
+                <li><a class="dropdown-item" href="{{ url('picturearchive') }}">Picture Archive</a></li>
+                <li><a class="dropdown-item" href="{{ url('posterarchive') }}">Poster Archive</a></li>
+            </ul>
+        </li>
+    </ul>
+</li>
                     <li><a class="dropdown-item" href="{{ url('videoproduction') }}">Video production</a></li>
 <li><a class="dropdown-item" href="{{ url('creativewriting') }}">Creative writing</a></li>
 <li><a class="dropdown-item" href="{{ url('contentwriters') }}">Content writers</a></li>
@@ -194,8 +195,8 @@
             </li>
 
 
-            <a href="{{ url('ourteam') }}" id="ourteam" class="nav-link flexauto">Our Team</a>
-<a href="{{ url('aboutus') }}" id="aboutus" class="nav-link flexauto">About us</a>
+<a href="{{ url('molabsteam') }}" id="molabsteam" class="nav-link flexauto">Our Team</a>
+<a href="{{ url('') }}" id="aboutus" class="nav-link flexauto">About us</a>
 <a href="{{ url('contactus') }}" id="contactus" class="nav-link flexauto">Contact Us</a>
 
             <div class="menu-icon-container">
@@ -204,25 +205,14 @@
                 </div>
             </div>
             <ul class="mobile-dropdown-list">
-                <li><a class="menu_link" href='index'>home</a></li>
-                <li class="csquared-sublink"><a class="menu_link" href="{{ url('events') }}"> Events
-                    </a>
-                </li>
-                <li class="csquared-sublink"><a class="menu_link" href="{{ url('upcomingevents') }}"> Upcoming Events
-                    </a>
-                </li>
+                <li><a class="menu_link" href="{{ url('index') }}">home</a></li>
 
-                <li class="csquared-sublink"><a class="menu_link" href="{{ url('videos') }}"> Video Archive
-                    </a>
-                </li>
+<li class="csquared-sublink"><a class="menu_link" href="{{ url('events') }}"> Events</a></li>
+<li class="csquared-sublink"><a class="menu_link" href="{{ url('upcomingevents') }}"> Upcoming Events</a></li>
+<li class="csquared-sublink"><a class="menu_link" href="{{ url('videos') }}"> Video Archive</a></li>
+<li class="csquared-sublink"><a class="menu_link" href="{{ url('picturearchive') }}"> Picture Archive</a></li>
+<li class="csquared-sublink"><a class="menu_link" href="{{ url('posterarchive') }}"> Poster Archive</a></li>
 
-                <li class="csquared-sublink"><a class="menu_link" href="{{ url('picturearchive') }}"> Picture Archive
-                    </a>
-                </li>
-
-                <li class="csquared-sublink"><a class="menu_link" href="{{ url('postersarchive') }}"> Poster Archive
-                    </a>
-                </li>
                 <li class="csquared-sublink"><a class="menu_link" href="{{ url('videoproduction') }}"> Video Production </a></li>
 <li class="csquared-sublink"><a class="menu_link" href="{{ url('creativewriting') }}"> Creative Writing </a></li>
 <li class="csquared-sublink"><a class="menu_link" href="{{ url('contentwriters') }}"> Content Writing </a></li>
@@ -231,7 +221,6 @@
 <li class="csquared-sublink"><a class="menu_link" href="{{ url('itandtelecom') }}"> IT and Telecom Staffing </a></li>
 <li class="csquared-sublink"><a class="menu_link" href="{{ url('contactus') }}"> Contact us </a></li>
 <li class="csquared-sublink"><a class="menu_link" href="{{ url('aboutus') }}"> About us </a></li>
-
 
             </ul>
         </div>
@@ -324,16 +313,6 @@
 
 
     <style>
-    .row {
-        display: flex;
-    }
-
-    /* Create three equal columns that sits next to each other */
-    .column {
-        flex: 18%;
-        padding: 5px;
-    }
-
     #phone-desk-container {
         display: none;
     }
@@ -397,7 +376,7 @@
         padding-left: 5vw;
     }
 
-    #ourteam {
+    #molabsteam {
         padding-right: 3vw;
         padding-left: 3vw;
     }
@@ -840,35 +819,60 @@
     }
     </style>
 
-    <div id="contactus-hero" class="jumbotron hero-height">
-        <div id="content-container" class="container hero-container">
-            <div id="content-hero-container" class="hp-hero-content-container hp-hero-content-container-alt">
-                <img class="hp-hero-logo" src="molabsmedia/molabs_logo.png">
-                <h1 class="hp-hero-heading">Events</h1>
 
+
+    <section id="about-us">
+        <div id="like-drives-row" class="row center-aligned-container">
+            <div class="col-md">
+                <img id="content-like-drive-hidden" src="{{ asset('content/images/mobile/content_likedrives_mobile.jpg') }}" width="100%" height="auto">
+            </div>
+
+            <div id="likeDrivesCol" class="col-md">
+                <div class="inside-container-content-container-right">
+                    <div id="content-three-content">
+                        <!-- <img id="thumbs-up" src="content/images/thumb_and_numbers.png"> -->
+                        <h1 class="body-headings">About Us</h1>
+                        <p class="copy-one">We care for every client and propose them the best
+                            suitable model to fulfill their needs within the given budget and timelines. Our models are
+                            flexible
+                            and solely customer oriented because we know a happy customer is worth more than a million
+                            dollars.</p>
+
+
+                        <p>
+                            <button class="outlined-black-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseExample2" aria-expanded="false"
+                                aria-controls="collapseExample2">
+                                Read More
+                            </button>
+                        </p>
+                        <div class="collapse" id="collapseExample2">
+                            <div class="card card-body copy-one" style="background-color: #E4AA22;">
+                                We’ve been building and operating for more than 15 years, and will continue that
+                                commitment for
+                                many years to come. As demand for connectivity grows, we are building the solutions that
+                                deliver
+                                long-term value for our customers, communities, and investors.
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
 
+
+    <div>
+        <h1 class="body-headings text-center"> Our Services </h1>
     </div>
 
-    <section id="section-two">
-        <div class="teal-splash-container">
-            <img id="teal-splash" src="homepage/images/desktop/teal_splash.png">
-        </div>
-        <div class="what-we-do-container container">
-            <h1 id="whatWeDo" class="body-headings heading-black">Our Events</h1>
-            <hr id="whatWeDoHr" class="body-hr">
-        </div>
-
-
-
-        <div class="row mb-1-custom">
+    <div class="row mb-1-custom">
             <div class="col-md grid-padding-right">
                 <div class="hp-grid-box-container">
                     <div id="upcoming-box" class="hp-grid-box-content-container grid-container">
                         <h2 class="body-headings-two heading-white">Upcoming Events</h2>
-                        <!-- <p id="ad-grid-copy" class="copy-two">All-in-one marketing solution <br class="desktop-break">
-                            for <br class="mobile-break"> digital advertising.</p> -->
+
                         <button class="outlined-white-button mt-5" type="button"
                             onclick="window.location.href='upcomingevents'">learn more</button>
                     </div>
@@ -877,15 +881,131 @@
             <div class="col-md grid-padding-left">
                 <div class="hp-grid-box-container">
                     <div id="archive-box" class="hp-grid-box-content-container grid-container">
-                        <h2 class="body-headings-two heading-white">Past Events</h2>
-                        <!-- <p id="web-grid-copy" class="copy-two">Custom websites to enhance <br class="desktop-break"> <br
-                                class="mobile-break"> your company's image.</p> -->
+                        <h2 class="body-headings-two heading-white">Archive Events</h2>
+
                         <button class="outlined-white-button mt-5" type="button"
-                            onclick="window.location.href='{{ url('pastevents') }}'">learn more</button>
+                            onclick="window.location.href='pastevents'">learn more</button>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="row mb-1-custom">
+            <div class="col-md grid-padding-right">
+                <div class="hp-grid-box-container">
+                    <div id="video-box" class="hp-grid-box-content-container grid-container">
+                        <h2 class="body-headings-two heading-white">Video production</h2>
+
+                        <button class="outlined-white-button mt-5" type="button"
+                            onclick="window.location.href='videoproduction'">learn more</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md grid-padding-left">
+                <div class="hp-grid-box-container">
+                    <div id="creative-writing-box" class="hp-grid-box-content-container grid-container">
+                        <h2 class="body-headings-two heading-white">Creative writing</h2>
+
+                        <button class="outlined-white-button mt-5" type="button"
+                            onclick="window.location.href='creativewriting'">learn more</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-1-custom">
+            <div class="col-md grid-padding-right">
+                <div class="hp-grid-box-container">
+                    <div id="content2-box" class="hp-grid-box-content-container grid-container">
+                        <h2 class="body-headings-two heading-white">Content writers</h2>
+                        <!-- <p id="content-grid-copy" class="copy-two">Stay top-of-mind with your audience <br
+                                class="desktop-break"> <br class="mobile-break"> with consistent, relevant content.</p> -->
+                        <button class="outlined-white-button mt-5" type="button"
+                            onclick="window.location.href=contentwriters'">learn more</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md grid-padding-left">
+                <div class="hp-grid-box-container">
+                    <div id="design-box" class="hp-grid-box-content-container grid-container">
+                        <h2 class="body-headings-two heading-white">Web design</h2>
+
+                        <button class="outlined-white-button mt-5" type="button"
+                            onclick="window.location.href='webdesign'">learn more
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-1-custom">
+            <div class="col-md grid-padding-right">
+                <div class="hp-grid-box-container">
+                    <div id="graphics-box" class="hp-grid-box-content-container grid-container">
+                        <h2 class="body-headings-two heading-white">Graphic design</h2>
+
+                        <button class="outlined-white-button mt-5" type="button"
+                            onclick="window.location.href='graphicsdesign'">learn more</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md grid-padding-left">
+                <div class="hp-grid-box-container">
+                    <div id="it-telecom-box" class="hp-grid-box-content-container grid-container">
+                        <h2 class="body-headings-two heading-white">IT and Telecom Staffing</h2>
+                        <!-- <p id="design-grid-copy" class="copy-two">Our professional designers <br class="desktop-break">
+                            <br class="mobile-break"> can meet all of your design needs. </p> -->
+                        <button class="outlined-white-button mt-5" type="button"
+                            onclick="window.location.href='itandtelecom'">learn more
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+    <section id="arhiveevents-three">
+        <div id="like-drives-row" class="row center-aligned-container">
+            <div class="col-md">
+                <img id="content-like-drive-hidden" src="{{ asset('content/images/mobile/content_likedrives_mobile.jpg') }}" width="100%" height="auto">
+            </div>
+
+            <div id="likeDrivesCol" class="col-md">
+                <div class="inside-container-content-container-right">
+                    <div id="content-three-content">
+
+                        <h1 class="body-headings">Events</h1>
+                        <p class="copy-one">Molabs Media Events operates through Concerts, Ticketing, Sponsorship and
+                            Advertising segments.
+
+                            The Concerts segment hosts and promotes live Indian and Pakistan events (top artists and
+                            musical events) in rented third-party venues.
+
+                            The Ticketing segment manages the ticketing operations, including providing ticketing
+                            software and services to clients and online access for customers relating to ticket and
+                            event information through its website. This segment sells tickets through website, ticket
+                            outlets, and telephone call centers. </p>
+
+                        <p>
+                            <button class="outlined-black-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                Read More
+                            </button>
+                        </p>
+                        <div class="collapse" id="collapseExample">
+                            <div class="card card-body copy-one" style="background-color: #ffdf01;">
+                                The Sponsorship & Advertising segment sells international, national, and local
+                                sponsorships and placement of advertising, including signage, promotional programs, as
+                                well as banner ads across the company’s distribution network of venues, events, and
+                                Websites.
+
+                                Molabs Media currently runs operations in Dallas, Texas.
+
+                                It was an audience hungry for good cinematic entertainment on stage that made Molabs
+                                Media, a showbiz extraordinaire, and it’s our continued commitment to the South Asian
+                                Community that has made us a household name.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -894,7 +1014,7 @@
         integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g=="
         crossorigin="anonymous"></script>
 
-    <form id="main-form" action="mail.php" method="post" autocomplete="off">
+    {{-- <form id="main-form" action="mail.php" method="post" autocomplete="off">
         <div class="form-container container lets-talk-form">
             <h1 id="homepage-form-heading">let's talk</h1>
             <hr
@@ -926,7 +1046,7 @@
             <button onclick="getButtonId(this)" name="Footer Form" id="form-button" type="submit">submit</button>
             <div id="form-disclaimer">* By clicking submit, you agree to our terms of service.</div>
         </div>
-    </form>
+    </form> --}}
 
     <style>
     /** stop ios rounded corners */
@@ -1052,72 +1172,11 @@
         integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g=="
         crossorigin="anonymous"></script>
 
-    <form id="mobile-form" action="mail.php" method="post" autocomplete="off" style="width: 100%;">
-        <div class="mobile-form-container">
-            <h1 id="homepage-form-heading-mobile">let's talk</h1>
-            <hr style="opacity: 1; color: black; width: 15px; height: 4pt; margin-left: -11px; margin-bottom: 2rem;">
-            <div id="mobile-form-confirmation">
-                <p><span style="font-weight: bold;">Thank you for contacting us!</span> We will be in touch soon.</p>
-            </div>
-            <div class="row">
-                <input style="width: 50%;" name="full_name" id="form-fullname-mobile" type="text"
-                    class="field-in-row-mobile my-top-border-mobile" placeholder="full name" required>
-                <input style="width: 50%;" name="phone_number" id="form-phone-number-mobile" type="text"
-                    class="field-in-row-mobile my-top-border-mobile" placeholder="phone number" required>
-            </div>
+    @include('partials.contactsection')
 
-            <div class="row">
-                <input style="width: 100%;" name="email" id="form-email-mobile" type="email" placeholder="email"
-                    required>
-            </div>
-
-            <div class="row">
-                <input style="width: 100%;" name="lead_business_name" id="form-business-name-mobile" type="text"
-                    placeholder="business name" required>
-            </div>
-
-            <div class="row">
-                <textarea style="width: 100%;" name="msg" id="form-message-mobile" rows="7" cols="50"
-                    placeholder="message"></textarea>
-            </div>
-
-            <!-- used to get he values from the utm script -->
-            <input name="utm_data" type="hidden" id="utmDataFieldTwo">
-
-            <button onclick="getButtonId(this)" name="Footer Form" id="form-button-mobile">submit</button>
-            <div id="form-disclaimer-mobile">* By clicking submit, you agree to our terms of service.</div>
-        </div>
-    </form>
+    @include('partials.aboutusmobileform')
 
     <style>
-    #event1-left-box {
-        background-image: url('images/event1.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: bottom;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding-bottom: 25px;
-        min-height: 1050px;
-        margin-top: 25px;
-        margin-bottom: 25px;
-    }
-
-    #event2-right-box {
-        background-image: url('images/event2.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: bottom;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding-bottom: 25px;
-        min-height: 1050px;
-        margin-top: 25px;
-        margin-bottom: 25px;
-    }
-
     input {
         -webkit-border-radius: 0;
         border-radius: 0;
@@ -1241,11 +1300,7 @@
             <a class="footerLinks" href="{{ url('index') }}">
     <p class="desktopFooterMainCopy">molabsmedia.com</p>
 </a>
-            <!-- <a class="footerLinks" href="/cdn-cgi/l/email-protection#b5dcdbd3daf5d6c6c4c0d4c7d0d1c6dad6dcd4d99bd6dad8">
-                <p class="desktopFooterMainCopy"><span class="__cf_email__"
-                        data-cfemail="1e777078715e7d6d6f6b7f6c7b7a6d717d777f72307d7173">[email&#160;protected]</span>
-                </p>
-            </a> -->
+
 
             <a class="footerLinks">
 
@@ -1263,14 +1318,7 @@
                     <p class="desktopFooterMainCopy stateInformation">Dallas, TX, 75234</p>
                 </div>
             </div>
-            <!-- <div class="locationsContainer">
-        <img class="stateIcon" src="essentials/footer/images/ID.svg" />
-            <div>
-                <p class="desktopFooterMainCopy stateInformation"><span style="font-weight: bold;">Boise, ID</span></p>
-                <p class="desktopFooterMainCopy stateInformation dontWrapText">1861 S Wells Ave #300</p>
-                <p class="desktopFooterMainCopy stateInformation">Meridian, ID 83642</p>
-            </div>
-        </div> -->
+
             <hr class="footerHR">
             <h3 class="desktopFooterSubheading">follow</h3>
             <div class="desktopFooterSocialContainer">
@@ -1315,10 +1363,7 @@
             </div>
             <hr class="footerHR">
             <p class="desktopRightsReserved desktopFooterMainCopy"> &#169; 2022 Molabs Media All Rights Reserved.</p>
-            <!-- <a class="desktopPrivacyAndTerms" href="#disclaimerModal" data-toggle="modal"
-                data-target="#disclaimerModal">
-                <p class="desktopFooterMainCopy"><span style="font-weight: bold;">Privacy & Terms</span></p>
-            </a> -->
+
         </div>
     </footer>
 
@@ -1330,10 +1375,7 @@
                     <h2 class="desktopFooterHeader">Your Business <br> is unique for us!</h2>
                     <p class="desktopRightsReserved desktopFooterMainCopy"> &#169; 2022 Molabs Media All Rights
                         Reserved.</p>
-                    <!-- <a class="desktopPrivacyAndTerms" href="#disclaimerModal" data-toggle="modal"
-                        data-target="#disclaimerModal">
-                        <p class="desktopFooterMainCopy"><span style="font-weight: bold;">Privacy & Terms</span></p>
-                    </a> -->
+
                 </div>
 
                 <div class="col-2 columnBorderTop">
@@ -1341,10 +1383,10 @@
                     <a class="desktopFooterPhone footerLinks">
                         <p class="desktopFooterMainCopy"><span style="font-weight: bold;">+1 214-679-6818</span></p>
                     </a>
-                    <a class="footerLinks" href="{{ url('/') }}">
-    <p class="desktopFooterMainCopy">molabsmedia.com</p>
-</a>
-                    <!-- <a class="footerLinks" href="/cdn-cgi/l/email-protection#98f1f6fef7d8fbebe9edf9eafdfcebf7fbf1f9f4b6fbf7f5"><p class="desktopFooterMainCopy"><span class="__cf_email__" data-cfemail="127b7c747d527161636773607776617d717b737e3c717d7f">[email&#160;protected]</span></p></a> -->
+                    <a class="footerLinks" href="index">
+                        <p class="desktopFooterMainCopy">molabsmedia.com</p>
+                    </a>
+
 
                     <a class="footerLinks">
 
@@ -1363,27 +1405,20 @@
                             <p class="desktopFooterMainCopy stateInformation">Dallas, TX, 75234</p>
                         </div>
                     </div>
-                    <!-- <div class="locationsContainer">
-                <img class="stateIcon" src="essentials/footer/images/ID.svg" />
-                    <div>
-                        <p class="desktopFooterMainCopy stateInformation"><span style="font-weight: bold;">Boise, ID</span></p>
-                        <p class="desktopFooterMainCopy stateInformation dontWrapText">1861 S Wells Ave #300</p>
-                        <p class="desktopFooterMainCopy stateInformation">Meridian, ID 83642</p>
-                    </div>
-                </div> -->
+
                 </div>
                 <div class="col-2 columnBorderTop">
                     <h3 class="desktopFooterSubheading">information</h3>
-                    <a class="footerLinks" href="{{ url('upcomingevents') }}">
+                    <a class="footerLinks" href="videoproduction">
                         <p class="desktopFooterMainCopy">Video Production</p>
                     </a>
-                    <a class="footerLinks" href="{{ url('creativewriting') }}">
+                    <a class="footerLinks" href="creativewriting">
                         <p class="desktopFooterMainCopy">Creative Writing</p>
                     </a>
-                    <a class="footerLinks" href="{{ url('contentwriters') }}">
+                    <a class="footerLinks" href="contentwriters">
                         <p class="desktopFooterMainCopy">Content Writing</p>
                     </a>
-                    <a class="footerLinks" href="{{ url('webdesign') }}">
+                    <a class="footerLinks" href="webdesign">
                         <p class="desktopFooterMainCopy">Web Design</p>
                     </a>
 
@@ -1391,7 +1426,7 @@
                         <p class="desktopFooterMainCopy">Graphics Design</p>
                     </a>
 
-                    <a class="footerLinks" href="{{ url('itandtelecom') }}">
+                    <a class="footerLinks" href="itandtelecom">
                         <p class="desktopFooterMainCopy">IT and Telecom Staffing</p>
                     </a>
 
@@ -1442,29 +1477,7 @@
         </div>
     </footer>
 
-    <!-- <div class="modal" tabindex="-1" role="dialog" aria-labelledby="disclaimerModal" aria-hidden="true"
-        id="disclaimerModal" data-backdrop="false">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content" style="width: 100%;">
-                <div class="modal-header" style="background-color: white;">
-                    <h5 class="modal-title">Privacy & Terms</h5>
-                    <button id="close-disclaimer" type="button" class="close" data-dismiss="modal" aria-label="Close"
-                        style="border-radius: 25px; border-color: black; border: solid; background-color: white;">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body" style="overflow-y: scroll; height: 450px; background-color: white;"> -->
-    <!-- Termly Tracking Code -->
-    <!-- goes here -->
-    <!--  <embed src="https://app.termly.io/document/privacy-policy/90512b59-d462-4367-b546-069571520429"
-                        style="width: 100%;height: 450px;">
 
-                </div>
-            </div>
-        </div>
-    </div> -->
-
-    <!-- <script language='JavaScript1.1' async src='//pixel.mathtag.com/event/js?mt_id=1541489&mt_adid=245306&mt_exem=&mt_excl=&v1=&v2=&v3=&s1=&s2=&s3='></script> -->
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script type="text/javascript">
     _linkedin_partner_id = "1293980";
@@ -2246,10 +2259,7 @@
                     height: 40px;
                     border: solid 1px black;
                     border-radius: 0.25rem;
-                    /* background-image: url('essentials/forms/images/popup_person_button.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center; */
+
                     color: white;
                     font-family: 'Pro Source Code', monospace;
                     font-weight: 800;
@@ -2617,10 +2627,7 @@
                     height: 40px;
                     border: solid 1px black;
                     border-radius: 0.25rem;
-                    /* background-image: url('essentials/forms/images/popup_person_button.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center; */
+
                     color: white;
                     font-family: 'Pro Source Code', monospace;
                     font-weight: 800;
@@ -2905,7 +2912,7 @@
                                 <!-- <div class="form-group"> -->
                                 <textarea name="msg" id="message_four" type="text" class="help-input msg"
                                     placeholder="how can we help?" rows="5"></textarea>
-                                <!-- </div> -->
+
                                 <!-- used to get he values from the utm script -->
                                 <input name="utm_data" type="hidden" id="utmButtonMobileFour">
                                 <button id="popup-form-button" type="submit" class="mobile-form-button">submit</button>
@@ -2991,10 +2998,7 @@
                     height: 40px;
                     border: solid 1px black;
                     border-radius: 0.25rem;
-                    /* background-image: url('essentials/forms/images/popup_person_button.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center; */
+
                     color: white;
                     font-family: 'Pro Source Code', monospace;
                     font-weight: 800;
@@ -3357,10 +3361,7 @@
                     height: 40px;
                     border: solid 1px black;
                     border-radius: 0.25rem;
-                    /* background-image: url('essentials/forms/images/popup_person_button.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center; */
+
                     color: white;
                     font-family: 'Pro Source Code', monospace;
                     font-weight: 800;
@@ -3737,3 +3738,13 @@ input[type="text"] {
     }
 }
 </style>
+
+
+<script>
+    window.addEventListener('load', function() {
+        var element = document.getElementById('contactmessage');
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+</script>

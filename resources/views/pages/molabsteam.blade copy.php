@@ -11,7 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
-    <!-- Font Awesome -->
+    <!-- Fonts-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
@@ -26,16 +26,17 @@
         crossorigin="anonymous" />
 
     <!--Calendly required import-->
-    <link href="/assets/calendly.css" rel="stylesheet">
+    <link href="assets/calendly.css" rel="stylesheet">
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
     <!-- -->
-    <script src="/assets/analytics.js" type="text/javascript" async></script>
+    <script src="assets/analytics.js" type="text/javascript" async></script>
+
 
     <link rel="shortcut icon" type="image/jpg" href="{{ asset('essentials/images/favicon/favicon.ico') }}" />
 <link rel="stylesheet" href="{{ asset('style/style.css') }}">
-
-    <title>Molabs Media – Content Services</title>
-    <meta name="description" content="Impress your prospects with stunning and unified content across all channels.">
+    <title>Molabs Media – Video Production</title>
+    <meta name="description"
+        content="Get expert targeted digital advertising with our proprietary targeting methods and see real-time results with exclusive reporting analytics.">
 
     <style type="text/css">
     /* ============ desktop view ============ */
@@ -138,12 +139,11 @@
 </head>
 
 <body>
-    <!-- audience files and page -->
+    <!-- homepage -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"
         integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g=="
         crossorigin="anonymous"></script>
-
 
 
     <nav class="navbar" id="desktop-navbar">
@@ -164,25 +164,31 @@
     <img id="desktop-logo" src="{{ asset('molabsmedia/molabs_logo.png') }}" alt="Molabs Media Logo">
 </a>
 
+
+
+
+
+
             <li class="nav-item dropdown">
                 <a id="services" class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
                     data-bs-toggle="dropdown" aria-expanded="false">
                     Services
                 </a>
                 <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                    <li><a class="dropdown-item" href="{{ url('events') }}">Events &raquo; </a>
-                        <ul class="submenu dropdown-menu dropdown-menu-dark">
-                        <li><a class="dropdown-item" href="{{ url('upcomingevents') }}">Upcoming Events</a></li>
-                            <li><a class="dropdown-item" href="{{ url('pastevents') }}">Past Events &raquo; </a>
-                                <ul class="submenu dropdown-menu dropdown-menu-dark">
-                                    <li><a class="dropdown-item" href="{{ url('videos') }}">Video Archive</a></li>
-                                    <li><a class="dropdown-item" href="{{ url('picturearchive') }}">Picture Archive</a></li>
-                                    <li><a class="dropdown-item" href="{{ url('postersarchive') }}">Poster Archive</a></li>
-                                </ul>
-                            </li>
-
-                        </ul>
-                    </li>
+                    <li>
+    <a class="dropdown-item" href="{{ url('events') }}">Events &raquo; </a>
+    <ul class="submenu dropdown-menu dropdown-menu-dark">
+        <li><a class="dropdown-item" href="{{ url('upcomingevents') }}">Upcoming Events</a></li>
+        <li>
+            <a class="dropdown-item" href="{{ url('pastevents') }}">Past Events &raquo; </a>
+            <ul class="submenu dropdown-menu dropdown-menu-dark">
+                <li><a class="dropdown-item" href="{{ url('videos') }}">Video Archive</a></li>
+                <li><a class="dropdown-item" href="{{ url('picturearchive') }}">Picture Archive</a></li>
+                <li><a class="dropdown-item" href="{{ url('posterarchive') }}">Poster Archive</a></li>
+            </ul>
+        </li>
+    </ul>
+</li>
                     <li><a class="dropdown-item" href="{{ url('videoproduction') }}">Video production</a></li>
 <li><a class="dropdown-item" href="{{ url('creativewriting') }}">Creative writing</a></li>
 <li><a class="dropdown-item" href="{{ url('contentwriters') }}">Content writers</a></li>
@@ -204,7 +210,7 @@
                 </div>
             </div>
             <ul class="mobile-dropdown-list">
-                <li><a class="menu_link" href='index'>home</a></li>
+                <li><a class="menu_link" href="{{ url('index') }}">home</a></li>
                 <li class="csquared-sublink"><a class="menu_link" href="{{ url('events') }}"> Events
                     </a>
                 </li>
@@ -220,24 +226,24 @@
                     </a>
                 </li>
 
-                <li class="csquared-sublink"><a class="menu_link" href="{{ url('postersarchive') }}"> Poster Archive
+                <li class="csquared-sublink"><a class="menu_link" href="{{ url('posterarchive') }}"> Poster Archive
                     </a>
                 </li>
-                <li class="csquared-sublink"><a class="menu_link" href="{{ url('videoproduction') }}"> Video Production </a></li>
-<li class="csquared-sublink"><a class="menu_link" href="{{ url('creativewriting') }}"> Creative Writing </a></li>
-<li class="csquared-sublink"><a class="menu_link" href="{{ url('contentwriters') }}"> Content Writing </a></li>
-<li class="csquared-sublink"><a class="menu_link" href="{{ url('webdesign') }}"> Web Design </a></li>
-<li class="csquared-sublink"><a class="menu_link" href="{{ url('graphicsdesign') }}"> Graphics Design </a></li>
-<li class="csquared-sublink"><a class="menu_link" href="{{ url('itandtelecom') }}"> IT and Telecom Staffing </a></li>
-<li class="csquared-sublink"><a class="menu_link" href="{{ url('contactus') }}"> Contact us </a></li>
-<li class="csquared-sublink"><a class="menu_link" href="{{ url('aboutus') }}"> About us </a></li>
-
+                <li class="csquared-sublink"><a class="menu_link" href="{{ url('upcomingevents') }}"> Video Production </a>
+                </li>
+                <li class="csquared-sublink"><a class="menu_link" href="{{ url('creativewriting') }}"> Creative Writing </a>
+                </li>
+                <li class="csquared-sublink"><a class="menu_link" href="{{ url('contentwriters') }}"> Content Writing </a> </li>
+                <li class="csquared-sublink"><a class="menu_link" href="{{ url('webdesign') }}"> Web Design </a> </li>
+                <li class="csquared-sublink"><a class="menu_link" href="graphicsdesign"> Graphics design </a> </li>
+                <li class="csquared-sublink"><a class="menu_link" href="{{ url('itandtelecom') }}"> IT and Telecom Staffing </a>
+                </li>
+                <li class="csquared-sublink"><a class="menu_link" href="contactus"> Contact us </a></li>
+                <li class="csquared-sublink"><a class="menu_link" href="aboutus"> About us </a></li>
 
             </ul>
         </div>
     </nav>
-
-
 
     <script>
     var contactNumber = document.getElementById("phone-dropdown-img");
@@ -323,17 +329,8 @@
     </script>
 
 
+
     <style>
-    .row {
-        display: flex;
-    }
-
-    /* Create three equal columns that sits next to each other */
-    .column {
-        flex: 18%;
-        padding: 5px;
-    }
-
     #phone-desk-container {
         display: none;
     }
@@ -372,9 +369,6 @@
         display: -ms-flexbox;
         display: -webkit-flex;
         display: flex;
-        /* padding-left: 25%;
-    padding-right: 25%; */
-        /* display: inline-block; */
         justify-content: center;
         align-items: stretch;
         align-content: stretch;
@@ -413,10 +407,6 @@
     }
 
     #content {
-        /* padding-right: 16%;
-    padding-left: 6%; */
-        /* padding-right: 215px;
-    padding-left: 60px; */
         padding-right: 10vw;
         padding-left: 3vw;
     }
@@ -434,13 +424,9 @@
 
     .menu_icon {
         position: absolute;
-        /* top: 10px;
-    left: 20px; */
         left: 15px;
         bottom: 76px;
         transform: translate(-50%, -50%);
-        /* width: 80px;
-    height: 80px; */
         cursor: pointer;
         margin-left: -13px;
     }
@@ -501,9 +487,6 @@
     #phone {
         border: none;
         background: transparent;
-        /* margin-left: 150px; */
-        /* padding-right: 8.5%;
-    padding-left: 8.5% */
     }
 
     #dropdown-button {
@@ -674,12 +657,6 @@
         flex: auto;
     }
 
-    /*
-.csquared-sublink{
-    font-size: 35px;
-    margin-left: 15px;
-} */
-
     .menu_link {
         font-size: 35px;
     }
@@ -689,23 +666,6 @@
         font-weight: 100;
     }
 
-
-    /* #desktop-navbar{
-    display: none;
-}
-
-#mobile-navbar{
-    display: inline-block;
-} */
-
-
-    /** Navbar Responsiveness */
-
-    /* @media screen and (min-width: 2560px){
-    .mobile-dropdown-list{
-        padding-left: 4%;
-    }
-} */
 
     @media screen and (max-width: 1920px) {
         .mobile-dropdown-list {
@@ -750,14 +710,6 @@
         }
 
         #mobile-navbar {
-            /* display: inline-block; */
-            /* text-align: center;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-content: center;
-        justify-content: center;
-        justify-content: space-evenly;
-        align-items: center; */
             display: inline-flex;
             flex-direction: row;
             flex-wrap: nowrap;
@@ -840,55 +792,92 @@
     }
     </style>
 
-    <div id="contactus-hero" class="jumbotron hero-height">
-        <div id="content-container" class="container hero-container">
-            <div id="content-hero-container" class="hp-hero-content-container hp-hero-content-container-alt">
-                <img class="hp-hero-logo" src="molabsmedia/molabs_logo.png">
-                <h1 class="hp-hero-heading">Events</h1>
 
+    <!-- <div id="advert-jumbotron" class="jumbotron hero-height">
+        <div id="advert-container" class="container hero-container">
+            <div id="advert-hero-content-container" class="hp-hero-content-container">
+                <div class="advert-hero-subcontainer">
+
+                    <img class="hp-hero-logo .bg-dark" src="molabsmedia/molabs_logo.png">
+                    <h1 id="advert-hero-heading" class="hp-hero-heading heading-black">Our Team</h1>
+                    <p class="hp-hero-text font-black">The experts in targeted digital advertising.<p>
+                            <button onclick="getButtonId(this)" name="Advertising Hero Button"
+                                id="advertising-hero-button" class="outlined-black-button" type="button"
+                                data-toggle="modal" data-target="#buttonModal">get pricing</button>
+                </div>
             </div>
         </div>
-
     </div>
+     -->
+    <section class="team text-center py-5">
+        <div class="container">
+            <div class="header my-5">
+                <h1>Meet our Team </h1>
+                <!-- <p class="text-muted">Meet and Greet our Team Members</p> -->
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-3">
+                    <div class="img-block mb-5">
+                        <img src="{{ asset('ourteam/mohammad-abbas.jpg') }}" class="img-fluid  img-thumbnail rounded-circle"
+                            alt="image1">
+                        <div class="content mt-2">
+                            <h4>Mohammad Abbas</h4>
+                            <p class="text-muted">President/CEO</p>
+                        </div>
+                    </div>
+                </div>
 
-    <section id="section-two">
-        <div class="teal-splash-container">
-            <img id="teal-splash" src="homepage/images/desktop/teal_splash.png">
-        </div>
-        <div class="what-we-do-container container">
-            <h1 id="whatWeDo" class="body-headings heading-black">Our Events</h1>
-            <hr id="whatWeDoHr" class="body-hr">
-        </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="img-block mb-5">
+                        <img src="{{ asset('ourteam/uzmaabbas.jpg') }}"
+                            class="img-fluid  img-thumbnail rounded-circle" alt="image1">
+                        <div class="content mt-2">
+                            <h4>Uzma Abbas</h4>
+                            <p class="text-muted">Vice President/Director</p>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="col-md-6 col-lg-3 ">
+                    <div class="img-block mb-5">
+                        <img src="ourteam/rachel-samuel.png" class="img-fluid  img-thumbnail rounded-circle"
+                            alt="image1">
+                        <div class="content mt-2">
+                            <h4>Rachel Samuel</h4>
+                            <p class="text-muted">Business Manager</p>
+                        </div>
+                    </div>
+                </div>
 
-
-        <div class="row mb-1-custom">
-            <div class="col-md grid-padding-right">
-                <div class="hp-grid-box-container">
-                    <div id="upcoming-box" class="hp-grid-box-content-container grid-container">
-                        <h2 class="body-headings-two heading-white">Upcoming Events</h2>
-                        <!-- <p id="ad-grid-copy" class="copy-two">All-in-one marketing solution <br class="desktop-break">
-                            for <br class="mobile-break"> digital advertising.</p> -->
-                        <button class="outlined-white-button mt-5" type="button"
-                            onclick="window.location.href='upcomingevents'">learn more</button>
+                <div class="col-md-6 col-lg-3">
+                    <div class="img-block mb-5">
+                        <img src="ourteam/shahabsiddiqi.jpg"
+                            class="img-fluid  img-thumbnail rounded-circle" alt="image1">
+                        <div class="content mt-2">
+                            <h4>Shahab Siddiqi</h4>
+                            <p class="text-muted">Marketing Coordinator</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md grid-padding-left">
-                <div class="hp-grid-box-container">
-                    <div id="archive-box" class="hp-grid-box-content-container grid-container">
-                        <h2 class="body-headings-two heading-white">Past Events</h2>
-                        <!-- <p id="web-grid-copy" class="copy-two">Custom websites to enhance <br class="desktop-break"> <br
-                                class="mobile-break"> your company's image.</p> -->
-                        <button class="outlined-white-button mt-5" type="button"
-                            onclick="window.location.href='{{ url('pastevents') }}'">learn more</button>
+
+            <div class="row">
+                <div class="col-md-6 col-lg-3">
+                    <div class="img-block mb-5">
+                        <img src="ourteam/milandhakal.jpg" class="img-fluid  img-thumbnail rounded-circle"
+                            alt="image1">
+                        <div class="content mt-2">
+                            <h4>Milan Dhakal</h4>
+                            <p class="text-muted">Director Photography/Cinematics</p>
+                        </div>
                     </div>
                 </div>
+
+
             </div>
-        </div>
+
         </div>
     </section>
-
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"
         integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g=="
@@ -1090,34 +1079,6 @@
     </form>
 
     <style>
-    #event1-left-box {
-        background-image: url('images/event1.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: bottom;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding-bottom: 25px;
-        min-height: 1050px;
-        margin-top: 25px;
-        margin-bottom: 25px;
-    }
-
-    #event2-right-box {
-        background-image: url('images/event2.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: bottom;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding-bottom: 25px;
-        min-height: 1050px;
-        margin-top: 25px;
-        margin-bottom: 25px;
-    }
-
     input {
         -webkit-border-radius: 0;
         border-radius: 0;
@@ -1232,20 +1193,16 @@
     <footer id="showOnMobile" class="mobileFooter">
         <div class="container">
             <img id="mobileFooterLogo" src='molabsmedia/molabs_logo.png' />
-            <h2 class="desktopFooterHeader">Your Business <br> is unique for us!</h2>
+            <h2 class="desktopFooterHeader">Your Business <br> is unique for us</h2>
             <hr class="footerHR">
             <h3 class="desktopFooterSubheading">contact</h3>
             <a class="desktopFooterPhone footerLinks">
-                <p class="desktopFooterMainCopy"><span style="font-weight: bold;">tel: +1 214-679-6818</span></p>
+                <p class="desktopFooterMainCopy"><span style="font-weight: bold;">+1 214-679-6818</span></p>
             </a>
             <a class="footerLinks" href="{{ url('index') }}">
     <p class="desktopFooterMainCopy">molabsmedia.com</p>
 </a>
-            <!-- <a class="footerLinks" href="/cdn-cgi/l/email-protection#b5dcdbd3daf5d6c6c4c0d4c7d0d1c6dad6dcd4d99bd6dad8">
-                <p class="desktopFooterMainCopy"><span class="__cf_email__"
-                        data-cfemail="1e777078715e7d6d6f6b7f6c7b7a6d717d777f72307d7173">[email&#160;protected]</span>
-                </p>
-            </a> -->
+
 
             <a class="footerLinks">
 
@@ -1257,68 +1214,56 @@
             <div id="CAContainer" class="locationsContainer">
                 <img class="stateIcon" src="{{ asset('essentials/footer/images/texas.png') }}" />
                 <div>
-                    <p class="desktopFooterMainCopy stateInformation"><span style="font-weight: bold;">Carlsbad,
-                            CA</span></p>
+                    <p class="desktopFooterMainCopy stateInformation"><span style="font-weight: bold;">Dallas, TX</span>
+                    </p>
                     <p class="desktopFooterMainCopy stateInformation dontWrapText">2727 LBJ Freeway, Suite 200</p>
                     <p class="desktopFooterMainCopy stateInformation">Dallas, TX, 75234</p>
                 </div>
             </div>
-            <!-- <div class="locationsContainer">
-        <img class="stateIcon" src="essentials/footer/images/ID.svg" />
-            <div>
-                <p class="desktopFooterMainCopy stateInformation"><span style="font-weight: bold;">Boise, ID</span></p>
-                <p class="desktopFooterMainCopy stateInformation dontWrapText">1861 S Wells Ave #300</p>
-                <p class="desktopFooterMainCopy stateInformation">Meridian, ID 83642</p>
-            </div>
-        </div> -->
-            <hr class="footerHR">
-            <h3 class="desktopFooterSubheading">follow</h3>
-            <div class="desktopFooterSocialContainer">
-                <a href="https://www.facebook.com/Molabsmedia" target="_blank">
-    <img width="100%" height="auto" id="desktopFooterFB" src="{{ asset('essentials/footer/images/Facebook_white.svg') }}" />
-</a>
-                <a class="footerLinks linkCenter" href="https://www.facebook.com/Molabsmedia" target="_blank">
-                    <p class="desktopFooterMainCopy noBottomMargin">Facebook</p>
-                </a>
-            </div>
-            <div class="desktopFooterSocialContainer">
-                <a href="https://www.instagram.com/molabs_media" target="_blank">
-    <img width="100%" height="auto" id="desktopFooterInsta" src="{{ asset('essentials/footer/images/Instagram_white.svg') }}" />
-</a>
-                <a class="footerLinks linkCenter" href="https://www.instagram.com/molabs_media" target="_blank">
-                    <p class="desktopFooterMainCopy noBottomMargin">Instagram</p>
-                </a>
-            </div>
-            <div class="desktopFooterSocialContainer">
-                <a href="https://twitter.com/Molabs_Media" target="_blank">
-    <img width="100%" height="auto" id="desktopFooterTwitter" src="{{ asset('essentials/footer/images/Twitter_white.svg') }}" />
-</a>
-                <a class="footerLinks linkCenter" href="https://twitter.com/Molabs_Media" target="_blank">
-                    <p class="desktopFooterMainCopy noBottomMargin">Twitter</p>
-                </a>
-            </div>
-            <div class="desktopFooterSocialContainer">
-                <a href="https://www.linkedin.com/company/mo-labs-media" target="_blank"><img width="100%" height="auto"
-                        id="desktopFooterLI" src="essentials/footer/images/Linkedin_white.svg" /></a>
-                <a class="footerLinks linkCenter" href="https://www.linkedin.com/company/mo-labs-media" target="_blank">
-                    <p class="desktopFooterMainCopy noBottomMargin">LinkedIn</p>
-                </a>
-            </div>
-            <div class="desktopFooterSocialContainer">
-                <a href="https://www.youtube.com/channel/UC4ZvAdyyN2slzr_N6pvXomg" target="_blank">
-    <img width="100%" height="auto" id="desktopFooterYT" src="{{ asset('essentials/footer/images/Youtube_white.svg') }}" />
-</a>
-                <a class="footerLinks linkCenter" href="https://www.youtube.com/channel/UC4ZvAdyyN2slzr_N6pvXomg"
-                    target="_blank">
-                    <p class="desktopFooterMainCopy noBottomMargin">Youtube</p>
-                </a>
-            </div>
-            <hr class="footerHR">
-            <p class="desktopRightsReserved desktopFooterMainCopy"> &#169; 2022 Molabs Media All Rights Reserved.</p>
-            <!-- <a class="desktopPrivacyAndTerms" href="#disclaimerModal" data-toggle="modal"
-                data-target="#disclaimerModal">
-                <p class="desktopFooterMainCopy"><span style="font-weight: bold;">Privacy & Terms</span></p>
-            </a> -->
+
+        </div>
+        <hr class="footerHR">
+        <h3 class="desktopFooterSubheading">follow</h3>
+        <div class="desktopFooterSocialContainer">
+            <a href="https://www.facebook.com/Molabsmedia" target="_blank"><img width="100%" height="auto"
+                    id="desktopFooterFB" src="essentials/footer/images/Facebook_white.svg" /></a>
+            <a class="footerLinks linkCenter" href="https://www.facebook.com/Molabsmedia" target="_blank">
+                <p class="desktopFooterMainCopy noBottomMargin">Facebook</p>
+            </a>
+        </div>
+        <div class="desktopFooterSocialContainer">
+            <a href="https://www.instagram.com/molabs_media" target="_blank"><img width="100%" height="auto"
+                    id="desktopFooterInsta" src="essentials/footer/images/Instagram_white.svg" /></a>
+            <a class="footerLinks linkCenter" href="https://www.instagram.com/molabs_media" target="_blank">
+                <p class="desktopFooterMainCopy noBottomMargin">Instagram</p>
+            </a>
+        </div>
+        <div class="desktopFooterSocialContainer">
+            <a href="https://twitter.com/Molabs_Media" target="_blank"><img width="100%" height="auto"
+                    id="desktopFooterTwitter" src="essentials/footer/images/Twitter_white.svg" /></a>
+            <a class="footerLinks linkCenter" href="https://twitter.com/Molabs_Media" target="_blank">
+                <p class="desktopFooterMainCopy noBottomMargin">Twitter</p>
+            </a>
+        </div>
+        <div class="desktopFooterSocialContainer">
+            <a href="https://www.linkedin.com/company/mo-labs-media" target="_blank"><img width="100%" height="auto"
+                    id="desktopFooterLI" src="essentials/footer/images/Linkedin_white.svg" /></a>
+            <a class="footerLinks linkCenter" href="https://www.linkedin.com/company/mo-labs-media" target="_blank">
+                <p class="desktopFooterMainCopy noBottomMargin">LinkedIn</p>
+            </a>
+        </div>
+        <div class="desktopFooterSocialContainer">
+            <a href="https://www.youtube.com/channel/UC4ZvAdyyN2slzr_N6pvXomg" target="_blank"><img width="100%"
+                    height="auto" id="desktopFooterYT" src="essentials/footer/images/Youtube_white.svg" /></a>
+            <a class="footerLinks linkCenter" href="https://www.youtube.com/channel/UC4ZvAdyyN2slzr_N6pvXomg"
+                target="_blank">
+                <p class="desktopFooterMainCopy noBottomMargin">Youtube</p>
+            </a>
+        </div>
+        <hr class="footerHR">
+        <p class="desktopRightsReserved desktopFooterMainCopy"> &#169; 2022 Molabs Media All Rights Reserved.
+        </p>
+
         </div>
     </footer>
 
@@ -1330,10 +1275,7 @@
                     <h2 class="desktopFooterHeader">Your Business <br> is unique for us!</h2>
                     <p class="desktopRightsReserved desktopFooterMainCopy"> &#169; 2022 Molabs Media All Rights
                         Reserved.</p>
-                    <!-- <a class="desktopPrivacyAndTerms" href="#disclaimerModal" data-toggle="modal"
-                        data-target="#disclaimerModal">
-                        <p class="desktopFooterMainCopy"><span style="font-weight: bold;">Privacy & Terms</span></p>
-                    </a> -->
+
                 </div>
 
                 <div class="col-2 columnBorderTop">
@@ -1344,7 +1286,7 @@
                     <a class="footerLinks" href="{{ url('/') }}">
     <p class="desktopFooterMainCopy">molabsmedia.com</p>
 </a>
-                    <!-- <a class="footerLinks" href="/cdn-cgi/l/email-protection#98f1f6fef7d8fbebe9edf9eafdfcebf7fbf1f9f4b6fbf7f5"><p class="desktopFooterMainCopy"><span class="__cf_email__" data-cfemail="127b7c747d527161636773607776617d717b737e3c717d7f">[email&#160;protected]</span></p></a> -->
+
 
                     <a class="footerLinks">
 
@@ -1363,14 +1305,7 @@
                             <p class="desktopFooterMainCopy stateInformation">Dallas, TX, 75234</p>
                         </div>
                     </div>
-                    <!-- <div class="locationsContainer">
-                <img class="stateIcon" src="essentials/footer/images/ID.svg" />
-                    <div>
-                        <p class="desktopFooterMainCopy stateInformation"><span style="font-weight: bold;">Boise, ID</span></p>
-                        <p class="desktopFooterMainCopy stateInformation dontWrapText">1861 S Wells Ave #300</p>
-                        <p class="desktopFooterMainCopy stateInformation">Meridian, ID 83642</p>
-                    </div>
-                </div> -->
+
                 </div>
                 <div class="col-2 columnBorderTop">
                     <h3 class="desktopFooterSubheading">information</h3>
@@ -1399,8 +1334,9 @@
                 <div class="col-2 columnBorderTop">
                     <h3 class="desktopFooterSubheading">follow</h3>
                     <div class="desktopFooterSocialContainer">
-                        <a href="https://www.facebook.com/Molabsmedia" target="_blank"><img width="100%" height="auto"
-                                id="desktopFooterFB" src="essentials/footer/images/Facebook_white.svg" /></a>
+                        <a href="https://www.facebook.com/csquaredsocial/" target="_blank"><img width="100%"
+                                height="auto" id="desktopFooterFB"
+                                src="essentials/footer/images/Facebook_white.svg" /></a>
                         <a class="footerLinks linkCenter" href="https://www.facebook.com/Molabsmedia" target="_blank">
                             <p class="desktopFooterMainCopy noBottomMargin">Facebook</p>
                         </a>
@@ -1442,27 +1378,7 @@
         </div>
     </footer>
 
-    <!-- <div class="modal" tabindex="-1" role="dialog" aria-labelledby="disclaimerModal" aria-hidden="true"
-        id="disclaimerModal" data-backdrop="false">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content" style="width: 100%;">
-                <div class="modal-header" style="background-color: white;">
-                    <h5 class="modal-title">Privacy & Terms</h5>
-                    <button id="close-disclaimer" type="button" class="close" data-dismiss="modal" aria-label="Close"
-                        style="border-radius: 25px; border-color: black; border: solid; background-color: white;">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body" style="overflow-y: scroll; height: 450px; background-color: white;"> -->
-    <!-- Termly Tracking Code -->
-    <!-- goes here -->
-    <!--  <embed src="https://app.termly.io/document/privacy-policy/90512b59-d462-4367-b546-069571520429"
-                        style="width: 100%;height: 450px;">
 
-                </div>
-            </div>
-        </div>
-    </div> -->
 
     <!-- <script language='JavaScript1.1' async src='//pixel.mathtag.com/event/js?mt_id=1541489&mt_adid=245306&mt_exem=&mt_excl=&v1=&v2=&v3=&s1=&s2=&s3='></script> -->
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
@@ -2031,7 +1947,7 @@
                     <div class="get-onboard-container">
                         <div class="popupDesktopParentContainer">
                             <div class="popupDesktopContainer">
-                                <h4 class="popupDesktopCopy">partner up with <br>
+                                <h4 class="popupDesktopCopy">Partner up with <br>
                                     the specialists at <br>
                                     <span style="font-weight: bold;">Molabs Media.</span> <br>
                                     we have!
@@ -2056,14 +1972,12 @@
                                 </div>
                                 <div class="popupDesktopParentContainer">
                                     <div class="popupDesktopContainer mobilePopupContainer">
-                                        <h4 class="popupDesktopCopy">partner up with <br>
+                                        <h4 class="popupDesktopCopy">Partner up with <br>
                                             the specialists at <br>
                                             <span style="font-weight: bold;">c squared social.</span> <br>
-                                            i have!
+                                            we have!
                                         </h4>
-                                        <div class="formSignatureContainer">
-                                            <img id="formSignature" src="/homepage/images/signature_White.png">
-                                        </div>
+
                                     </div>
                                 </div>
 
@@ -2246,10 +2160,7 @@
                     height: 40px;
                     border: solid 1px black;
                     border-radius: 0.25rem;
-                    /* background-image: url('essentials/forms/images/popup_person_button.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center; */
+
                     color: white;
                     font-family: 'Pro Source Code', monospace;
                     font-weight: 800;
@@ -2414,12 +2325,14 @@
                     <div class="get-onboard-container">
                         <div class="popupDesktopParentContainer">
                             <div class="popupDesktopContainer">
-                                <h4 class="popupDesktopCopy">partner up with <br>
+                                <h4 class="popupDesktopCopy">Partner up with <br>
                                     the specialists at <br>
                                     <span style="font-weight: bold;">Molabs Media.</span><br>
                                     we have!
                                 </h4>
-
+                                <!-- <div class="formSignatureContainer">
+                                    <img id="formSignature" src="/homepage/images/signature_White.png">
+                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -2438,14 +2351,12 @@
                                 </div>
                                 <div class="popupDesktopParentContainer">
                                     <div class="popupDesktopContainer mobilePopupContainer">
-                                        <h4 class="popupDesktopCopy">partner up with <br>
+                                        <h4 class="popupDesktopCopy">Partner up with <br>
                                             the specialists at <br>
                                             <span style="font-weight: bold;">c squared social.</span> <br>
-                                            i have!
+                                            we have!
                                         </h4>
-                                        <div class="formSignatureContainer">
-                                            <img id="formSignature" src="/homepage/images/signature_White.png">
-                                        </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -2617,10 +2528,7 @@
                     height: 40px;
                     border: solid 1px black;
                     border-radius: 0.25rem;
-                    /* background-image: url('essentials/forms/images/popup_person_button.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center; */
+
                     color: white;
                     font-family: 'Pro Source Code', monospace;
                     font-weight: 800;
@@ -2838,12 +2746,11 @@
                     <div class="get-onboard-container">
                         <div class="popupDesktopParentContainer">
                             <div class="popupDesktopContainer">
-                                <h4 class="popupDesktopCopy">partner up with <br>
+                                <h4 class="popupDesktopCopy">Partner up with <br>
                                     the specialists at <br>
                                     <span style="font-weight: bold;">Molabs Media.</span> <br>
                                     we have!
                                 </h4>
-
                             </div>
                         </div>
                     </div>
@@ -2863,14 +2770,14 @@
                                 </div>
                                 <div class="popupDesktopParentContainer">
                                     <div class="popupDesktopContainer mobilePopupContainer">
-                                        <h4 class="popupDesktopCopy">partner up with <br>
+                                        <h4 class="popupDesktopCopy">Partner up with <br>
                                             the specialists at <br>
                                             <span style="font-weight: bold;">c squared social.</span><br>
-                                            i have!
+                                            we have!
                                         </h4>
-                                        <div class="formSignatureContainer">
+                                        <!-- <div class="formSignatureContainer">
                                             <img id="formSignature" src="/homepage/images/signature_White.png">
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -2991,10 +2898,7 @@
                     height: 40px;
                     border: solid 1px black;
                     border-radius: 0.25rem;
-                    /* background-image: url('essentials/forms/images/popup_person_button.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center; */
+
                     color: white;
                     font-family: 'Pro Source Code', monospace;
                     font-weight: 800;
@@ -3220,9 +3124,9 @@
                     <div class="get-onboard-container">
                         <div class="popupDesktopParentContainer">
                             <div class="popupDesktopContainer">
-                                <h4 class="popupDesktopCopy">partner up with <br>
+                                <h4 class="popupDesktopCopy">Partner up with <br>
                                     the specialists at <br>
-                                    <span style="font-weight: bold;">Molabs Media</span> <br>
+                                    <span style="font-weight: bold;">Molabs Media.</span> <br>
                                     we have!
                                 </h4>
 
@@ -3246,14 +3150,14 @@
                                 </div>
                                 <div class="popupDesktopParentContainer">
                                     <div class="popupDesktopContainer mobilePopupContainer">
-                                        <h4 class="popupDesktopCopy">partner up with <br>
+                                        <h4 class="popupDesktopCopy">Partner up with <br>
                                             the specialists at <br>
                                             <span style="font-weight: bold;">c squared social.</span> <br>
-                                            i have!
+                                            we have!
                                         </h4>
-                                        <div class="formSignatureContainer">
+                                        <!-- <div class="formSignatureContainer">
                                             <img id="formSignature" src="/homepage/images/signature_White.png">
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -3357,10 +3261,7 @@
                     height: 40px;
                     border: solid 1px black;
                     border-radius: 0.25rem;
-                    /* background-image: url('essentials/forms/images/popup_person_button.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center; */
+
                     color: white;
                     font-family: 'Pro Source Code', monospace;
                     font-weight: 800;
@@ -3545,10 +3446,8 @@ $(document).ready(function() {
             $(`#formPopupModal-${sessionStorage['selectedForm']}`).modal('toggle');
 
             //creating a variable so we can pass as utm_data
-            var popupModal = `Content Popup Modal ${sessionStorage['selectedForm']}`;
-            var utmData =
-                'google | cpc | Social_Media_Agency | g | Social_Media_Agency | ad agency company' +
-                ' | ' + popupModal;
+            var popupModal = `Advertising Popup Modal ${sessionStorage['selectedForm']}`;
+            var utmData = '' + ' | ' + popupModal;
 
             //assigning string data to our form fields
             const elements = [
@@ -3559,7 +3458,6 @@ $(document).ready(function() {
                 'utmDataFieldFour',
                 'utmDataFieldFive',
                 'utmDataFieldSix',
-
                 'utmButtonDesktopOne',
                 'utmButtonMobileOne',
 
@@ -3616,10 +3514,9 @@ function getButtonId(buttonClicked) {
     }
 
     if (buttonClicked != null) {
-        var utmData = 'google | cpc | Social_Media_Agency | g | Social_Media_Agency | ad agency company |' +
-            `${buttonClicked} ${sessionStorage['selectedForm']}`;
+        var utmData = ' |' + `${buttonClicked} ${sessionStorage['selectedForm']}`;
     } else {
-        var utmData = 'google | cpc | Social_Media_Agency | g | Social_Media_Agency | ad agency company';
+        var utmData = '';
     }
 
     const buttonElements = [
@@ -3664,6 +3561,7 @@ body {
     margin: 0;
     overflow-x: hidden;
     overflow-y: overlay;
+    height: auto;
 }
 
 input[type="text"] {

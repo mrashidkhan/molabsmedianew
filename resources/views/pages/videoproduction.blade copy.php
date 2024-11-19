@@ -31,11 +31,104 @@
     <!-- -->
     <script src="/assets/analytics.js" type="text/javascript" async></script>
 
-    <link rel="shortcut icon" type="image/jpg" href="essentials/images/favicon-01.png" />
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="shortcut icon" type="image/jpg" href="{{ asset('essentials/images/favicon/favicon.ico') }}" />
+<link rel="stylesheet" href="{{ asset('style/style.css') }}">
 
     <title>Molabs Media – Content Services</title>
     <meta name="description" content="Impress your prospects with stunning and unified content across all channels.">
+
+    <style type="text/css">
+
+/* ============ desktop view ============ */
+@media all and (min-width: 992px) {
+
+	.dropdown-menu li{
+		position: relative;
+	}
+	.dropdown-menu .submenu{
+		display: none;
+		position: absolute;
+		left:100%; top:-7px;
+	}
+	.dropdown-menu .submenu-left{
+		right:100%; left:auto;
+	}
+
+	/* .dropdown-menu > li:hover{ background-color: #f1f1f1 } */
+	.dropdown-menu > li:hover > .submenu{
+		display: block;
+	}
+}
+/* ============ desktop view .end// ============ */
+
+/* ============ small devices ============ */
+@media (max-width: 991px) {
+
+.dropdown-menu .dropdown-menu{
+		margin-left:0.7rem; margin-right:0.7rem; margin-bottom: .5rem;
+}
+
+}
+/* ============ small devices .end// ============ */
+
+</style>
+
+
+<script type="text/javascript">
+//	window.addEventListener("resize", function() {
+//		"use strict"; window.location.reload();
+//	});
+
+
+	document.addEventListener("DOMContentLoaded", function(){
+
+
+    	/////// Prevent closing from click inside dropdown
+		document.querySelectorAll('.dropdown-menu').forEach(function(element){
+			element.addEventListener('click', function (e) {
+			  e.stopPropagation();
+			});
+		})
+
+
+
+		// make it as accordion for smaller screens
+		if (window.innerWidth < 992) {
+
+			// close all inner dropdowns when parent is closed
+			document.querySelectorAll('.navbar .dropdown').forEach(function(everydropdown){
+				everydropdown.addEventListener('hidden.bs.dropdown', function () {
+					// after dropdown is hidden, then find all submenus
+					  this.querySelectorAll('.submenu').forEach(function(everysubmenu){
+					  	// hide every submenu as well
+					  	everysubmenu.style.display = 'none';
+					  });
+				})
+			});
+
+			document.querySelectorAll('.dropdown-menu a').forEach(function(element){
+				element.addEventListener('click', function (e) {
+
+				  	let nextEl = this.nextElementSibling;
+				  	if(nextEl && nextEl.classList.contains('submenu')) {
+				  		// prevent opening link if link needs to open dropdown
+				  		e.preventDefault();
+				  		console.log(nextEl);
+				  		if(nextEl.style.display == 'block'){
+				  			nextEl.style.display = 'none';
+				  		} else {
+				  			nextEl.style.display = 'block';
+				  		}
+
+				  	}
+				});
+			})
+		}
+		// end if innerWidth
+
+	});
+	// DOMContentLoaded  end
+</script>
 </head>
 
 <body>
@@ -54,7 +147,7 @@
                     <img id="footer_outlined_phone" src="{{ asset('essentials/images/Phone_white.png') }}">
                 </button>
                 <img id="phone-dropdown-img" src="{{ asset('essentials/images/phone(dropdown)-01.png') }}">
-                <a href="tel:8583867400" id="mobile-phone" class="nav-link">
+                <a href="tel:0012146796818" id="mobile-phone" class="nav-link">
                     <img id="footer_outlined_phone_mobile" src="{{ asset('essentials/images/Phone_white.png') }}">
                 </a>
                 <a href="{{ url('index') }}" id="mobile-logo" class="nav-link flexauto">
@@ -71,27 +164,26 @@
                     Services
                 </a>
                 <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                <li>
-    <a class="dropdown-item" href="{{ url('events') }}">Events &raquo; </a>
-    <ul class="submenu dropdown-menu dropdown-menu-dark">
-        <li><a class="dropdown-item" href="{{ url('upcomingevents') }}">Upcoming Events</a></li>
-        <li>
-            <a class="dropdown-item" href="{{ url('pastevents') }}">Past Events &raquo; </a>
-            <ul class="submenu dropdown-menu dropdown-menu-dark">
-                <li><a class="dropdown-item" href="{{ url('videos') }}">Video Archive</a></li>
-                <li><a class="dropdown-item" href="{{ url('picturearchive') }}">Picture Archive</a></li>
-                <li><a class="dropdown-item" href="{{ url('posterarchive') }}">Poster Archive</a></li>
-            </ul>
-        </li>
-    </ul>
-</li>
+                <li><a class="dropdown-item" href="{{ url('events') }}">Events &raquo; </a>
+                        <ul class="submenu dropdown-menu dropdown-menu-dark">
+                        <li><a class="dropdown-item" href="{{ url('upcomingevents') }}">Upcoming Events</a></li>
+                            <li><a class="dropdown-item" href="{{ url('pastevents') }}">Past Events &raquo; </a>
+                                <ul class="submenu dropdown-menu dropdown-menu-dark">
+                                    <li><a class="dropdown-item" href="{{ url('videos') }}">Video Archive</a></li>
+                                    <li><a class="dropdown-item" href="{{ url('picturearchive') }}">Picture Archive</a></li>
+                                    <li><a class="dropdown-item" href="{{ url('posterarchive') }}">Poster Archive</a></li>
+                                </ul>
+                            </li>
 
+                        </ul>
+                    </li>
                     <li><a class="dropdown-item" href="{{ url('videoproduction') }}">Video production</a></li>
 <li><a class="dropdown-item" href="{{ url('creativewriting') }}">Creative writing</a></li>
 <li><a class="dropdown-item" href="{{ url('contentwriters') }}">Content writers</a></li>
 <li><a class="dropdown-item" href="{{ url('webdesign') }}">Web design</a></li>
 <li><a class="dropdown-item" href="{{ url('graphicsdesign') }}">Graphics design</a></li>
 <li><a class="dropdown-item" href="{{ url('itandtelecom') }}">IT and Telecom Staffing</a></li>
+
                 </ul>
             </li>
 
@@ -734,23 +826,12 @@
 
     </style>
 
-   <!--  <div id="content-hero" class="jumbotron hero-height">
-        <div id="content-container" class="container hero-container">
-            <div id="content-hero-container" class="hp-hero-content-container hp-hero-content-container-alt">
-                <img class="hp-hero-logo" src="products/molabsmedia/molabs_logo.png">
-                <h1 class="hp-hero-heading">Creative Writing</h1>
-                <p id="content-hero-text" class="hp-hero-text"> Our team of professional writers have expertise in different genres of writing. We work on building content that is effective and persuasive. Our team of writers are capable of writing on range of different disciplines like showbiz, fashion, lifestyle, automobile, gadgets, education, technology, hospitality, eCommerce and what not.  </p>
-                <button onclick="getButtonId(this)" name="Content Hero Button" id="content-hero-button"
-                    class="outlined-white-button" type="button" data-toggle="modal" data-target="#buttonModal">get
-                    pricing</button>
-            </div>
-        </div>
-    </div> -->
+    
 
-    <section id="welcome-thanks">
+    <section id="video-production">
         <div id="like-drives-row" class="row center-aligned-container">
             <div class="col-md">
-                <img id="content-like-drive-hidden" src="homepage/images/newdesktop/thanks.jpg"
+                <img id="content-like-drive-hidden" src="homepage/images/newdesktop/video_production.jpg"
                     width="100%" height="auto">
             </div>
 
@@ -758,22 +839,24 @@
                 <div class="inside-container-content-container-right">
                     <div id="content-three-content">
                         <!-- <img id="thumbs-up" src="content/images/thumb_and_numbers.png"> -->
-                        <h1 class="body-headings">Thank you</h1>
-                        <p class="copy-one">for contacting us! We will be in touch soon. </p>
+                        <h1 class="body-headings">Video Production</h1>
+                        <p class="copy-one">We provide quality video production solutions and services. From capturing to final edit, we provide full range of exceptional services to our clients.</p>
                         <!-- <button onclick="getButtonId(this)" name="Content Like Drives Button" id="content-three-button"
                             class="outlined-black-button" type="button" data-toggle="modal"
                             data-target="#buttonModal">book demo</button> -->
-                            <!-- <p>
+
+                            <p>
                             <button class="outlined-black-button" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
+                                data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                                 Read More
                             </button>
                         </p>
-                        <div class="collapse" id="collapseExample2">
-                            <div class="card card-body copy-one" style="background-color: #EFBB31;">
-                            We will work with you every step of the way toward the creation of impressive graphics that you will be proud to have representing your brand. We can design your company logo, business card, etc.
+                        <div class="collapse" id="collapseExample">
+                            <div class="card card-body copy-one" style="background-color: #E6A81F;">
+                            We assist with other services like video marketing, script writing, pre-production planning to execution and delivery of videos.
                             </div>
-                        </div> -->
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -827,30 +910,32 @@
             </div>
         </div>
     </section> -->
-    <!-- <section id="graphics-three">
+   <!--  <section id="video-three">
         <div id="like-drives-row" class="row center-aligned-container">
             <div class="col-md">
-                <img id="content-like-drive-hidden" src="{{ asset('content/images/mobile/content_likedrives_mobile.jpg') }}" width="100%" height="auto">
+                <img id="content-like-drive-hidden" src="images/video-production.jpg"
+                    width="100%" height="auto">
             </div>
 
             <div id="likeDrivesCol" class="col-md">
                 <div class="inside-container-content-container-right">
                     <div id="content-three-content">
 
-                        <h1 class="body-headings">Graphics Design</h1>
-                        <p class="copy-one">Our graphic designing team have the creative capabilities to take your company’s personality and translate it to visual design. We with careful consideration of color schemes, and essential design principles is fully capable of bringing your brand to life.</p>
-                        <p>
+                        <h1 class="body-headings">Video Production</h1>
+                        <p class="copy-one">We provide quality video production solutions and services. From capturing to final edit, we provide full range of exceptional services to our clients. </p>
+
+
+                            <p>
                             <button class="outlined-black-button" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
                                 Read More
                             </button>
                         </p>
                         <div class="collapse" id="collapseExample2">
-                            <div class="card card-body copy-one" style="background-color: #F4AABB;">
-                            We will work with you every step of the way toward the creation of impressive graphics that you will be proud to have representing your brand. We can design your company logo, business card, etc.
+                            <div class="card card-body copy-one" style="background-color: #E08B9E;">
+                            We assist with other services like video marketing, script writing, pre-production planning to execution and delivery of videos.
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -1278,7 +1363,7 @@
 
                 <div class="col-2 columnBorderTop">
                     <h3 class="desktopFooterSubheading">contact</h3>
-                    <a class="desktopFooterPhone footerLinks">
+                    <a class="desktopFooterPhone footerLinks" >
                         <p class="desktopFooterMainCopy"><span style="font-weight: bold;">+1 214-679-6818</span></p>
                     </a>
                     <a class="footerLinks" href="{{ url('/') }}">
@@ -1303,14 +1388,7 @@
                             <p class="desktopFooterMainCopy stateInformation">Dallas, TX, 75234</p>
                         </div>
                     </div>
-                    <!-- <div class="locationsContainer">
-                <img class="stateIcon" src="essentials/footer/images/ID.svg" />
-                    <div>
-                        <p class="desktopFooterMainCopy stateInformation"><span style="font-weight: bold;">Boise, ID</span></p>
-                        <p class="desktopFooterMainCopy stateInformation dontWrapText">1861 S Wells Ave #300</p>
-                        <p class="desktopFooterMainCopy stateInformation">Meridian, ID 83642</p>
-                    </div>
-                </div> -->
+
                 </div>
                 <div class="col-2 columnBorderTop">
                     <h3 class="desktopFooterSubheading">information</h3>

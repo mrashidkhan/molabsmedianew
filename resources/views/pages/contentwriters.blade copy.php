@@ -31,11 +31,104 @@
     <!-- -->
     <script src="/assets/analytics.js" type="text/javascript" async></script>
 
-    <link rel="shortcut icon" type="image/jpg" href="essentials/images/favicon-01.png" />
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="shortcut icon" type="image/jpg" href="{{ asset('essentials/images/favicon/favicon.ico') }}" />
+<link rel="stylesheet" href="{{ asset('style/style.css') }}">
 
     <title>Molabs Media – Content Services</title>
     <meta name="description" content="Impress your prospects with stunning and unified content across all channels.">
+
+    <style type="text/css">
+
+/* ============ desktop view ============ */
+@media all and (min-width: 992px) {
+
+	.dropdown-menu li{
+		position: relative;
+	}
+	.dropdown-menu .submenu{
+		display: none;
+		position: absolute;
+		left:100%; top:-7px;
+	}
+	.dropdown-menu .submenu-left{
+		right:100%; left:auto;
+	}
+
+	/* .dropdown-menu > li:hover{ background-color: #f1f1f1 } */
+	.dropdown-menu > li:hover > .submenu{
+		display: block;
+	}
+}
+/* ============ desktop view .end// ============ */
+
+/* ============ small devices ============ */
+@media (max-width: 991px) {
+
+.dropdown-menu .dropdown-menu{
+		margin-left:0.7rem; margin-right:0.7rem; margin-bottom: .5rem;
+}
+
+}
+/* ============ small devices .end// ============ */
+
+</style>
+
+
+<script type="text/javascript">
+//	window.addEventListener("resize", function() {
+//		"use strict"; window.location.reload();
+//	});
+
+
+	document.addEventListener("DOMContentLoaded", function(){
+
+
+    	/////// Prevent closing from click inside dropdown
+		document.querySelectorAll('.dropdown-menu').forEach(function(element){
+			element.addEventListener('click', function (e) {
+			  e.stopPropagation();
+			});
+		})
+
+
+
+		// make it as accordion for smaller screens
+		if (window.innerWidth < 992) {
+
+			// close all inner dropdowns when parent is closed
+			document.querySelectorAll('.navbar .dropdown').forEach(function(everydropdown){
+				everydropdown.addEventListener('hidden.bs.dropdown', function () {
+					// after dropdown is hidden, then find all submenus
+					  this.querySelectorAll('.submenu').forEach(function(everysubmenu){
+					  	// hide every submenu as well
+					  	everysubmenu.style.display = 'none';
+					  });
+				})
+			});
+
+			document.querySelectorAll('.dropdown-menu a').forEach(function(element){
+				element.addEventListener('click', function (e) {
+
+				  	let nextEl = this.nextElementSibling;
+				  	if(nextEl && nextEl.classList.contains('submenu')) {
+				  		// prevent opening link if link needs to open dropdown
+				  		e.preventDefault();
+				  		console.log(nextEl);
+				  		if(nextEl.style.display == 'block'){
+				  			nextEl.style.display = 'none';
+				  		} else {
+				  			nextEl.style.display = 'block';
+				  		}
+
+				  	}
+				});
+			})
+		}
+		// end if innerWidth
+
+	});
+	// DOMContentLoaded  end
+</script>
 </head>
 
 <body>
@@ -47,14 +140,14 @@
 
 
 
-<nav class="navbar" id="desktop-navbar">
+    <nav class="navbar" id="desktop-navbar">
         <div id="desktop-navbar-container">
             <div id="phone-desk-container">
                 <button id="phone" class="nav-link flexauto">
                     <img id="footer_outlined_phone" src="{{ asset('essentials/images/Phone_white.png') }}">
                 </button>
                 <img id="phone-dropdown-img" src="{{ asset('essentials/images/phone(dropdown)-01.png') }}">
-                <a href="tel:8583867400" id="mobile-phone" class="nav-link">
+                <a href="tel:0012146796818" id="mobile-phone" class="nav-link">
                     <img id="footer_outlined_phone_mobile" src="{{ asset('essentials/images/Phone_white.png') }}">
                 </a>
                 <a href="{{ url('index') }}" id="mobile-logo" class="nav-link flexauto">
@@ -71,32 +164,31 @@
                     Services
                 </a>
                 <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                <li>
-    <a class="dropdown-item" href="{{ url('events') }}">Events &raquo; </a>
-    <ul class="submenu dropdown-menu dropdown-menu-dark">
-        <li><a class="dropdown-item" href="{{ url('upcomingevents') }}">Upcoming Events</a></li>
-        <li>
-            <a class="dropdown-item" href="{{ url('pastevents') }}">Past Events &raquo; </a>
-            <ul class="submenu dropdown-menu dropdown-menu-dark">
-                <li><a class="dropdown-item" href="{{ url('videos') }}">Video Archive</a></li>
-                <li><a class="dropdown-item" href="{{ url('picturearchive') }}">Picture Archive</a></li>
-                <li><a class="dropdown-item" href="{{ url('posterarchive') }}">Poster Archive</a></li>
-            </ul>
-        </li>
-    </ul>
-</li>
+                <li><a class="dropdown-item" href="{{ url('events') }}">Events &raquo; </a>
+                        <ul class="submenu dropdown-menu dropdown-menu-dark">
+                        <li><a class="dropdown-item" href="{{ url('upcomingevents') }}">Upcoming Events</a></li>
+                            <li><a class="dropdown-item" href="{{ url('pastevents') }}">Past Events &raquo; </a>
+                                <ul class="submenu dropdown-menu dropdown-menu-dark">
+                                    <li><a class="dropdown-item" href="{{ url('videos') }}">Video Archive</a></li>
+                                    <li><a class="dropdown-item" href="picturearchive.php">Picture Archive</a></li>
+                                    <li><a class="dropdown-item" href="postersarchive.php">Poster Archive</a></li>
+                                </ul>
+                            </li>
 
-                    <li><a class="dropdown-item" href="{{ url('videoproduction') }}">Video production</a></li>
-<li><a class="dropdown-item" href="{{ url('creativewriting') }}">Creative writing</a></li>
-<li><a class="dropdown-item" href="{{ url('contentwriters') }}">Content writers</a></li>
-<li><a class="dropdown-item" href="{{ url('webdesign') }}">Web design</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="dropdown-item" href="{{ url('videoproduction.php') }}">Video production</a></li>
+<li><a class="dropdown-item" href="{{ url('creativewriting.php') }}">Creative writing</a></li>
+<li><a class="dropdown-item" href="{{ url('contentwriters.php') }}">Content writers</a></li>
+<li><a class="dropdown-item" href="{{ url('webdesign.php') }}">Web design</a></li>
 <li><a class="dropdown-item" href="{{ url('graphicsdesign') }}">Graphics design</a></li>
-<li><a class="dropdown-item" href="{{ url('itandtelecom') }}">IT and Telecom Staffing</a></li>
+<li><a class="dropdown-item" href="{{ url('itandtelecom.php') }}">IT and Telecom Staffing</a></li>
+
                 </ul>
             </li>
 
-
-            <a href="{{ url('ourteam') }}" id="ourteam" class="nav-link flexauto">Our Team</a>
+            <!-- <a href="products/advertising.php" id="advertising" class="nav-link flexauto">Solutions</a> -->
+            <a href="{{ url('ourteam.php') }}" id="ourteam" class="nav-link flexauto">Our Team</a>
 <a href="{{ url('aboutus') }}" id="aboutus" class="nav-link flexauto">About us</a>
 <a href="{{ url('contactus') }}" id="contactus" class="nav-link flexauto">Contact Us</a>
 
@@ -106,7 +198,9 @@
                 </div>
             </div>
             <ul class="mobile-dropdown-list">
-                <li><a class="menu_link" href="{{ url('index') }}">home</a></li>
+                <li><a class="menu_link" href='index.php'>home</a></li>
+
+
                 <li class="csquared-sublink"><a class="menu_link" href="{{ url('events') }}"> Events
                     </a>
                 </li>
@@ -118,19 +212,20 @@
                     </a>
                 </li>
 
-                <li class="csquared-sublink"><a class="menu_link" href="{{ url('picturearchive') }}"> Picture Archive
+                <li class="csquared-sublink"><a class="menu_link" href="picturearchive.php"> Picture Archive
                     </a>
                 </li>
 
-                <li class="csquared-sublink"><a class="menu_link" href="{{ url('posterarchive') }}"> Poster Archive
+                <li class="csquared-sublink"><a class="menu_link" href="postersarchive.php"> Poster Archive
                     </a>
                 </li>
-                <li class="csquared-sublink"><a class="menu_link" href="{{ url('videoproduction') }}"> Video Production </a></li>
-<li class="csquared-sublink"><a class="menu_link" href="{{ url('creativewriting') }}"> Creative Writing </a></li>
-<li class="csquared-sublink"><a class="menu_link" href="{{ url('contentwriters') }}"> Content Writing </a></li>
-<li class="csquared-sublink"><a class="menu_link" href="{{ url('webdesign') }}"> Web Design </a></li>
+
+                <li class="csquared-sublink"><a class="menu_link" href="{{ url('videoproduction.php') }}"> Video Production </a></li>
+<li class="csquared-sublink"><a class="menu_link" href="{{ url('creativewriting.php') }}"> Creative Writing </a></li>
+<li class="csquared-sublink"><a class="menu_link" href="{{ url('contentwriters.php') }}"> Content Writing </a></li>
+<li class="csquared-sublink"><a class="menu_link" href="{{ url('webdesign.php') }}"> Web Design </a></li>
 <li class="csquared-sublink"><a class="menu_link" href="{{ url('graphicsdesign') }}"> Graphics Design </a></li>
-<li class="csquared-sublink"><a class="menu_link" href="{{ url('itandtelecom') }}"> IT and Telecom Staffing </a></li>
+<li class="csquared-sublink"><a class="menu_link" href="{{ url('itandtelecom.php') }}"> IT and Telecom Staffing </a></li>
 <li class="csquared-sublink"><a class="menu_link" href="{{ url('contactus') }}"> Contact us </a></li>
 <li class="csquared-sublink"><a class="menu_link" href="{{ url('aboutus') }}"> About us </a></li>
 
@@ -730,27 +825,12 @@
                 font-size: 20px;
             }
         }
-
-
     </style>
 
-   <!--  <div id="content-hero" class="jumbotron hero-height">
-        <div id="content-container" class="container hero-container">
-            <div id="content-hero-container" class="hp-hero-content-container hp-hero-content-container-alt">
-                <img class="hp-hero-logo" src="products/molabsmedia/molabs_logo.png">
-                <h1 class="hp-hero-heading">Creative Writing</h1>
-                <p id="content-hero-text" class="hp-hero-text"> Our team of professional writers have expertise in different genres of writing. We work on building content that is effective and persuasive. Our team of writers are capable of writing on range of different disciplines like showbiz, fashion, lifestyle, automobile, gadgets, education, technology, hospitality, eCommerce and what not.  </p>
-                <button onclick="getButtonId(this)" name="Content Hero Button" id="content-hero-button"
-                    class="outlined-white-button" type="button" data-toggle="modal" data-target="#buttonModal">get
-                    pricing</button>
-            </div>
-        </div>
-    </div> -->
-
-    <section id="welcome-thanks">
+    <section id="contentwriter-three">
         <div id="like-drives-row" class="row center-aligned-container">
             <div class="col-md">
-                <img id="content-like-drive-hidden" src="homepage/images/newdesktop/thanks.jpg"
+                <img id="content-like-drive-hidden" src="homepage/images/newdesktop/home_content.jpg"
                     width="100%" height="auto">
             </div>
 
@@ -758,104 +838,29 @@
                 <div class="inside-container-content-container-right">
                     <div id="content-three-content">
                         <!-- <img id="thumbs-up" src="content/images/thumb_and_numbers.png"> -->
-                        <h1 class="body-headings">Thank you</h1>
-                        <p class="copy-one">for contacting us! We will be in touch soon. </p>
-                        <!-- <button onclick="getButtonId(this)" name="Content Like Drives Button" id="content-three-button"
-                            class="outlined-black-button" type="button" data-toggle="modal"
-                            data-target="#buttonModal">book demo</button> -->
-                            <!-- <p>
+                        <h1 class="body-headings">Content writers</h1>
+                        <p class="copy-one">Our team of professional writers have expertise in different genres of
+                            writing. We work on building content that is effective and persuasive. </p>
+
+                        <p>
                             <button class="outlined-black-button" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
+                                data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                                 Read More
                             </button>
                         </p>
-                        <div class="collapse" id="collapseExample2">
-                            <div class="card card-body copy-one" style="background-color: #EFBB31;">
-                            We will work with you every step of the way toward the creation of impressive graphics that you will be proud to have representing your brand. We can design your company logo, business card, etc.
+                        <div class="collapse" id="collapseExample">
+                            <div class="card card-body copy-one" style="background-color: #DA5572;">
+                                Our team of writers are capable of writing on range of different disciplines like
+                                showbiz, fashion, lifestyle, automobile, gadgets, education, technology, hospitality,
+                                eCommerce and what not. Our pertinent and appropriate content makes instant connection
+                                with the audience and make them fall for your businesses and brands.
                             </div>
-                        </div> -->
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- <section id="content-one">
-        <div id="content-socialposts-and-blog-row" class="row">
-            <div id="content-left" class="col-md">
-                <div id="content-left-box">
-                    <div id="content-left-box-items" class="content-container">
-                        <h1 id="social-posts-heading" class="body-headings font-white">social posts</h1>
-                        <p id="social-posts-text" class="copy-one font-white">Provide the high-quality, consistent
-                            organic content today’s customers expect. We’ll help you validate your brand and engage with
-                            new customers to improve conversions.</p>
-                        <button onclick="getButtonId(this)" name="Content Social Posts Button" id="content-left-button"
-                            class="outlined-white-button" type="button" data-toggle="modal"
-                            data-target="#buttonModal">let's talk!</button>
-                    </div>
-                </div>
-            </div>
-            <div id="content-right" class="col-md">
-                <div id="content-right-box">
-                    <div id="content-right-box-items" class="content-container">
-                        <h1 class="body-headings font-white">blogs</h1>
-                        <p id="blogs-text" class="copy-one font-white">Our in-house team of copywriting experts can help
-                            you create relevant and engaging blog content.</p>
-                        <button onclick="getButtonId(this)" name="Content Blogs Button" id="content-right-button"
-                            class="outlined-white-button" type="button" data-toggle="modal"
-                            data-target="#buttonModal">let's talk!</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-    <!-- <section id="content-two">
-        <div class="container">
-            <div id="email-sms-row" class="row center-aligned-container">
-                <div class="col-md">
-                    <div class="inside-container-content-container-right">
-                        <img id="text-bubble" src="content/images/desktop/email_SMS gif.gif">
-                        <h1 class="body-headings">email/SMS</h1>
-                        <p class="copy-one">Capitalize on your lead generation efforts with email and SMS marketing that
-                            captures your message and drives more purchases.</p>
-                        <button onclick="getButtonId(this)" name="Content email/SMS Button" id="content-two-button"
-                            class="outlined-black-button" type="button" data-toggle="modal"
-                            data-target="#buttonModal">book demo</button>
-                    </div>
-                </div>
-                <div id="content-phone-bg-col" class="col-md"></div>
-            </div>
-        </div>
-    </section> -->
-    <!-- <section id="graphics-three">
-        <div id="like-drives-row" class="row center-aligned-container">
-            <div class="col-md">
-                <img id="content-like-drive-hidden" src="{{ asset('content/images/mobile/content_likedrives_mobile.jpg') }}" width="100%" height="auto">
-            </div>
-
-            <div id="likeDrivesCol" class="col-md">
-                <div class="inside-container-content-container-right">
-                    <div id="content-three-content">
-
-                        <h1 class="body-headings">Graphics Design</h1>
-                        <p class="copy-one">Our graphic designing team have the creative capabilities to take your company’s personality and translate it to visual design. We with careful consideration of color schemes, and essential design principles is fully capable of bringing your brand to life.</p>
-                        <p>
-                            <button class="outlined-black-button" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
-                                Read More
-                            </button>
-                        </p>
-                        <div class="collapse" id="collapseExample2">
-                            <div class="card card-body copy-one" style="background-color: #F4AABB;">
-                            We will work with you every step of the way toward the creation of impressive graphics that you will be proud to have representing your brand. We can design your company logo, business card, etc.
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"
         integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g=="
         crossorigin="anonymous"></script>
@@ -1220,11 +1225,10 @@
                 </a>
             </div>
             <div class="desktopFooterSocialContainer">
-                <a href="https://www.instagram.com/molabs_media" target="_blank"><img
-                        width="100%" height="auto" id="desktopFooterInsta"
-                        src="essentials/footer/images/Instagram_white.svg" /></a>
-                <a class="footerLinks linkCenter" href="https://www.instagram.com/molabs_media"
-                    target="_blank">
+                <a href="https://www.instagram.com/molabs_media" target="_blank">
+    <img width="100%" height="auto" id="desktopFooterInsta" src="{{ asset('essentials/footer/images/Instagram_white.svg') }}" />
+</a>
+                <a class="footerLinks linkCenter" href="https://www.instagram.com/molabs_media" target="_blank">
                     <p class="desktopFooterMainCopy noBottomMargin">Instagram</p>
                 </a>
             </div>
@@ -1237,10 +1241,9 @@
                 </a>
             </div>
             <div class="desktopFooterSocialContainer">
-                <a href="https://www.linkedin.com/company/mo-labs-media" target="_blank"><img width="100%"
-                        height="auto" id="desktopFooterLI" src="essentials/footer/images/Linkedin_white.svg" /></a>
-                <a class="footerLinks linkCenter" href="https://www.linkedin.com/company/mo-labs-media"
-                    target="_blank">
+                <a href="https://www.linkedin.com/company/mo-labs-media" target="_blank"><img width="100%" height="auto"
+                        id="desktopFooterLI" src="essentials/footer/images/Linkedin_white.svg" /></a>
+                <a class="footerLinks linkCenter" href="https://www.linkedin.com/company/mo-labs-media" target="_blank">
                     <p class="desktopFooterMainCopy noBottomMargin">LinkedIn</p>
                 </a>
             </div>
@@ -1270,10 +1273,7 @@
                     <h2 class="desktopFooterHeader">Your Business <br> is unique for us!</h2>
                     <p class="desktopRightsReserved desktopFooterMainCopy"> &#169; 2022 Molabs Media All Rights
                         Reserved.</p>
-                    <!-- <a class="desktopPrivacyAndTerms" href="#disclaimerModal" data-toggle="modal"
-                        data-target="#disclaimerModal">
-                        <p class="desktopFooterMainCopy"><span style="font-weight: bold;">Privacy & Terms</span></p>
-                    </a> -->
+
                 </div>
 
                 <div class="col-2 columnBorderTop">
@@ -1339,20 +1339,16 @@
                 <div class="col-2 columnBorderTop">
                     <h3 class="desktopFooterSubheading">follow</h3>
                     <div class="desktopFooterSocialContainer">
-                        <a href="https://www.facebook.com/Molabsmedia" target="_blank"><img width="100%"
-                                height="auto" id="desktopFooterFB"
-                                src="essentials/footer/images/Facebook_white.svg" /></a>
-                        <a class="footerLinks linkCenter" href="https://www.facebook.com/Molabsmedia"
-                            target="_blank">
+                        <a href="https://www.facebook.com/Molabsmedia" target="_blank"><img width="100%" height="auto"
+                                id="desktopFooterFB" src="essentials/footer/images/Facebook_white.svg" /></a>
+                        <a class="footerLinks linkCenter" href="https://www.facebook.com/Molabsmedia" target="_blank">
                             <p class="desktopFooterMainCopy noBottomMargin">Facebook</p>
                         </a>
                     </div>
                     <div class="desktopFooterSocialContainer">
-                        <a href="https://www.instagram.com/molabs_media" target="_blank"><img
-                                width="100%" height="auto" id="desktopFooterInsta"
-                                src="essentials/footer/images/Instagram_white.svg" /></a>
-                        <a class="footerLinks linkCenter"
-                            href="https://www.instagram.com/molabs_media" target="_blank">
+                        <a href="https://www.instagram.com/molabs_media" target="_blank"><img width="100%" height="auto"
+                                id="desktopFooterInsta" src="essentials/footer/images/Instagram_white.svg" /></a>
+                        <a class="footerLinks linkCenter" href="https://www.instagram.com/molabs_media" target="_blank">
                             <p class="desktopFooterMainCopy noBottomMargin">Instagram</p>
                         </a>
                     </div>
@@ -1398,9 +1394,9 @@
                     </button>
                 </div>
                 <div class="modal-body" style="overflow-y: scroll; height: 450px; background-color: white;"> -->
-                    <!-- Termly Tracking Code -->
-                    <!-- goes here -->
-                   <!--  <embed src="https://app.termly.io/document/privacy-policy/90512b59-d462-4367-b546-069571520429"
+    <!-- Termly Tracking Code -->
+    <!-- goes here -->
+    <!--  <embed src="https://app.termly.io/document/privacy-policy/90512b59-d462-4367-b546-069571520429"
                         style="width: 100%;height: 450px;">
 
                 </div>
@@ -3168,7 +3164,8 @@
                     </div>
 
                     <div id="form-container" class="input-container-mobile">
-                        <form id="popup-form-b-mobile" action="mail.php" method="post" class="popup-form popupDesktopOne">
+                        <form id="popup-form-b-mobile" action="mail.php" method="post"
+                            class="popup-form popupDesktopOne">
                             <div class="mobile-get-onboard-container">
                                 <div class="close-button-container">
                                     <span id="close-popup-button" class="close-popup">

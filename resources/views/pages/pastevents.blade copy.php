@@ -31,8 +31,8 @@
     <!-- -->
     <script src="/assets/analytics.js" type="text/javascript" async></script>
 
-    <link rel="shortcut icon" type="image/jpg" href="{{ asset('essentials/images/favicon/favicon.ico') }}" />
-<link rel="stylesheet" href="{{ asset('style/style.css') }}">
+    <link rel="shortcut icon" type="image/jpg" href="essentials/images/favicon-01.png" />
+    <link rel="stylesheet" href="style/style.css">
 
     <title>Molabs Media – Content Services</title>
     <meta name="description" content="Impress your prospects with stunning and unified content across all channels.">
@@ -170,19 +170,20 @@
                     Services
                 </a>
                 <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                    <li><a class="dropdown-item" href="{{ url('events') }}">Events &raquo; </a>
-                        <ul class="submenu dropdown-menu dropdown-menu-dark">
-                        <li><a class="dropdown-item" href="{{ url('upcomingevents') }}">Upcoming Events</a></li>
-                            <li><a class="dropdown-item" href="{{ url('pastevents') }}">Past Events &raquo; </a>
-                                <ul class="submenu dropdown-menu dropdown-menu-dark">
-                                    <li><a class="dropdown-item" href="{{ url('videos') }}">Video Archive</a></li>
-                                    <li><a class="dropdown-item" href="{{ url('picturearchive') }}">Picture Archive</a></li>
-                                    <li><a class="dropdown-item" href="{{ url('postersarchive') }}">Poster Archive</a></li>
-                                </ul>
-                            </li>
-
-                        </ul>
-                    </li>
+                    <li>
+    <a class="dropdown-item" href="{{ url('events') }}">Events &raquo; </a>
+    <ul class="submenu dropdown-menu dropdown-menu-dark">
+        <li><a class="dropdown-item" href="{{ url('upcomingevents') }}">Upcoming Events</a></li>
+        <li>
+            <a class="dropdown-item" href="{{ url('pastevents') }}">Past Events &raquo; </a>
+            <ul class="submenu dropdown-menu dropdown-menu-dark">
+                <li><a class="dropdown-item" href="{{ url('videos') }}">Video Archive</a></li>
+                <li><a class="dropdown-item" href="{{ url('picturearchive') }}">Picture Archive</a></li>
+                <li><a class="dropdown-item" href="{{ url('posterarchive') }}">Poster Archive</a></li>
+            </ul>
+        </li>
+    </ul>
+</li>
                     <li><a class="dropdown-item" href="{{ url('videoproduction') }}">Video production</a></li>
 <li><a class="dropdown-item" href="{{ url('creativewriting') }}">Creative writing</a></li>
 <li><a class="dropdown-item" href="{{ url('contentwriters') }}">Content writers</a></li>
@@ -216,11 +217,11 @@
                     </a>
                 </li>
 
-                <li class="csquared-sublink"><a class="menu_link" href="{{ url('picturearchive') }}"> Picture Archive
+                <li class="csquared-sublink"><a class="menu_link" href="picturearchive"> Picture Archive
                     </a>
                 </li>
 
-                <li class="csquared-sublink"><a class="menu_link" href="{{ url('postersarchive') }}"> Poster Archive
+                <li class="csquared-sublink"><a class="menu_link" href="posterarchive"> Poster Archive
                     </a>
                 </li>
                 <li class="csquared-sublink"><a class="menu_link" href="{{ url('videoproduction') }}"> Video Production </a></li>
@@ -326,6 +327,8 @@
     <style>
     .row {
         display: flex;
+        width: 100%;
+        height: 100%;
     }
 
     /* Create three equal columns that sits next to each other */
@@ -843,8 +846,8 @@
     <div id="contactus-hero" class="jumbotron hero-height">
         <div id="content-container" class="container hero-container">
             <div id="content-hero-container" class="hp-hero-content-container hp-hero-content-container-alt">
-                <img class="hp-hero-logo" src="molabsmedia/molabs_logo.png">
-                <h1 class="hp-hero-heading">Events</h1>
+                <img class="hp-hero-logo" src="{{ asset('molabsmedia/molabs_logo.png') }}">
+                <h1 class="hp-hero-heading">Past Events</h1>
 
             </div>
         </div>
@@ -856,37 +859,64 @@
             <img id="teal-splash" src="homepage/images/desktop/teal_splash.png">
         </div>
         <div class="what-we-do-container container">
-            <h1 id="whatWeDo" class="body-headings heading-black">Our Events</h1>
+            <h1 id="whatWeDo" class="body-headings heading-black">Past Events</h1>
             <hr id="whatWeDoHr" class="body-hr">
         </div>
 
 
 
+
         <div class="row mb-1-custom">
+
+
             <div class="col-md grid-padding-right">
                 <div class="hp-grid-box-container">
                     <div id="upcoming-box" class="hp-grid-box-content-container grid-container">
-                        <h2 class="body-headings-two heading-white">Upcoming Events</h2>
-                        <!-- <p id="ad-grid-copy" class="copy-two">All-in-one marketing solution <br class="desktop-break">
-                            for <br class="mobile-break"> digital advertising.</p> -->
-                        <button class="outlined-white-button mt-5" type="button"
-                            onclick="window.location.href='upcomingevents'">learn more</button>
+                        <h2 class="body-headings-two heading-white">Video Archive</h2>
+
+                        <a class="outlined-white-button mt-5" href="{{ url('videos') }}" role="button">learn more</a>
                     </div>
                 </div>
             </div>
             <div class="col-md grid-padding-left">
                 <div class="hp-grid-box-container">
                     <div id="archive-box" class="hp-grid-box-content-container grid-container">
-                        <h2 class="body-headings-two heading-white">Past Events</h2>
-                        <!-- <p id="web-grid-copy" class="copy-two">Custom websites to enhance <br class="desktop-break"> <br
-                                class="mobile-break"> your company's image.</p> -->
-                        <button class="outlined-white-button mt-5" type="button"
-                            onclick="window.location.href='{{ url('pastevents') }}'">learn more</button>
+                        <h2 class="body-headings-two heading-white">Picture Archive</h2>
+
+                        <a class="outlined-white-button mt-5" href="{{ url('picturearchive') }}" role="button">learn more</a>
                     </div>
                 </div>
             </div>
+
+
+
+
         </div>
+
+        <div class="row mb-1-custom">
+
+
+            <div class="col-md grid-padding-left">
+                <div class="hp-grid-box-container">
+                    <div id="archive-box" class="hp-grid-box-content-container grid-container">
+                        <h2 class="body-headings-two heading-white">Poster Archive</h2>
+
+                                <a class="outlined-white-button mt-5" href="{{ url('posterarchive') }}" role="button">learn more</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md grid-padding-left">
+                <div class="hp-grid-box-container">
+
+                </div>
+            </div>
+
+
+
         </div>
+
+
     </section>
 
 
@@ -1241,11 +1271,7 @@
             <a class="footerLinks" href="{{ url('index') }}">
     <p class="desktopFooterMainCopy">molabsmedia.com</p>
 </a>
-            <!-- <a class="footerLinks" href="/cdn-cgi/l/email-protection#b5dcdbd3daf5d6c6c4c0d4c7d0d1c6dad6dcd4d99bd6dad8">
-                <p class="desktopFooterMainCopy"><span class="__cf_email__"
-                        data-cfemail="1e777078715e7d6d6f6b7f6c7b7a6d717d777f72307d7173">[email&#160;protected]</span>
-                </p>
-            </a> -->
+
 
             <a class="footerLinks">
 
@@ -1315,10 +1341,7 @@
             </div>
             <hr class="footerHR">
             <p class="desktopRightsReserved desktopFooterMainCopy"> &#169; 2022 Molabs Media All Rights Reserved.</p>
-            <!-- <a class="desktopPrivacyAndTerms" href="#disclaimerModal" data-toggle="modal"
-                data-target="#disclaimerModal">
-                <p class="desktopFooterMainCopy"><span style="font-weight: bold;">Privacy & Terms</span></p>
-            </a> -->
+
         </div>
     </footer>
 

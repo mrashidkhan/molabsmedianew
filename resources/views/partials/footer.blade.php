@@ -1,1123 +1,4 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-
-    <!-- Font Awesome -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap"
-        rel="stylesheet">
-
-    <!-- font awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-        crossorigin="anonymous" />
-
-    <!--Calendly required import-->
-    <link href="/assets/calendly.css" rel="stylesheet">
-    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-    <!-- -->
-    <script src="/assets/analytics.js" type="text/javascript" async></script>
-
-    <link rel="shortcut icon" type="image/jpg" href="{{ asset('essentials/images/favicon/favicon.ico') }}" />
-<link rel="stylesheet" href="{{ asset('style/style.css') }}">
-
-    <title>Molabs Media – Content Services</title>
-    <meta name="description" content="Impress your prospects with stunning and unified content across all channels.">
-
-    <style type="text/css">
-    /* ============ desktop view ============ */
-    @media all and (min-width: 992px) {
-
-        .dropdown-menu li {
-            position: relative;
-        }
-
-        .dropdown-menu .submenu {
-            display: none;
-            position: absolute;
-            left: 100%;
-            top: -7px;
-        }
-
-        .dropdown-menu .submenu-left {
-            right: 100%;
-            left: auto;
-        }
-
-        /* .dropdown-menu > li:hover{ background-color: #f1f1f1 } */
-        .dropdown-menu>li:hover>.submenu {
-            display: block;
-        }
-    }
-
-    /* ============ desktop view .end// ============ */
-
-    /* ============ small devices ============ */
-    @media (max-width: 991px) {
-
-        .dropdown-menu .dropdown-menu {
-            margin-left: 0.7rem;
-            margin-right: 0.7rem;
-            margin-bottom: .5rem;
-        }
-
-    }
-
-    /* ============ small devices .end// ============ */
-    </style>
-
-
-    <script type="text/javascript">
-    //	window.addEventListener("resize", function() {
-    //		"use strict"; window.location.reload();
-    //	});
-
-
-    document.addEventListener("DOMContentLoaded", function() {
-
-
-        /////// Prevent closing from click inside dropdown
-        document.querySelectorAll('.dropdown-menu').forEach(function(element) {
-            element.addEventListener('click', function(e) {
-                e.stopPropagation();
-            });
-        })
-
-
-
-        // make it as accordion for smaller screens
-        if (window.innerWidth < 992) {
-
-            // close all inner dropdowns when parent is closed
-            document.querySelectorAll('.navbar .dropdown').forEach(function(everydropdown) {
-                everydropdown.addEventListener('hidden.bs.dropdown', function() {
-                    // after dropdown is hidden, then find all submenus
-                    this.querySelectorAll('.submenu').forEach(function(everysubmenu) {
-                        // hide every submenu as well
-                        everysubmenu.style.display = 'none';
-                    });
-                })
-            });
-
-            document.querySelectorAll('.dropdown-menu a').forEach(function(element) {
-                element.addEventListener('click', function(e) {
-
-                    let nextEl = this.nextElementSibling;
-                    if (nextEl && nextEl.classList.contains('submenu')) {
-                        // prevent opening link if link needs to open dropdown
-                        e.preventDefault();
-                        console.log(nextEl);
-                        if (nextEl.style.display == 'block') {
-                            nextEl.style.display = 'none';
-                        } else {
-                            nextEl.style.display = 'block';
-                        }
-
-                    }
-                });
-            })
-        }
-        // end if innerWidth
-
-    });
-    // DOMContentLoaded  end
-    </script>
-</head>
-
-<body>
-    <!-- audience files and page -->
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"
-        integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g=="
-        crossorigin="anonymous"></script>
-
-
-
-    <nav class="navbar" id="desktop-navbar">
-        <div id="desktop-navbar-container">
-            <div id="phone-desk-container">
-                <button id="phone" class="nav-link flexauto">
-                    <img id="footer_outlined_phone" src="{{ asset('essentials/images/Phone_white.png') }}">
-                </button>
-                <img id="phone-dropdown-img" src="{{ asset('essentials/images/phone(dropdown)-01.png') }}">
-                <a href="tel:0012146796818" id="mobile-phone" class="nav-link">
-                    <img id="footer_outlined_phone_mobile" src="{{ asset('essentials/images/Phone_white.png') }}">
-                </a>
-                <a href="{{ url('index') }}" id="mobile-logo" class="nav-link flexauto">
-    <img id="mobile-logo-img" src="{{ asset('molabsmedia/molabs_logo.png') }}" alt="Molabs Media Logo">
-</a>
-            </div>
-            <a class="navbar-brand flexauto" href="{{ url('/') }}">
-    <img id="desktop-logo" src="{{ asset('molabsmedia/molabs_logo.png') }}" alt="Molabs Media Logo">
-</a>
-
-            <li class="nav-item dropdown">
-                <a id="services" class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    Services
-                </a>
-                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                    <li><a class="dropdown-item" href="{{ url('events') }}">Events &raquo; </a>
-                        <ul class="submenu dropdown-menu dropdown-menu-dark">
-                        <li><a class="dropdown-item" href="{{ url('upcomingevents') }}">Upcoming Events</a></li>
-                            <li><a class="dropdown-item" href="{{ url('pastevents') }}">Past Events &raquo; </a>
-                                <ul class="submenu dropdown-menu dropdown-menu-dark">
-                                    <li><a class="dropdown-item" href="{{ url('videos') }}">Video Archive</a></li>
-                                    <li><a class="dropdown-item" href="{{ url('picturearchive') }}">Picture Archive</a></li>
-                                    <li><a class="dropdown-item" href="{{ url('postersarchive') }}">Poster Archive</a></li>
-                                </ul>
-                            </li>
-
-                        </ul>
-                    </li>
-                    <li><a class="dropdown-item" href="{{ url('videoproduction') }}">Video production</a></li>
-<li><a class="dropdown-item" href="{{ url('creativewriting') }}">Creative writing</a></li>
-<li><a class="dropdown-item" href="{{ url('contentwriters') }}">Content writers</a></li>
-<li><a class="dropdown-item" href="{{ url('webdesign') }}">Web design</a></li>
-<li><a class="dropdown-item" href="{{ url('graphicsdesign') }}">Graphics design</a></li>
-<li><a class="dropdown-item" href="{{ url('itandtelecom') }}">IT and Telecom Staffing</a></li>
-
-                </ul>
-            </li>
-
-
-            <a href="{{ url('ourteam') }}" id="ourteam" class="nav-link flexauto">Our Team</a>
-<a href="{{ url('aboutus') }}" id="aboutus" class="nav-link flexauto">About us</a>
-<a href="{{ url('contactus') }}" id="contactus" class="nav-link flexauto">Contact Us</a>
-
-            <div class="menu-icon-container">
-                <div class="menu_icon">
-                    <div class="hamburger_menu"></div>
-                </div>
-            </div>
-            <ul class="mobile-dropdown-list">
-                <li><a class="menu_link" href='index'>home</a></li>
-                <li class="csquared-sublink"><a class="menu_link" href="{{ url('events') }}"> Events
-                    </a>
-                </li>
-                <li class="csquared-sublink"><a class="menu_link" href="{{ url('upcomingevents') }}"> Upcoming Events
-                    </a>
-                </li>
-
-                <li class="csquared-sublink"><a class="menu_link" href="{{ url('videos') }}"> Video Archive
-                    </a>
-                </li>
-
-                <li class="csquared-sublink"><a class="menu_link" href="{{ url('picturearchive') }}"> Picture Archive
-                    </a>
-                </li>
-
-                <li class="csquared-sublink"><a class="menu_link" href="{{ url('postersarchive') }}"> Poster Archive
-                    </a>
-                </li>
-                <li class="csquared-sublink"><a class="menu_link" href="{{ url('videoproduction') }}"> Video Production </a></li>
-<li class="csquared-sublink"><a class="menu_link" href="{{ url('creativewriting') }}"> Creative Writing </a></li>
-<li class="csquared-sublink"><a class="menu_link" href="{{ url('contentwriters') }}"> Content Writing </a></li>
-<li class="csquared-sublink"><a class="menu_link" href="{{ url('webdesign') }}"> Web Design </a></li>
-<li class="csquared-sublink"><a class="menu_link" href="{{ url('graphicsdesign') }}"> Graphics Design </a></li>
-<li class="csquared-sublink"><a class="menu_link" href="{{ url('itandtelecom') }}"> IT and Telecom Staffing </a></li>
-<li class="csquared-sublink"><a class="menu_link" href="{{ url('contactus') }}"> Contact us </a></li>
-<li class="csquared-sublink"><a class="menu_link" href="{{ url('aboutus') }}"> About us </a></li>
-
-
-            </ul>
-        </div>
-    </nav>
-
-
-
-    <script>
-    var contactNumber = document.getElementById("phone-dropdown-img");
-    // var transparent = document.getElementById("phone-image-dropdown");
-    var num = 0;
-    $('#phone').click(function(e) {
-        e.stopPropagation();
-        num++;
-        contactNumber.style.display = "inline-block";
-        // transparent.style.display = "inline-block";
-        if (num % 2 == 0) {
-            contactNumber.style.display = "none";
-            // transparent.style.display = "none";
-        }
-        //if anything outside the button dropdown is selected, the dropdown goes away
-        $("body").click(function(e) {
-            num++;
-            if (e.target.id != "phone-dropdown-img") {
-                contactNumber.style.display = "none";
-                $("body").unbind("click");
-            }
-        })
-    });
-    </script>
-
-    <script>
-    var menu_icon = document.querySelector(".menu_icon");
-    var menu_list = document.querySelector(".mobile-dropdown-list");
-    menu_list.style.display = "none";
-
-    menu_icon.addEventListener("click", function() {
-        menu_icon.classList.toggle("active");
-        if (menu_list.style.display === "none") {
-            menu_list.style.display = "block";
-        } else {
-            menu_list.style.display = "none";
-        }
-    });
-    </script>
-
-    <script>
-    var menuList = document.querySelector(".mobile-dropdown-list");
-    $("#contact-us-mob").click(function() {
-        menu_icon.classList.toggle("active");
-        menuList.style.display = "none";
-
-
-        // <!--TODO: test start here-- >
-            $(`#formPopupModal-${sessionStorage['selectedForm']}`).modal('toggle');
-        // location.href="#main-form";
-
-        var mobileQuery = window.matchMedia("(max-width: 768px)");
-        mobileQuery.addListener(function() {
-            $(`#formPopupModal-${sessionStorage['selectedForm']}`).modal('toggle');
-            // location.href="#mobile-form";
-        });
-        // <!--TODO: test end here-- >
-    });
-    </script>
-
-    <script>
-    document.addEventListener('click', function(e) {
-        menu_icon_container = document.querySelector('.menu-icon-container');
-        menu_ham = document.querySelector('.hamburger_menu');
-        if (menu_icon.classList.contains("active") &&
-            !e.target.isEqualNode(menu_ham) &&
-            !e.target.isEqualNode(menu_icon_container) &&
-            !e.target.isEqualNode(menu_icon) &&
-            !e.target.isEqualNode(menu_list)) {
-            menu_icon.classList.toggle("active");
-            menu_list.style.display = "none";
-        }
-    });
-
-    $(window).on('scroll', function(e) {
-        var scroll = $(window).scrollTop();
-        if (scroll > 200) {
-            $(".mobile-dropdown-list").fadeOut();
-            menu_list.style.display = "none";
-            menu_icon.classList.remove("active");
-        }
-    });
-    </script>
-
-
-    <style>
-    .row {
-        display: flex;
-    }
-
-    /* Create three equal columns that sits next to each other */
-    .column {
-        flex: 18%;
-        padding: 5px;
-    }
-
-    #phone-desk-container {
-        display: none;
-    }
-
-    .menu-icon-container {
-        width: 58px;
-        height: 100%;
-        padding-right: 50px;
-        padding-top: 50px;
-        /* margin-left: -50px; */
-        position: relative;
-    }
-
-    #phone-image-dropdown {
-        display: none;
-        background-color: transparent;
-        left: 0;
-        top: 0;
-        width: 100vw;
-        height: 700vh;
-        position: absolute;
-        z-index: 2;
-    }
-
-    #phone-dropdown-img {
-        display: none;
-        width: 150px;
-        position: absolute;
-        margin-left: -75px;
-    }
-
-    #desktop-navbar-container {
-        width: 100%;
-        height: 100%;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        /* padding-left: 25%;
-    padding-right: 25%; */
-        /* display: inline-block; */
-        justify-content: center;
-        align-items: stretch;
-        align-content: stretch;
-        /* margin-left: 3%; */
-    }
-
-    .navbar-brand {
-        padding-left: 0;
-        padding-right: 0;
-        margin-right: 0;
-    }
-
-    #services {
-        padding-right: 3vw;
-        padding-left: 5vw;
-    }
-
-    #services-list {
-        padding-right: 3vw;
-        padding-left: 5vw;
-    }
-
-    #ourteam {
-        padding-right: 3vw;
-        padding-left: 3vw;
-    }
-
-    #aboutus {
-        padding-right: 3vw;
-        padding-left: 3vw;
-    }
-
-    #contactus {
-        padding-right: 3vw;
-        padding-left: 3vw;
-    }
-
-    #content {
-        /* padding-right: 16%;
-    padding-left: 6%; */
-        /* padding-right: 215px;
-    padding-left: 60px; */
-        padding-right: 10vw;
-        padding-left: 3vw;
-    }
-
-    #footer_outlined_phone {
-        width: 30px;
-        height: 30px;
-    }
-
-    #desktop-logo {
-        width: 70px;
-        height: auto;
-        /* margin-left: 50px; */
-    }
-
-    .menu_icon {
-        position: absolute;
-        /* top: 10px;
-    left: 20px; */
-        left: 15px;
-        bottom: 76px;
-        transform: translate(-50%, -50%);
-        /* width: 80px;
-    height: 80px; */
-        cursor: pointer;
-        margin-left: -13px;
-    }
-
-    .hamburger_menu {
-        position: absolute;
-        width: 25px;
-        height: 8px;
-        background: transparent;
-        top: 50px;
-        left: 25px;
-        transform: translate(-50%, -50%);
-        box-shadow: 0 2px 5px rgba(0, 0, 0, .0);
-    }
-
-    .hamburger_menu::before,
-    .hamburger_menu::after {
-        content: "";
-        position: absolute;
-        width: 25px;
-        height: 1px;
-        background: #fff;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        transition: 0.5s;
-        /* left: -18.5px; */
-        left: 0;
-    }
-
-    .hamburger_menu::after {
-        top: 8px;
-    }
-
-    .hamburger_menu::before {
-        top: -4px;
-    }
-
-    .menu_icon.active .hamburger_menu {
-        background: rgba(0, 0, 0, 0);
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
-        transition: 0.2s;
-    }
-
-    .menu_icon.active .hamburger_menu::before {
-        top: 0;
-        transform: rotate(45deg);
-    }
-
-    .menu_icon.active .hamburger_menu::after {
-        top: 0;
-        transform: rotate(-45deg);
-    }
-
-    /**desktop navbar styling */
-    #audience {
-        margin-left: 100px;
-    }
-
-    #phone {
-        border: none;
-        background: transparent;
-        /* margin-left: 150px; */
-        /* padding-right: 8.5%;
-    padding-left: 8.5% */
-    }
-
-    #dropdown-button {
-        border: none;
-        background-color: black;
-        color: white;
-    }
-
-    #dropdown-list {
-        list-style: none;
-        padding-left: 0;
-        text-align: left;
-    }
-
-    .dropdown:hover .dropdown-content {
-        display: block;
-        padding: 0;
-    }
-
-    .dropdown {
-        position: relative;
-        display: inline-block;
-        color: white;
-    }
-
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f9f9f9;
-        min-width: 100px;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-        color: black;
-        margin-left: -125%;
-    }
-
-    .dropdown-content a {
-        color: black;
-        padding: 5px 10px;
-        text-decoration: none;
-        display: block;
-    }
-
-    .dropdown-content a:hover {
-        background-color: none;
-    }
-
-    .navbar {
-        background-color: #1F1F1F;
-        padding-left: 5%;
-        padding-right: 5%;
-        position: fixed !important;
-        top: 0;
-        width: 100%;
-        text-align: center;
-        justify-content: center;
-        z-index: 99999;
-        height: 75px;
-        overflow: visible;
-    }
-
-    .nav-link {
-        color: white !important;
-        text-decoration: none;
-        transition: 0s;
-        font-weight: 200;
-    }
-
-    .navbar a:hover {
-        background-color: none;
-        color: white;
-    }
-
-    /**mobile navbar styling */
-    #mobile-navbar {
-        display: none;
-        background-color: black;
-        width: 100%;
-        height: 75px;
-        position: fixed;
-        padding: 0;
-    }
-
-    .mobile-dropdown {
-        position: relative;
-        display: inline-block;
-        color: white;
-    }
-
-    #mobile-dropdown-button {
-        border: none;
-        background-color: black;
-        color: white;
-    }
-
-    .mobile-dropdown:hover .mobile-dropdown-content {
-        display: block;
-    }
-
-    .mobile-dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f9f9f9;
-        min-width: 100px;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-        color: black;
-        margin-left: -15%;
-    }
-
-    .mobile-dropdown-content a {
-        color: black;
-        padding: 5px 10px;
-        text-decoration: none;
-        display: block;
-    }
-
-    .mobile-dropdown-content a:hover {
-        background-color: none;
-    }
-
-    /** hamburger dropdown styling */
-    .mobile-dropdown-list {
-        list-style: none;
-        padding-left: 20px !important;
-        padding-bottom: 20px;
-        padding-right: 20px;
-        padding-top: 10px;
-        text-align: left;
-        position: absolute;
-        top: 55px;
-        right: 0;
-        line-height: 42px;
-        background-color: #1F1F1F;
-        color: #C8C8C8;
-        height: 100vh;
-        font-size: 44px;
-        text-align: left;
-        /* width: 28vw; */
-    }
-
-    .menu_link:link {
-        color: white;
-        text-decoration: none;
-        /* font-size: 35px; */
-        font-weight: 300;
-    }
-
-    a.menu_link {
-        color: white;
-        text-decoration: none;
-        font-weight: 300;
-    }
-
-    a {
-        color: #C8C8C8;
-    }
-
-    #mobile-logo-img {
-        display: none;
-    }
-
-    #footer_outlined_phone_mobile {
-        display: none;
-    }
-
-    .flexauto {
-        flex: auto;
-    }
-
-    /*
-.csquared-sublink{
-    font-size: 35px;
-    margin-left: 15px;
-} */
-
-    .menu_link {
-        font-size: 35px;
-    }
-
-    .csquared-sublink>.menu_link {
-        font-size: 27px;
-        font-weight: 100;
-    }
-
-
-    /* #desktop-navbar{
-    display: none;
-}
-
-#mobile-navbar{
-    display: inline-block;
-} */
-
-
-    /** Navbar Responsiveness */
-
-    /* @media screen and (min-width: 2560px){
-    .mobile-dropdown-list{
-        padding-left: 4%;
-    }
-} */
-
-    @media screen and (max-width: 1920px) {
-        .mobile-dropdown-list {
-            width: 26vw;
-        }
-
-        .csquared-sublink {
-            /* font-size: 35px; */
-            margin-left: 15px;
-        }
-    }
-
-    @media screen and (max-width: 1600px) {
-        .mobile-dropdown-list {
-            width: 28vw;
-        }
-    }
-
-    @media screen and (max-width: 1400px) {
-        .mobile-dropdown-list {
-            width: 30vw;
-        }
-    }
-
-    @media screen and (max-width: 768px) {
-        .csquared-sublink>.menu_link {
-            padding-left: 15px;
-            font-size: 20px;
-        }
-
-        .csquared-sublink {
-            /* font-size: 35px; */
-            margin-left: 0px;
-        }
-
-        #phone-desk-container {
-            display: inline-block;
-        }
-
-        #desktop-navbar {
-            /* display: none; */
-        }
-
-        #mobile-navbar {
-            /* display: inline-block; */
-            /* text-align: center;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-content: center;
-        justify-content: center;
-        justify-content: space-evenly;
-        align-items: center; */
-            display: inline-flex;
-            flex-direction: row;
-            flex-wrap: nowrap;
-            align-content: stretch;
-            justify-content: space-evenly;
-            align-items: center;
-        }
-
-        .mobile-dropdown {
-            display: inline-block;
-        }
-
-        #mobile-logo {
-            display: inline-block;
-            padding-left: 20vw;
-            padding-right: 20vw;
-        }
-
-        #mobile-logo-img {
-            width: 35px;
-        }
-
-        #mobile-phone {
-            display: inline-block;
-            padding-left: 10px;
-            padding-right: 10px;
-            margin-right: 0px;
-        }
-
-        .nav-link {
-            display: none;
-        }
-
-        #desktop-logo {
-            display: none;
-        }
-
-        #mobile-logo-img {
-            display: inline-block;
-        }
-
-        #footer_outlined_phone_mobile {
-            display: inline-block;
-            width: 25px;
-        }
-
-        .navbar {
-            background-color: #000000;
-            width: 100%;
-            height: 75px;
-            position: fixed;
-        }
-
-        .mobile-dropdown-list {
-            background-color: #000000;
-            width: 55vw;
-            text-align: left;
-            padding-left: 15px !important;
-            padding-right: 15% !important;
-        }
-
-        .flexauto {
-            flex: unset;
-        }
-    }
-
-
-    @media only screen and (max-width: 600px) {
-        .mobile-dropdown-list {
-            padding-right: 15% !important;
-            text-align: left;
-            width: 55vw;
-            padding-left: 15px !important;
-        }
-
-        .csquared-sublink>.menu_link {
-            padding-left: 15px;
-            font-size: 20px;
-        }
-    }
-    </style>
-
-    <div id="contactus-hero" class="jumbotron hero-height">
-        <div id="content-container" class="container hero-container">
-            <div id="content-hero-container" class="hp-hero-content-container hp-hero-content-container-alt">
-                <img class="hp-hero-logo" src="molabsmedia/molabs_logo.png">
-                <h1 class="hp-hero-heading">Events</h1>
-
-            </div>
-        </div>
-
-    </div>
-
-    <section id="section-two">
-        <div class="teal-splash-container">
-            <img id="teal-splash" src="homepage/images/desktop/teal_splash.png">
-        </div>
-        <div class="what-we-do-container container">
-            <h1 id="whatWeDo" class="body-headings heading-black">Our Events</h1>
-            <hr id="whatWeDoHr" class="body-hr">
-        </div>
-
-
-
-        <div class="row mb-1-custom">
-            <div class="col-md grid-padding-right">
-                <div class="hp-grid-box-container">
-                    <div id="upcoming-box" class="hp-grid-box-content-container grid-container">
-                        <h2 class="body-headings-two heading-white">Upcoming Events</h2>
-                        <!-- <p id="ad-grid-copy" class="copy-two">All-in-one marketing solution <br class="desktop-break">
-                            for <br class="mobile-break"> digital advertising.</p> -->
-                        <button class="outlined-white-button mt-5" type="button"
-                            onclick="window.location.href='upcomingevents'">learn more</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md grid-padding-left">
-                <div class="hp-grid-box-container">
-                    <div id="archive-box" class="hp-grid-box-content-container grid-container">
-                        <h2 class="body-headings-two heading-white">Past Events</h2>
-                        <!-- <p id="web-grid-copy" class="copy-two">Custom websites to enhance <br class="desktop-break"> <br
-                                class="mobile-break"> your company's image.</p> -->
-                        <button class="outlined-white-button mt-5" type="button"
-                            onclick="window.location.href='{{ url('pastevents') }}'">learn more</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
-    </section>
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"
-        integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g=="
-        crossorigin="anonymous"></script>
-
-    <form id="main-form" action="mail.php" method="post" autocomplete="off">
-        <div class="form-container container lets-talk-form">
-            <h1 id="homepage-form-heading">let's talk</h1>
-            <hr
-                style="opacity: 1; color: black; width: 35px; height: 10px; margin-left: -11px; margin-top: 2rem; margin-bottom: 2rem;">
-            <div id="main-form-confirmation">
-                <p><span style="font-weight: bold;">Thank you for contacting us!</span> We will be in touch soon.</p>
-            </div>
-            <div class="row">
-                <input name="full_name" id="form-fullname" type="text" class="field-in-row my-top-border"
-                    placeholder="full name" required>
-                <input name="email" id="form-email" type="email" class="field-in-row my-top-border" placeholder="email"
-                    required>
-                <input name="phone_number" id="form-phone-number" type="text" class="field-in-row my-top-border"
-                    placeholder="phone number" required>
-            </div>
-
-            <div class="row">
-                <input name="lead_business_name" id="form-business-name" type="text" placeholder="business name"
-                    required>
-            </div>
-
-            <div class="row">
-                <textarea name="msg" id="form-message" rows="7" cols="50" placeholder="message"></textarea>
-            </div>
-
-            <!-- used to get he values from the utm script -->
-            <input name="utm_data" type="hidden" id="utmDataField">
-
-            <button onclick="getButtonId(this)" name="Footer Form" id="form-button" type="submit">submit</button>
-            <div id="form-disclaimer">* By clicking submit, you agree to our terms of service.</div>
-        </div>
-    </form>
-
-    <style>
-    /** stop ios rounded corners */
-    input {
-        -webkit-border-radius: 0;
-        border-radius: 0;
-    }
-
-    textarea {
-        -webkit-border-radius: 0;
-        border-radius: 0;
-    }
-
-    #form-fullname {
-        font-size: 20px;
-    }
-
-    #main-form-confirmation {
-        display: none;
-        border: solid 2px;
-        font-size: 25px;
-        font-family: 'Source Code Pro', sans-serif;
-        padding-top: 20px;
-        padding-bottom: 80px;
-        padding-left: 15px;
-    }
-
-    #main-form {
-        outline: none;
-        height: 100%;
-        padding-top: 80px;
-        padding-bottom: 80px;
-        /* height: 700px; */
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-
-    #homepage-form-heading {
-        margin-left: -11px;
-        /* font-weight: 700; */
-        /* font-size: 70px; */
-    }
-
-    .form-container {
-        /* padding-bottom: 80px;
-        padding-top: 80px; */
-    }
-
-    .lets-talk-form {
-        display: block !important;
-    }
-
-    .field-in-row {
-        width: 33.3%;
-        border-left: none;
-        height: 70px;
-        font-family: 'Source Code Pro', monospace;
-        font-size: 20px;
-        outline: none;
-        background-color: transparent;
-    }
-
-    #form-phone-number {
-        border-right: none;
-        font-size: 20px;
-        outline: none;
-        background-color: transparent;
-    }
-
-    #form-business-name {
-        font-size: 20px;
-        border: none;
-        height: 70px;
-        font-family: 'Source Code Pro', monospace;
-        outline: none;
-        background-color: transparent;
-    }
-
-    #form-message {
-        font-size: 20px;
-        font-family: 'Source Code Pro', monospace;
-        border-left: none;
-        border-right: none;
-        resize: none;
-        outline: none;
-        background-color: transparent;
-        padding-top: 25px;
-    }
-
-    .my-top-border {
-        border-top: 5px solid black;
-    }
-
-    #form-button {
-        width: 250px;
-        height: 64px;
-        border: solid;
-        background: transparent;
-        margin-left: -12px;
-        font-size: 18px;
-        font-weight: bold;
-        box-shadow: inset 0 0 0 0 black;
-        transition: ease-out 0.3s;
-        outline: none;
-    }
-
-    #form-button:hover {
-        box-shadow: inset 250px 0 0 0 black;
-        border-color: black;
-        color: white;
-    }
-
-    #form-disclaimer {
-        font-weight: bold;
-        display: inline-block;
-        padding-left: 20px;
-        font-size: 12px;
-        position: absolute;
-        margin-top: 20px;
-    }
-    </style>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"
-        integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g=="
-        crossorigin="anonymous"></script>
-
-    <form id="mobile-form" action="mail.php" method="post" autocomplete="off" style="width: 100%;">
-        <div class="mobile-form-container">
-            <h1 id="homepage-form-heading-mobile">let's talk</h1>
-            <hr style="opacity: 1; color: black; width: 15px; height: 4pt; margin-left: -11px; margin-bottom: 2rem;">
-            <div id="mobile-form-confirmation">
-                <p><span style="font-weight: bold;">Thank you for contacting us!</span> We will be in touch soon.</p>
-            </div>
-            <div class="row">
-                <input style="width: 50%;" name="full_name" id="form-fullname-mobile" type="text"
-                    class="field-in-row-mobile my-top-border-mobile" placeholder="full name" required>
-                <input style="width: 50%;" name="phone_number" id="form-phone-number-mobile" type="text"
-                    class="field-in-row-mobile my-top-border-mobile" placeholder="phone number" required>
-            </div>
-
-            <div class="row">
-                <input style="width: 100%;" name="email" id="form-email-mobile" type="email" placeholder="email"
-                    required>
-            </div>
-
-            <div class="row">
-                <input style="width: 100%;" name="lead_business_name" id="form-business-name-mobile" type="text"
-                    placeholder="business name" required>
-            </div>
-
-            <div class="row">
-                <textarea style="width: 100%;" name="msg" id="form-message-mobile" rows="7" cols="50"
-                    placeholder="message"></textarea>
-            </div>
-
-            <!-- used to get he values from the utm script -->
-            <input name="utm_data" type="hidden" id="utmDataFieldTwo">
-
-            <button onclick="getButtonId(this)" name="Footer Form" id="form-button-mobile">submit</button>
-            <div id="form-disclaimer-mobile">* By clicking submit, you agree to our terms of service.</div>
-        </div>
-    </form>
-
-    <style>
-    #event1-left-box {
-        background-image: url('images/event1.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: bottom;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding-bottom: 25px;
-        min-height: 1050px;
-        margin-top: 25px;
-        margin-bottom: 25px;
-    }
-
-    #event2-right-box {
-        background-image: url('images/event2.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: bottom;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding-bottom: 25px;
-        min-height: 1050px;
-        margin-top: 25px;
-        margin-bottom: 25px;
-    }
-
+<style>
     input {
         -webkit-border-radius: 0;
         border-radius: 0;
@@ -1241,11 +122,7 @@
             <a class="footerLinks" href="{{ url('index') }}">
     <p class="desktopFooterMainCopy">molabsmedia.com</p>
 </a>
-            <!-- <a class="footerLinks" href="/cdn-cgi/l/email-protection#b5dcdbd3daf5d6c6c4c0d4c7d0d1c6dad6dcd4d99bd6dad8">
-                <p class="desktopFooterMainCopy"><span class="__cf_email__"
-                        data-cfemail="1e777078715e7d6d6f6b7f6c7b7a6d717d777f72307d7173">[email&#160;protected]</span>
-                </p>
-            </a> -->
+
 
             <a class="footerLinks">
 
@@ -1263,14 +140,7 @@
                     <p class="desktopFooterMainCopy stateInformation">Dallas, TX, 75234</p>
                 </div>
             </div>
-            <!-- <div class="locationsContainer">
-        <img class="stateIcon" src="essentials/footer/images/ID.svg" />
-            <div>
-                <p class="desktopFooterMainCopy stateInformation"><span style="font-weight: bold;">Boise, ID</span></p>
-                <p class="desktopFooterMainCopy stateInformation dontWrapText">1861 S Wells Ave #300</p>
-                <p class="desktopFooterMainCopy stateInformation">Meridian, ID 83642</p>
-            </div>
-        </div> -->
+
             <hr class="footerHR">
             <h3 class="desktopFooterSubheading">follow</h3>
             <div class="desktopFooterSocialContainer">
@@ -1315,10 +185,7 @@
             </div>
             <hr class="footerHR">
             <p class="desktopRightsReserved desktopFooterMainCopy"> &#169; 2022 Molabs Media All Rights Reserved.</p>
-            <!-- <a class="desktopPrivacyAndTerms" href="#disclaimerModal" data-toggle="modal"
-                data-target="#disclaimerModal">
-                <p class="desktopFooterMainCopy"><span style="font-weight: bold;">Privacy & Terms</span></p>
-            </a> -->
+
         </div>
     </footer>
 
@@ -1330,10 +197,7 @@
                     <h2 class="desktopFooterHeader">Your Business <br> is unique for us!</h2>
                     <p class="desktopRightsReserved desktopFooterMainCopy"> &#169; 2022 Molabs Media All Rights
                         Reserved.</p>
-                    <!-- <a class="desktopPrivacyAndTerms" href="#disclaimerModal" data-toggle="modal"
-                        data-target="#disclaimerModal">
-                        <p class="desktopFooterMainCopy"><span style="font-weight: bold;">Privacy & Terms</span></p>
-                    </a> -->
+
                 </div>
 
                 <div class="col-2 columnBorderTop">
@@ -1341,10 +205,10 @@
                     <a class="desktopFooterPhone footerLinks">
                         <p class="desktopFooterMainCopy"><span style="font-weight: bold;">+1 214-679-6818</span></p>
                     </a>
-                    <a class="footerLinks" href="{{ url('/') }}">
-    <p class="desktopFooterMainCopy">molabsmedia.com</p>
-</a>
-                    <!-- <a class="footerLinks" href="/cdn-cgi/l/email-protection#98f1f6fef7d8fbebe9edf9eafdfcebf7fbf1f9f4b6fbf7f5"><p class="desktopFooterMainCopy"><span class="__cf_email__" data-cfemail="127b7c747d527161636773607776617d717b737e3c717d7f">[email&#160;protected]</span></p></a> -->
+                    <a class="footerLinks" href="index">
+                        <p class="desktopFooterMainCopy">molabsmedia.com</p>
+                    </a>
+
 
                     <a class="footerLinks">
 
@@ -1363,27 +227,20 @@
                             <p class="desktopFooterMainCopy stateInformation">Dallas, TX, 75234</p>
                         </div>
                     </div>
-                    <!-- <div class="locationsContainer">
-                <img class="stateIcon" src="essentials/footer/images/ID.svg" />
-                    <div>
-                        <p class="desktopFooterMainCopy stateInformation"><span style="font-weight: bold;">Boise, ID</span></p>
-                        <p class="desktopFooterMainCopy stateInformation dontWrapText">1861 S Wells Ave #300</p>
-                        <p class="desktopFooterMainCopy stateInformation">Meridian, ID 83642</p>
-                    </div>
-                </div> -->
+
                 </div>
                 <div class="col-2 columnBorderTop">
                     <h3 class="desktopFooterSubheading">information</h3>
-                    <a class="footerLinks" href="{{ url('upcomingevents') }}">
+                    <a class="footerLinks" href="videoproduction">
                         <p class="desktopFooterMainCopy">Video Production</p>
                     </a>
-                    <a class="footerLinks" href="{{ url('creativewriting') }}">
+                    <a class="footerLinks" href="creativewriting">
                         <p class="desktopFooterMainCopy">Creative Writing</p>
                     </a>
-                    <a class="footerLinks" href="{{ url('contentwriters') }}">
+                    <a class="footerLinks" href="contentwriters">
                         <p class="desktopFooterMainCopy">Content Writing</p>
                     </a>
-                    <a class="footerLinks" href="{{ url('webdesign') }}">
+                    <a class="footerLinks" href="webdesign">
                         <p class="desktopFooterMainCopy">Web Design</p>
                     </a>
 
@@ -1391,7 +248,7 @@
                         <p class="desktopFooterMainCopy">Graphics Design</p>
                     </a>
 
-                    <a class="footerLinks" href="{{ url('itandtelecom') }}">
+                    <a class="footerLinks" href="itandtelecom">
                         <p class="desktopFooterMainCopy">IT and Telecom Staffing</p>
                     </a>
 
@@ -1442,29 +299,7 @@
         </div>
     </footer>
 
-    <!-- <div class="modal" tabindex="-1" role="dialog" aria-labelledby="disclaimerModal" aria-hidden="true"
-        id="disclaimerModal" data-backdrop="false">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content" style="width: 100%;">
-                <div class="modal-header" style="background-color: white;">
-                    <h5 class="modal-title">Privacy & Terms</h5>
-                    <button id="close-disclaimer" type="button" class="close" data-dismiss="modal" aria-label="Close"
-                        style="border-radius: 25px; border-color: black; border: solid; background-color: white;">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body" style="overflow-y: scroll; height: 450px; background-color: white;"> -->
-    <!-- Termly Tracking Code -->
-    <!-- goes here -->
-    <!--  <embed src="https://app.termly.io/document/privacy-policy/90512b59-d462-4367-b546-069571520429"
-                        style="width: 100%;height: 450px;">
 
-                </div>
-            </div>
-        </div>
-    </div> -->
-
-    <!-- <script language='JavaScript1.1' async src='//pixel.mathtag.com/event/js?mt_id=1541489&mt_adid=245306&mt_exem=&mt_excl=&v1=&v2=&v3=&s1=&s2=&s3='></script> -->
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script type="text/javascript">
     _linkedin_partner_id = "1293980";
@@ -2246,10 +1081,7 @@
                     height: 40px;
                     border: solid 1px black;
                     border-radius: 0.25rem;
-                    /* background-image: url('essentials/forms/images/popup_person_button.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center; */
+
                     color: white;
                     font-family: 'Pro Source Code', monospace;
                     font-weight: 800;
@@ -2617,10 +1449,7 @@
                     height: 40px;
                     border: solid 1px black;
                     border-radius: 0.25rem;
-                    /* background-image: url('essentials/forms/images/popup_person_button.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center; */
+
                     color: white;
                     font-family: 'Pro Source Code', monospace;
                     font-weight: 800;
@@ -2905,7 +1734,7 @@
                                 <!-- <div class="form-group"> -->
                                 <textarea name="msg" id="message_four" type="text" class="help-input msg"
                                     placeholder="how can we help?" rows="5"></textarea>
-                                <!-- </div> -->
+
                                 <!-- used to get he values from the utm script -->
                                 <input name="utm_data" type="hidden" id="utmButtonMobileFour">
                                 <button id="popup-form-button" type="submit" class="mobile-form-button">submit</button>
@@ -2991,10 +1820,7 @@
                     height: 40px;
                     border: solid 1px black;
                     border-radius: 0.25rem;
-                    /* background-image: url('essentials/forms/images/popup_person_button.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center; */
+
                     color: white;
                     font-family: 'Pro Source Code', monospace;
                     font-weight: 800;
@@ -3357,10 +2183,7 @@
                     height: 40px;
                     border: solid 1px black;
                     border-radius: 0.25rem;
-                    /* background-image: url('essentials/forms/images/popup_person_button.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center; */
+
                     color: white;
                     font-family: 'Pro Source Code', monospace;
                     font-weight: 800;
@@ -3737,3 +2560,13 @@ input[type="text"] {
     }
 }
 </style>
+
+
+<script>
+    window.addEventListener('load', function() {
+        var element = document.getElementById('contactmessage');
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+</script>

@@ -31,11 +31,104 @@
     <!-- -->
     <script src="/assets/analytics.js" type="text/javascript" async></script>
 
-    <link rel="shortcut icon" type="image/jpg" href="essentials/images/favicon-01.png" />
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="shortcut icon" type="image/jpg" href="{{ asset('essentials/images/favicon/favicon.ico') }}" />
+<link rel="stylesheet" href="{{ asset('style/style.css') }}">
 
     <title>Molabs Media – Content Services</title>
     <meta name="description" content="Impress your prospects with stunning and unified content across all channels.">
+
+    <style type="text/css">
+
+/* ============ desktop view ============ */
+@media all and (min-width: 992px) {
+
+	.dropdown-menu li{
+		position: relative;
+	}
+	.dropdown-menu .submenu{
+		display: none;
+		position: absolute;
+		left:100%; top:-7px;
+	}
+	.dropdown-menu .submenu-left{
+		right:100%; left:auto;
+	}
+
+	/* .dropdown-menu > li:hover{ background-color: #f1f1f1 } */
+	.dropdown-menu > li:hover > .submenu{
+		display: block;
+	}
+}
+/* ============ desktop view .end// ============ */
+
+/* ============ small devices ============ */
+@media (max-width: 991px) {
+
+.dropdown-menu .dropdown-menu{
+		margin-left:0.7rem; margin-right:0.7rem; margin-bottom: .5rem;
+}
+
+}
+/* ============ small devices .end// ============ */
+
+</style>
+
+
+<script type="text/javascript">
+//	window.addEventListener("resize", function() {
+//		"use strict"; window.location.reload();
+//	});
+
+
+	document.addEventListener("DOMContentLoaded", function(){
+
+
+    	/////// Prevent closing from click inside dropdown
+		document.querySelectorAll('.dropdown-menu').forEach(function(element){
+			element.addEventListener('click', function (e) {
+			  e.stopPropagation();
+			});
+		})
+
+
+
+		// make it as accordion for smaller screens
+		if (window.innerWidth < 992) {
+
+			// close all inner dropdowns when parent is closed
+			document.querySelectorAll('.navbar .dropdown').forEach(function(everydropdown){
+				everydropdown.addEventListener('hidden.bs.dropdown', function () {
+					// after dropdown is hidden, then find all submenus
+					  this.querySelectorAll('.submenu').forEach(function(everysubmenu){
+					  	// hide every submenu as well
+					  	everysubmenu.style.display = 'none';
+					  });
+				})
+			});
+
+			document.querySelectorAll('.dropdown-menu a').forEach(function(element){
+				element.addEventListener('click', function (e) {
+
+				  	let nextEl = this.nextElementSibling;
+				  	if(nextEl && nextEl.classList.contains('submenu')) {
+				  		// prevent opening link if link needs to open dropdown
+				  		e.preventDefault();
+				  		console.log(nextEl);
+				  		if(nextEl.style.display == 'block'){
+				  			nextEl.style.display = 'none';
+				  		} else {
+				  			nextEl.style.display = 'block';
+				  		}
+
+				  	}
+				});
+			})
+		}
+		// end if innerWidth
+
+	});
+	// DOMContentLoaded  end
+</script>
 </head>
 
 <body>
@@ -54,7 +147,7 @@
                     <img id="footer_outlined_phone" src="{{ asset('essentials/images/Phone_white.png') }}">
                 </button>
                 <img id="phone-dropdown-img" src="{{ asset('essentials/images/phone(dropdown)-01.png') }}">
-                <a href="tel:8583867400" id="mobile-phone" class="nav-link">
+                <a href="tel:0012146796818" id="mobile-phone" class="nav-link">
                     <img id="footer_outlined_phone_mobile" src="{{ asset('essentials/images/Phone_white.png') }}">
                 </a>
                 <a href="{{ url('index') }}" id="mobile-logo" class="nav-link flexauto">
@@ -71,27 +164,26 @@
                     Services
                 </a>
                 <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                <li>
-    <a class="dropdown-item" href="{{ url('events') }}">Events &raquo; </a>
-    <ul class="submenu dropdown-menu dropdown-menu-dark">
-        <li><a class="dropdown-item" href="{{ url('upcomingevents') }}">Upcoming Events</a></li>
-        <li>
-            <a class="dropdown-item" href="{{ url('pastevents') }}">Past Events &raquo; </a>
-            <ul class="submenu dropdown-menu dropdown-menu-dark">
-                <li><a class="dropdown-item" href="{{ url('videos') }}">Video Archive</a></li>
-                <li><a class="dropdown-item" href="{{ url('picturearchive') }}">Picture Archive</a></li>
-                <li><a class="dropdown-item" href="{{ url('posterarchive') }}">Poster Archive</a></li>
-            </ul>
-        </li>
-    </ul>
-</li>
+                <li><a class="dropdown-item" href="{{ url('events') }}">Events &raquo; </a>
+                        <ul class="submenu dropdown-menu dropdown-menu-dark">
+                        <li><a class="dropdown-item" href="{{ url('upcomingevents') }}">Upcoming Events</a></li>
+                            <li><a class="dropdown-item" href="{{ url('pastevents') }}">Past Events &raquo; </a>
+                                <ul class="submenu dropdown-menu dropdown-menu-dark">
+                                    <li><a class="dropdown-item" href="{{ url('videos') }}">Video Archive</a></li>
+                                    <li><a class="dropdown-item" href="{{ url('picturearchive') }}">Picture Archive</a></li>
+                                    <li><a class="dropdown-item" href="{{ url('postersarchive') }}">Poster Archive</a></li>
+                                </ul>
+                            </li>
 
+                        </ul>
+                    </li>
                     <li><a class="dropdown-item" href="{{ url('videoproduction') }}">Video production</a></li>
 <li><a class="dropdown-item" href="{{ url('creativewriting') }}">Creative writing</a></li>
 <li><a class="dropdown-item" href="{{ url('contentwriters') }}">Content writers</a></li>
 <li><a class="dropdown-item" href="{{ url('webdesign') }}">Web design</a></li>
 <li><a class="dropdown-item" href="{{ url('graphicsdesign') }}">Graphics design</a></li>
 <li><a class="dropdown-item" href="{{ url('itandtelecom') }}">IT and Telecom Staffing</a></li>
+
                 </ul>
             </li>
 
@@ -106,7 +198,7 @@
                 </div>
             </div>
             <ul class="mobile-dropdown-list">
-                <li><a class="menu_link" href="{{ url('index') }}">home</a></li>
+                <li><a class="menu_link" href='index'>home</a></li>
                 <li class="csquared-sublink"><a class="menu_link" href="{{ url('events') }}"> Events
                     </a>
                 </li>
@@ -122,7 +214,7 @@
                     </a>
                 </li>
 
-                <li class="csquared-sublink"><a class="menu_link" href="{{ url('posterarchive') }}"> Poster Archive
+                <li class="csquared-sublink"><a class="menu_link" href="{{ url('postersarchive') }}"> Poster Archive
                     </a>
                 </li>
                 <li class="csquared-sublink"><a class="menu_link" href="{{ url('videoproduction') }}"> Video Production </a></li>
@@ -747,10 +839,10 @@
         </div>
     </div> -->
 
-    <section id="welcome-thanks">
+    <section id="graphics-design">
         <div id="like-drives-row" class="row center-aligned-container">
             <div class="col-md">
-                <img id="content-like-drive-hidden" src="homepage/images/newdesktop/thanks.jpg"
+                <img id="content-like-drive-hidden" src="homepage/images/newdesktop/home_graphics.jpg"
                     width="100%" height="auto">
             </div>
 
@@ -758,12 +850,10 @@
                 <div class="inside-container-content-container-right">
                     <div id="content-three-content">
                         <!-- <img id="thumbs-up" src="content/images/thumb_and_numbers.png"> -->
-                        <h1 class="body-headings">Thank you</h1>
-                        <p class="copy-one">for contacting us! We will be in touch soon. </p>
-                        <!-- <button onclick="getButtonId(this)" name="Content Like Drives Button" id="content-three-button"
-                            class="outlined-black-button" type="button" data-toggle="modal"
-                            data-target="#buttonModal">book demo</button> -->
-                            <!-- <p>
+                        <h1 class="body-headings">Graphics Design</h1>
+                        <p class="copy-one">Our graphic designing team have the creative capabilities to take your company’s personality and translate it to visual design. We with careful consideration of color schemes, and essential design principles is fully capable of bringing your brand to life. </p>
+                        
+                            <p>
                             <button class="outlined-black-button" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
                                 Read More
@@ -773,7 +863,7 @@
                             <div class="card card-body copy-one" style="background-color: #EFBB31;">
                             We will work with you every step of the way toward the creation of impressive graphics that you will be proud to have representing your brand. We can design your company logo, business card, etc.
                             </div>
-                        </div> -->
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1179,11 +1269,7 @@
             <a class="footerLinks" href="{{ url('index') }}">
     <p class="desktopFooterMainCopy">molabsmedia.com</p>
 </a>
-            <!-- <a class="footerLinks" href="/cdn-cgi/l/email-protection#b5dcdbd3daf5d6c6c4c0d4c7d0d1c6dad6dcd4d99bd6dad8">
-                <p class="desktopFooterMainCopy"><span class="__cf_email__"
-                        data-cfemail="1e777078715e7d6d6f6b7f6c7b7a6d717d777f72307d7173">[email&#160;protected]</span>
-                </p>
-            </a> -->
+
 
             <a class="footerLinks">
 
@@ -1284,7 +1370,7 @@
                     <a class="footerLinks" href="{{ url('/') }}">
     <p class="desktopFooterMainCopy">molabsmedia.com</p>
 </a>
-                    <!-- <a class="footerLinks" href="/cdn-cgi/l/email-protection#98f1f6fef7d8fbebe9edf9eafdfcebf7fbf1f9f4b6fbf7f5"><p class="desktopFooterMainCopy"><span class="__cf_email__" data-cfemail="127b7c747d527161636773607776617d717b737e3c717d7f">[email&#160;protected]</span></p></a> -->
+
 
                     <a class="footerLinks">
 
@@ -1302,15 +1388,7 @@
                             </p>
                             <p class="desktopFooterMainCopy stateInformation">Dallas, TX, 75234</p>
                         </div>
-                    </div>
-                    <!-- <div class="locationsContainer">
-                <img class="stateIcon" src="essentials/footer/images/ID.svg" />
-                    <div>
-                        <p class="desktopFooterMainCopy stateInformation"><span style="font-weight: bold;">Boise, ID</span></p>
-                        <p class="desktopFooterMainCopy stateInformation dontWrapText">1861 S Wells Ave #300</p>
-                        <p class="desktopFooterMainCopy stateInformation">Meridian, ID 83642</p>
-                    </div>
-                </div> -->
+
                 </div>
                 <div class="col-2 columnBorderTop">
                     <h3 class="desktopFooterSubheading">information</h3>
@@ -1327,7 +1405,7 @@
                         <p class="desktopFooterMainCopy">Web Design</p>
                     </a>
 
-                    <a class="footerLinks" href="graphicsdesign">
+                    <a class="footerLinks" href="{{ url('graphicsdesign') }}">
                         <p class="desktopFooterMainCopy">Graphics Design</p>
                     </a>
 
@@ -1386,29 +1464,7 @@
         </div>
     </footer>
 
-    <!-- <div class="modal" tabindex="-1" role="dialog" aria-labelledby="disclaimerModal" aria-hidden="true"
-        id="disclaimerModal" data-backdrop="false">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content" style="width: 100%;">
-                <div class="modal-header" style="background-color: white;">
-                    <h5 class="modal-title">Privacy & Terms</h5>
-                    <button id="close-disclaimer" type="button" class="close" data-dismiss="modal" aria-label="Close"
-                        style="border-radius: 25px; border-color: black; border: solid; background-color: white;">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body" style="overflow-y: scroll; height: 450px; background-color: white;"> -->
-                    <!-- Termly Tracking Code -->
-                    <!-- goes here -->
-                   <!--  <embed src="https://app.termly.io/document/privacy-policy/90512b59-d462-4367-b546-069571520429"
-                        style="width: 100%;height: 450px;">
 
-                </div>
-            </div>
-        </div>
-    </div> -->
-
-    <!-- <script language='JavaScript1.1' async src='//pixel.mathtag.com/event/js?mt_id=1541489&mt_adid=245306&mt_exem=&mt_excl=&v1=&v2=&v3=&s1=&s2=&s3='></script> -->
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script type="text/javascript">
         _linkedin_partner_id = "1293980";

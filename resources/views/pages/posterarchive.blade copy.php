@@ -135,6 +135,25 @@
     });
     // DOMContentLoaded  end
     </script>
+
+<style>
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.column {
+    flex: 1;
+    padding: 5px;
+}
+
+.responsive-image {
+    width: 100%;
+    height: 500px; /* Set a fixed height */
+    object-fit: cover; /* Ensures the image covers the element while maintaining aspect ratio */
+}
+</style>
+
 </head>
 
 <body>
@@ -170,19 +189,20 @@
                     Services
                 </a>
                 <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                    <li><a class="dropdown-item" href="{{ url('events') }}">Events &raquo; </a>
-                        <ul class="submenu dropdown-menu dropdown-menu-dark">
-                        <li><a class="dropdown-item" href="{{ url('upcomingevents') }}">Upcoming Events</a></li>
-                            <li><a class="dropdown-item" href="{{ url('pastevents') }}">Past Events &raquo; </a>
-                                <ul class="submenu dropdown-menu dropdown-menu-dark">
-                                    <li><a class="dropdown-item" href="{{ url('videos') }}">Video Archive</a></li>
-                                    <li><a class="dropdown-item" href="{{ url('picturearchive') }}">Picture Archive</a></li>
-                                    <li><a class="dropdown-item" href="{{ url('postersarchive') }}">Poster Archive</a></li>
-                                </ul>
-                            </li>
-
-                        </ul>
-                    </li>
+                    <li>
+    <a class="dropdown-item" href="{{ url('events') }}">Events &raquo; </a>
+    <ul class="submenu dropdown-menu dropdown-menu-dark">
+        <li><a class="dropdown-item" href="{{ url('upcomingevents') }}">Upcoming Events</a></li>
+        <li>
+            <a class="dropdown-item" href="{{ url('pastevents') }}">Past Events &raquo; </a>
+            <ul class="submenu dropdown-menu dropdown-menu-dark">
+                <li><a class="dropdown-item" href="{{ url('videos') }}">Video Archive</a></li>
+                <li><a class="dropdown-item" href="{{ url('picturearchive') }}">Picture Archive</a></li>
+                <li><a class="dropdown-item" href="{{ url('posterarchive') }}">Poster Archive</a></li>
+            </ul>
+        </li>
+    </ul>
+</li>
                     <li><a class="dropdown-item" href="{{ url('videoproduction') }}">Video production</a></li>
 <li><a class="dropdown-item" href="{{ url('creativewriting') }}">Creative writing</a></li>
 <li><a class="dropdown-item" href="{{ url('contentwriters') }}">Content writers</a></li>
@@ -220,7 +240,7 @@
                     </a>
                 </li>
 
-                <li class="csquared-sublink"><a class="menu_link" href="{{ url('postersarchive') }}"> Poster Archive
+                <li class="csquared-sublink"><a class="menu_link" href="{{ url('posterarchive') }}"> Poster Archive
                     </a>
                 </li>
                 <li class="csquared-sublink"><a class="menu_link" href="{{ url('videoproduction') }}"> Video Production </a></li>
@@ -372,9 +392,7 @@
         display: -ms-flexbox;
         display: -webkit-flex;
         display: flex;
-        /* padding-left: 25%;
-    padding-right: 25%; */
-        /* display: inline-block; */
+
         justify-content: center;
         align-items: stretch;
         align-content: stretch;
@@ -844,50 +862,166 @@
         <div id="content-container" class="container hero-container">
             <div id="content-hero-container" class="hp-hero-content-container hp-hero-content-container-alt">
                 <img class="hp-hero-logo" src="molabsmedia/molabs_logo.png">
-                <h1 class="hp-hero-heading">Events</h1>
+                <h1 class="hp-hero-heading">Poster Archive</h1>
 
             </div>
         </div>
 
     </div>
 
-    <section id="section-two">
-        <div class="teal-splash-container">
-            <img id="teal-splash" src="homepage/images/desktop/teal_splash.png">
-        </div>
-        <div class="what-we-do-container container">
-            <h1 id="whatWeDo" class="body-headings heading-black">Our Events</h1>
-            <hr id="whatWeDoHr" class="body-hr">
-        </div>
 
 
+    <div class="row">
+        <div class="col-12 col-md-6 col-lg-3 mb-3">
+            <img src="{{ asset('images/unforgettable-90s-kumarsanu-sadhana.jpeg') }}" alt="Snow" class="img-fluid" style="height: 600px; object-fit: cover; width: 100%;">
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 mb-3">
+            <img src="{{ asset('images/umrao-jaan-dallas.jpg') }}" alt="Forest" class="img-fluid" style="height: 600px; object-fit: cover; width: 100%;">
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 mb-3">
+            <img src="{{ asset('images/bismil-24.jpg') }}" alt="Mountains" class="img-fluid" style="height: 600px; object-fit: cover; width: 100%;">
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 mb-3">
+            <img src="{{ asset('images/jubin-nautiyal.jpeg') }}" alt="Mountains" class="img-fluid" style="height: 600px; object-fit: cover; width: 100%;">
+        </div>
+    </div>
 
-        <div class="row mb-1-custom">
-            <div class="col-md grid-padding-right">
-                <div class="hp-grid-box-container">
-                    <div id="upcoming-box" class="hp-grid-box-content-container grid-container">
-                        <h2 class="body-headings-two heading-white">Upcoming Events</h2>
-                        <!-- <p id="ad-grid-copy" class="copy-two">All-in-one marketing solution <br class="desktop-break">
-                            for <br class="mobile-break"> digital advertising.</p> -->
-                        <button class="outlined-white-button mt-5" type="button"
-                            onclick="window.location.href='upcomingevents'">learn more</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md grid-padding-left">
-                <div class="hp-grid-box-container">
-                    <div id="archive-box" class="hp-grid-box-content-container grid-container">
-                        <h2 class="body-headings-two heading-white">Past Events</h2>
-                        <!-- <p id="web-grid-copy" class="copy-two">Custom websites to enhance <br class="desktop-break"> <br
-                                class="mobile-break"> your company's image.</p> -->
-                        <button class="outlined-white-button mt-5" type="button"
-                            onclick="window.location.href='{{ url('pastevents') }}'">learn more</button>
-                    </div>
-                </div>
-            </div>
+
+    <div class="row">
+        <div class="col-12 col-md-6 col-lg-3 mb-3">
+            <img src="{{ asset('images/atif-aslam-28oct2023.jpg') }}" alt="Snow" class="img-fluid" style="height: 600px; object-fit: cover; width: 100%;">
         </div>
+        <div class="col-12 col-md-6 col-lg-3 mb-3">
+            <img src="{{ asset('images/sidsirram.jpg') }}" alt="Forest" class="img-fluid" style="height: 600px; object-fit: cover; width: 100%;">
         </div>
-    </section>
+        <div class="col-12 col-md-6 col-lg-3 mb-3">
+            <img src="{{ asset('images/sonunigamdallas.jpg') }}" alt="Mountains" class="img-fluid" style="height: 600px; object-fit: cover; width: 100%;">
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 mb-3">
+            <img src="{{ asset('images/loltour.jpg') }}" alt="Mountains" class="img-fluid" style="height: 600px; object-fit: cover; width: 100%;">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-md-6 col-lg-3 mb-3">
+            <img src="{{ asset('images/bismil.jpg') }}" alt="Snow" class="img-fluid" style="height: 600px; object-fit: cover; width: 100%;">
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 mb-3">
+            <img src="{{ asset('images/KartikAryan_4march2023.jpg') }}" alt="Forest" class="img-fluid" style="height: 600px; object-fit: cover; width: 100%;">
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 mb-3">
+            <img src="{{ asset('images/sara.jpg') }}" alt="Mountains" class="img-fluid" style="height: 600px; object-fit: cover; width: 100%;">
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 mb-3">
+            <img src="{{ asset('images/nehadallas.jpg') }}" alt="Mountains" class="img-fluid" style="height: 600px; object-fit: cover; width: 100%;">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-md-6 col-lg-3 mb-3">
+            <img src="{{ asset('images/grandtour.jpg') }}" alt="Snow" class="img-fluid" style="height: 600px; object-fit: cover; width: 100%;">
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 mb-3">
+            <img src="{{ asset('images/alamgir.jpg') }}" alt="Forest" class="img-fluid" style="height: 600px; object-fit: cover; width: 100%;">
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 mb-3">
+            <img src="{{ asset('images/anupamsafar.jpg') }}" alt="Mountains" class="img-fluid" style="height: 600px; object-fit: cover; width: 100%;">
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 mb-3">
+            <img src="{{ asset('images/tum-mere-pass-ho.jpg') }}" alt="Mountains" class="img-fluid" style="height: 600px; object-fit: cover; width: 100%;">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-md-6 col-lg-3 mb-3">
+            <img src="{{ asset('images/event1.jpg') }}" alt="Snow" class="img-fluid" style="height: 600px; object-fit: cover; width: 100%;">
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 mb-3">
+            <img src="{{ asset('images/event2.jpg') }}" alt="Forest" class="img-fluid" style="height: 600px; object-fit: cover; width: 100%;">
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 mb-3">
+            <img src="{{ asset('images/event3.jpg') }}" alt="Mountains" class="img-fluid" style="height: 600px; object-fit: cover; width: 100%;">
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 mb-3">
+            <img src="{{ asset('images/event4.jpg') }}" alt="Mountains" class="img-fluid" style="height: 600px; object-fit: cover; width: 100%;">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-md-6 col-lg-3 mb-3">
+            <img src="{{ asset('images/event5.jpg') }}" alt="Snow" class="img-fluid" style="height: 600px; object-fit: cover; width: 100%;">
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 mb-3">
+            <img src="{{ asset('images/event6.jpg') }}" alt="Forest" class="img-fluid" style="height: 600px; object-fit: cover; width: 100%;">
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 mb-3">
+            <img src="{{ asset('images/event7.jpg') }}" alt="Mountains" class="img-fluid" style="height: 600px; object-fit: cover; width: 100%;">
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 mb-3">
+            <img src="{{ asset('images/event8.jpg') }}" alt="Mountains" class="img-fluid" style="height: 600px; object-fit: cover; width: 100%;">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-md-6 col-lg-3 mb-3">
+            <img src="{{ asset('images/event9.jpg') }}" alt="Snow" class="img-fluid" style="height: 600px; object-fit: cover; width: 100%;">
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 mb-3">
+            <img src="{{ asset('images/event10.jpg') }}" alt="Forest" class="img-fluid" style="height: 600px; object-fit: cover; width: 100%;">
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 mb-3">
+            <img src="{{ asset('images/event11.jpg') }}" alt="Mountains" class="img-fluid" style="height: 600px; object-fit: cover; width: 100%;">
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 mb-3">
+            <img src="{{ asset('images/event12.jpg') }}" alt="Mountains" class="img-fluid" style="height: 600px; object-fit: cover; width: 100%;">
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-12 col-md-6 col-lg-3 mb-3">
+            <img src="{{ asset('images/event13.jpg') }}" alt="Snow" class="img-fluid" style="height: 600px; object-fit: cover; width: 100%;">
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 mb-3">
+            <img src="{{ asset('images/event14.jpg') }}" alt="Forest" class="img-fluid" style="height: 600px; object-fit: cover; width: 100%;">
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 mb-3">
+            <img src="{{ asset('images/event15.jpg') }}" alt="Mountains" class="img-fluid" style="height: 600px; object-fit: cover; width: 100%;">
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 mb-3">
+            <img src="{{ asset('images/event16.jpg') }}" alt="Mountains" class="img-fluid" style="height: 600px; object-fit: cover; width: 100%;">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-md-6 col-lg-3 mb-3">
+            <img src="{{ asset('images/event17.jpg') }}" alt="Snow" class="img-fluid" style="height: 600px; object-fit: cover; width: 100%;">
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 mb-3">
+            <img src="{{ asset('images/event18.jpg') }}" alt="Forest" class="img-fluid" style="height: 600px; object-fit: cover; width: 100%;">
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 mb-3">
+            <img src="{{ asset('images/event19.jpg') }}" alt="Mountains" class="img-fluid" style="height: 600px; object-fit: cover; width: 100%;">
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 mb-3">
+            <img src="{{ asset('images/event20.jpg') }}" alt="Mountains" class="img-fluid" style="height: 600px; object-fit: cover; width: 100%;">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-md-6 col-lg-3 mb-3">
+            <img src="{{ asset('images/event21.jpg') }}" alt="Snow" class="img-fluid" style="height: 600px; object-fit: cover; width: 100%;">
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 mb-3">
+            <img src="{{ asset('images/event22.jpg') }}" alt="Forest" class="img-fluid" style="height: 600px; object-fit: cover; width: 100%;">
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 mb-3">
+            <img src="{{ asset('images/event23.jpg') }}" alt="Mountains" class="img-fluid" style="height: 600px; object-fit: cover; width: 100%;">
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 mb-3">
+            <img src="{{ asset('images/event24.jpg') }}" alt="Mountains" class="img-fluid" style="height: 600px; object-fit: cover; width: 100%;">
+        </div>
+    </div>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"
@@ -1263,14 +1397,7 @@
                     <p class="desktopFooterMainCopy stateInformation">Dallas, TX, 75234</p>
                 </div>
             </div>
-            <!-- <div class="locationsContainer">
-        <img class="stateIcon" src="essentials/footer/images/ID.svg" />
-            <div>
-                <p class="desktopFooterMainCopy stateInformation"><span style="font-weight: bold;">Boise, ID</span></p>
-                <p class="desktopFooterMainCopy stateInformation dontWrapText">1861 S Wells Ave #300</p>
-                <p class="desktopFooterMainCopy stateInformation">Meridian, ID 83642</p>
-            </div>
-        </div> -->
+
             <hr class="footerHR">
             <h3 class="desktopFooterSubheading">follow</h3>
             <div class="desktopFooterSocialContainer">
@@ -1344,7 +1471,7 @@
                     <a class="footerLinks" href="{{ url('/') }}">
     <p class="desktopFooterMainCopy">molabsmedia.com</p>
 </a>
-                    <!-- <a class="footerLinks" href="/cdn-cgi/l/email-protection#98f1f6fef7d8fbebe9edf9eafdfcebf7fbf1f9f4b6fbf7f5"><p class="desktopFooterMainCopy"><span class="__cf_email__" data-cfemail="127b7c747d527161636773607776617d717b737e3c717d7f">[email&#160;protected]</span></p></a> -->
+
 
                     <a class="footerLinks">
 
@@ -1442,27 +1569,7 @@
         </div>
     </footer>
 
-    <!-- <div class="modal" tabindex="-1" role="dialog" aria-labelledby="disclaimerModal" aria-hidden="true"
-        id="disclaimerModal" data-backdrop="false">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content" style="width: 100%;">
-                <div class="modal-header" style="background-color: white;">
-                    <h5 class="modal-title">Privacy & Terms</h5>
-                    <button id="close-disclaimer" type="button" class="close" data-dismiss="modal" aria-label="Close"
-                        style="border-radius: 25px; border-color: black; border: solid; background-color: white;">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body" style="overflow-y: scroll; height: 450px; background-color: white;"> -->
-    <!-- Termly Tracking Code -->
-    <!-- goes here -->
-    <!--  <embed src="https://app.termly.io/document/privacy-policy/90512b59-d462-4367-b546-069571520429"
-                        style="width: 100%;height: 450px;">
 
-                </div>
-            </div>
-        </div>
-    </div> -->
 
     <!-- <script language='JavaScript1.1' async src='//pixel.mathtag.com/event/js?mt_id=1541489&mt_adid=245306&mt_exem=&mt_excl=&v1=&v2=&v3=&s1=&s2=&s3='></script> -->
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
